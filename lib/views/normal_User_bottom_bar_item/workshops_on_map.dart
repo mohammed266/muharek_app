@@ -292,7 +292,9 @@ class _WorkshopOnMapScreenState extends State<WorkshopOnMapScreen> {
                         ),
                       ),
                       onChanged: (val) {
-                        setState(() {});
+                        setState(() {
+
+                        });
                       },
                       onTap: () {},
                       textInputAction: TextInputAction.search,
