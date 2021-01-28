@@ -18,6 +18,7 @@ class _WorkshopOnMapScreenState extends State<WorkshopOnMapScreen> {
   BitmapDescriptor mapMarker;
   BitmapDescriptor mapMarker1;
   bool workShop = true;
+  bool selectService =true;
 
   Set<Marker> workshopMarkers = {};
   Set<Marker> captainMarkers = {};
@@ -218,7 +219,7 @@ class _WorkshopOnMapScreenState extends State<WorkshopOnMapScreen> {
                             ),
                           ),
                           Text(
-                            'فحص كمبيوتر/فحص محرك فحص بادى/ \n فحص شامل',
+                            'فحص كمبيوتر/فحص محرك/فحص بادى/ \n فحص شامل',
                             style: TextStyle(
                                 fontSize: 11, color: Color(0xFF3192D9)),
                           ),
@@ -235,7 +236,7 @@ class _WorkshopOnMapScreenState extends State<WorkshopOnMapScreen> {
                 text: 'طلب خدمة',
                 function: () {
                   setState(() {
-                    // selectService = false;
+                    selectService = false;
                   });
                 },
                 color: Color(0xFF1C608D),
@@ -246,6 +247,7 @@ class _WorkshopOnMapScreenState extends State<WorkshopOnMapScreen> {
       },
     );
   }
+
 
   @override
   Widget build(BuildContext context) {
