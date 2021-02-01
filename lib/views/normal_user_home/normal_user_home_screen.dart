@@ -3,7 +3,7 @@ import 'package:muharek_app/views/normal_User_bottom_bar_item/ads/ads.dart';
 import 'package:muharek_app/views/normal_User_bottom_bar_item/home/home.dart';
 import 'package:muharek_app/views/normal_User_bottom_bar_item/maintenance_workshops/maintenance_workshops.dart';
 import 'package:muharek_app/views/normal_User_bottom_bar_item/screening_service/screening_services.dart';
-import 'package:muharek_app/views/normal_User_bottom_bar_item/workshops_on_map.dart';
+import 'package:muharek_app/views/normal_User_bottom_bar_item/workshop_on_map/workshops_on_map.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

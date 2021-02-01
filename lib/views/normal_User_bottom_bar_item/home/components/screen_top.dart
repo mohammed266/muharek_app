@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:muharek_app/views/normal_User_bottom_bar_item/home/components/service_title.dart';
-
+import 'package:muharek_app/views/normal_User_bottom_bar_item/maintenance_workshops/maintenance_workshops.dart';
+import 'package:muharek_app/views/owner_workshop/workshop_owner.dart';
 
 class ScreenTop extends StatefulWidget {
   @override
@@ -57,7 +58,10 @@ class _ScreenTopState extends State<ScreenTop> {
           place: '(الرياض)',
           allService: 'كل الورش',
           onTap: () {
-            print('44');
+            Navigator.push(context, MaterialPageRoute(
+              builder: (_)=> MaintenanceWorkshopsScreen(),
+            ),
+            );
           },
         ),
         SizedBox(
@@ -71,37 +75,48 @@ class _ScreenTopState extends State<ScreenTop> {
             itemCount: 3,
             itemBuilder: (_, i) => Padding(
               padding: EdgeInsets.only(left: 10),
-              child: Container(
-                width: MediaQuery.of(context).size.width / 2,
-                // height: 140,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(17),
-                ),
-                child: Card(
-                  child: Column(
-                    children: [
-                      Image.asset('assets/images/image6.png'),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        'ورشة فهد بلال',
-                        style: TextStyle(
-                            color: Color(0xFF2777B2),
-                            fontSize: 10,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        'الرياض',
-                        style: TextStyle(
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => WorkshopOwnerScreen(),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 2,
+                  // height: 140,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(17),
+                  ),
+                  child: Card(
+                    child: Column(
+                      children: [
+                        Image.asset('assets/images/image6.png'),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          'ورشة فهد بلال',
+                          style: TextStyle(
+                              color: Color(0xFF2777B2),
+                              fontSize: 10,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'الرياض',
+                          style: TextStyle(
                             color: Color(0xFF555555),
                             fontSize: 10,
-                            fontWeight: FontWeight.w600),
-                      ),
-                    ],
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -112,7 +127,6 @@ class _ScreenTopState extends State<ScreenTop> {
     );
   }
 }
-
 
 class ServiceList extends StatelessWidget {
   const ServiceList({

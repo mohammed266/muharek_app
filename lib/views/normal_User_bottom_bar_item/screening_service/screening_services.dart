@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:muharek_app/shared/components/component.dart';
 import 'package:muharek_app/views/normal_User_bottom_bar_item/home/components/screen_bottom.dart';
 
 class ScreeningServicesScreen extends StatefulWidget {

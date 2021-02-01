@@ -205,6 +205,95 @@ class ImageAndTitle extends StatelessWidget {
   }
 }
 
+class WorkshopContainer extends StatelessWidget {
+  const WorkshopContainer({
+    Key key, this.image, this.title, this.onTap,
+  }) : super(key: key);
+
+  final String image,title;
+  final Function onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        height: 150,
+        width: MediaQuery.of(context).size.width / 2.3,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(17),
+          border: Border.all(color: Color(0xFFDCDCDC)),
+          color: Color(0xFFFCFCFC),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            CircleAvatar(
+              backgroundImage:
+              AssetImage('assets/icons/icon9.png'),
+              child: Image.asset(image),
+              radius: 26,
+            ),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 12,
+                color: Color(0xFF4C5264),
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class TitleContainer extends StatelessWidget {
+  const TitleContainer({
+    Key key,
+    this.image,
+    this.text,
+  }) : super(key: key);
+
+  final String image, text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 47,
+      decoration: BoxDecoration(
+        color: Color(0xFFFCFCFC),
+      ),
+      child: Padding(
+        padding: EdgeInsets.only(left: 20, right: 20),
+        child: Row(
+          children: [
+            Container(
+              height: 25,
+              width: 25,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Image.asset(image),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text(
+              text,
+              style: TextStyle(fontSize: 12),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
 Widget defaultButton({
   text,
   function,
@@ -224,7 +313,7 @@ Widget defaultButton({
       child: Text(
         text,
         style: TextStyle(
-          fontSize: 15,
+          fontSize: 13,
           color: c,
           fontWeight: FontWeight.w600,
         ),

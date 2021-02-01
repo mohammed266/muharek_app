@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:muharek_app/views/adv_screen_for_owner_advertisement/adv_screen_for_owner_adv.dart';
 import 'package:muharek_app/views/normal_User_bottom_bar_item/home/components/service_title.dart';
+import 'package:muharek_app/views/offer_details/offer_details.dart';
 
 class ScreenMiddle extends StatefulWidget {
   @override
@@ -82,7 +84,11 @@ class _ScreenMiddleState extends State<ScreenMiddle> {
                             ),
                             InkWell(
                               onTap: () {
-                                print('oo');
+                                Navigator.push(context,
+                                  MaterialPageRoute(builder: (_) =>
+                                      OfferDetailScreen(),
+                                  ),
+                                );
                               },
                               child: Container(
                                 height: 30,
@@ -165,148 +171,157 @@ class _ScreenMiddleState extends State<ScreenMiddle> {
             itemCount: 5,
             itemBuilder: (_, i) => Padding(
               padding: EdgeInsets.only(left: 10),
-              child: Container(
-                width: MediaQuery.of(context).size.width / 2,
-                height: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(17),
-                  color: Colors.grey.withOpacity(0.1),
-                ),
-                child: Column(
-                  children: [
-                    Container(
-                      height: 90,
-                      width: MediaQuery.of(context).size.width / 2,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/image11.png'),
-                          fit: BoxFit.fill,
-                        ),
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(17),
-                          topRight: Radius.circular(17),
-                        ),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 5,
+              child: InkWell(
+                onTap: (){
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (_) =>
+                        AdvScreenForOwnerAdv(),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 2,
+                  height: 200,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(17),
+                    color: Colors.grey.withOpacity(0.1),
+                  ),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 90,
+                        width: MediaQuery.of(context).size.width / 2,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/image11.png'),
+                            fit: BoxFit.fill,
                           ),
-                          InkWell(
-                            onTap: () {
-                              print('22');
-                            },
-                            child: Image.asset('assets/icons/icon35.png'),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(17),
+                            topRight: Radius.circular(17),
                           ),
-                          Spacer(),
-                          Container(
-                            height: 20,
-                            width: 40,
-                            decoration: BoxDecoration(
-                              color: Color(0xFF2777B2),
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                bottomLeft: Radius.circular(10),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 5,
+                            ),
+                            InkWell(
+                              onTap: () {
+                                print('22');
+                              },
+                              child: Image.asset('assets/icons/icon35.png'),
+                            ),
+                            Spacer(),
+                            Container(
+                              height: 20,
+                              width: 40,
+                              decoration: BoxDecoration(
+                                color: Color(0xFF2777B2),
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  bottomLeft: Radius.circular(10),
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    '5',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 10),
+                                  ),
+                                  SizedBox(
+                                    width: 4,
+                                  ),
+                                  Icon(
+                                    Icons.photo,
+                                    color: Colors.white,
+                                    size: 12,
+                                  ),
+                                ],
                               ),
                             ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  '5',
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 10),
-                                ),
-                                SizedBox(
-                                  width: 4,
-                                ),
-                                Icon(
-                                  Icons.photo,
-                                  color: Colors.white,
-                                  size: 12,
-                                ),
-                              ],
+                            SizedBox(
+                              height: 10,
                             ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 6,
+                      ),
+                      Text(
+                        'تويوتا لاندكروزر',
+                        style: TextStyle(
+                            color: Color(0xFF2777B2),
+                            fontSize: 10,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      SizedBox(
+                        height: 6,
+                      ),
+                      Text(
+                        '2005',
+                        style: TextStyle(
+                            color: Color(0xFF555555), fontSize: 10),
+                      ),
+                      SizedBox(
+                        height: 6,
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.place,
+                            color: Color(0xFF555555),
+                            size: 15,
+                          ),
+                          Text(
+                            'الرياض',
+                            style: TextStyle(
+                                color: Color(0xFF555555), fontSize: 10),
                           ),
                           SizedBox(
-                            height: 10,
+                            width: 30,
+                          ),
+                          Icon(
+                            Icons.watch_later_outlined,
+                            color: Color(0xFF555555),
+                            size: 15,
+                          ),
+                          Text(
+                            'منذ10ساعة',
+                            style: TextStyle(
+                                color: Color(0xFF555555), fontSize: 10),
                           ),
                         ],
                       ),
-                    ),
-                    SizedBox(
-                      height: 6,
-                    ),
-                    Text(
-                      'تويوتا لاندكروزر',
-                      style: TextStyle(
-                          color: Color(0xFF2777B2),
-                          fontSize: 10,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    SizedBox(
-                      height: 6,
-                    ),
-                    Text(
-                      '2005',
-                      style: TextStyle(
-                          color: Color(0xFF555555), fontSize: 10),
-                    ),
-                    SizedBox(
-                      height: 6,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.place,
-                          color: Color(0xFF555555),
-                          size: 15,
+                      Spacer(),
+                      Container(
+                        height: 30,
+                        width: MediaQuery.of(context).size.width / 2,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF1C608D),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(17),
+                            bottomRight: Radius.circular(17),
+                          ),
                         ),
-                        Text(
-                          'الرياض',
-                          style: TextStyle(
-                              color: Color(0xFF555555), fontSize: 10),
-                        ),
-                        SizedBox(
-                          width: 30,
-                        ),
-                        Icon(
-                          Icons.watch_later_outlined,
-                          color: Color(0xFF555555),
-                          size: 15,
-                        ),
-                        Text(
-                          'منذ10ساعة',
-                          style: TextStyle(
-                              color: Color(0xFF555555), fontSize: 10),
-                        ),
-                      ],
-                    ),
-                    Spacer(),
-                    Container(
-                      height: 30,
-                      width: MediaQuery.of(context).size.width / 2,
-                      decoration: BoxDecoration(
-                        color: Color(0xFF1C608D),
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(17),
-                          bottomRight: Radius.circular(17),
-                        ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          '‏75000 ر.س',
-                          style: TextStyle(
-                            fontSize: 10,
-                            color: Colors.white,
+                        child: Center(
+                          child: Text(
+                            '‏75000 ر.س',
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

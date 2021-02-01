@@ -11,7 +11,6 @@ class WorkshopOnMapScreen extends StatefulWidget {
 }
 
 class _WorkshopOnMapScreenState extends State<WorkshopOnMapScreen> {
-  // Completer<GoogleMapController> _controller = Completer();
   final LatLng _center = const LatLng(31.037933, 31.381523);
   // (22.5448131,88.3403691);
   GoogleMapController mapController;

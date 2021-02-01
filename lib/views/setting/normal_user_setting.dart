@@ -99,7 +99,7 @@ class _NormalUserSettingState extends State<NormalUserSetting> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          toolbarHeight: 75,
+          toolbarHeight: 70,
           centerTitle: true,
           backgroundColor: Color(0xFFF8F8F8),
           elevation: 0.0,

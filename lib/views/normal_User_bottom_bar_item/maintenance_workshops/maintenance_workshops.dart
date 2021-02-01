@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:muharek_app/views/all_workshop_offers/all_workshop_offers.dart';
+import 'package:muharek_app/views/owner_workshop/workshop_owner.dart';
 
 class MaintenanceWorkshopsScreen extends StatefulWidget {
   @override
@@ -20,9 +22,35 @@ class _MaintenanceWorkshopsScreenState
             style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 14,
-                color: Color(0xFF4C5264)),
+                color: Color(0xFF4C5264),
+            ),
           ),
-          leading: SizedBox(),
+          leading: Column(
+            children: [
+              SizedBox(
+                height: 15,
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  height: 35,
+                  width: 35,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Center(
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Color(0xFF4C5264),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
           elevation: 0.0,
           backgroundColor: Color(0xFFF8F8F8),
           toolbarHeight: 60,
@@ -69,7 +97,13 @@ class _MaintenanceWorkshopsScreenState
                         height: 10,
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context,
+                            MaterialPageRoute(builder: (_) =>
+                                AllWorkshopOffersScreen(),
+                            ),
+                          );
+                        },
                         child: Container(
                           height: 30,
                           width: 85,
@@ -141,35 +175,44 @@ class _MaintenanceWorkshopsScreenState
                   crossAxisCount: 2,
                   crossAxisSpacing: 10,
                 ),
-                itemBuilder: (_, i) => Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(17),
-                    color: Colors.grey.withOpacity(0.1),
-                  ),
-                  child: Column(
-                    children: [
-                      Image.asset(
-                        'assets/images/image6.png',
-                        fit: BoxFit.fill,
+                itemBuilder: (_, i) => InkWell(
+                  onTap: (){
+                    Navigator.push(context,
+                      MaterialPageRoute(builder: (_) =>
+                          WorkshopOwnerScreen(),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        'ورشة فهد بلال',
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: Color(0xFF2777B2),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(17),
+                      color: Colors.grey.withOpacity(0.1),
+                    ),
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          'assets/images/image6.png',
+                          fit: BoxFit.fill,
                         ),
-                      ),
-                      Text(
-                        'الرياض',
-                        style: TextStyle(
-                          color: Color(0xFF555555),
-                          fontSize: 10,
+                        SizedBox(
+                          height: 20,
                         ),
-                      ),
-                    ],
+                        Text(
+                          'ورشة فهد بلال',
+                          style: TextStyle(
+                            fontSize: 10,
+                            color: Color(0xFF2777B2),
+                          ),
+                        ),
+                        Text(
+                          'الرياض',
+                          style: TextStyle(
+                            color: Color(0xFF555555),
+                            fontSize: 10,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

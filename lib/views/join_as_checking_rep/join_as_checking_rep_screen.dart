@@ -12,7 +12,7 @@ class _CheckingRepScreenState extends State<CheckingRepScreen> {
     return Padding(
       padding: EdgeInsets.only(bottom: 5),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(
             title,
@@ -117,17 +117,17 @@ class _CheckingRepScreenState extends State<CheckingRepScreen> {
                         child: InkWell(
                           onTap: () {
                             setState(() {
-                              login = false;
+                              login = true;
                             });
                           },
                           child: Container(
                             child: Center(
                               child: Text(
-                                'الخدمات',
+                                'التسجيل',
                                 style: TextStyle(
                                   color: login
-                                      ? Color(0xFFA2A2A2)
-                                      : Color(0xFF3192D9),
+                                      ? Color(0xFF3192D9)
+                                      : Color(0xFFA2A2A2),
                                   fontWeight: FontWeight.w600,
                                   fontSize: 15,
                                 ),
@@ -145,17 +145,17 @@ class _CheckingRepScreenState extends State<CheckingRepScreen> {
                         child: InkWell(
                           onTap: () {
                             setState(() {
-                              login = true;
+                              login = false;
                             });
                           },
                           child: Container(
                             child: Center(
                               child: Text(
-                                'التسجيل',
+                                'الخدمات',
                                 style: TextStyle(
                                   color: login
-                                      ? Color(0xFF3192D9)
-                                      : Color(0xFFA2A2A2),
+                                      ? Color(0xFFA2A2A2)
+                                      : Color(0xFF3192D9),
                                   fontWeight: FontWeight.w600,
                                   fontSize: 15,
                                 ),
