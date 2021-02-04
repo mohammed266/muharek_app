@@ -330,7 +330,9 @@ Widget inputField(
     Function validate,
     Function onSave,
     Function onChanged,
-    Widget prefix}) {
+    Widget prefix,
+    Color color = Colors.white,
+    }) {
   return TextFormField(
     validator: validate,
     onSaved: onSave,
@@ -339,11 +341,11 @@ Widget inputField(
     obscureText: secure,
     decoration: InputDecoration(
       contentPadding: EdgeInsets.symmetric(horizontal: 15),
-      fillColor: Colors.white,
+      fillColor: color,
       hintText: hint,
       hintStyle: TextStyle(
         color: Color(0xFFBFBFBF),
-        fontSize: 15,
+        fontSize: 13,
       ),
       filled: true,
       suffixIcon: icon ? prefix : Container(),

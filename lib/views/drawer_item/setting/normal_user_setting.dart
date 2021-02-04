@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:muharek_app/views/drawer_item/setting/setting_items/edite_personal_data/personal_data.dart';
+import 'package:muharek_app/views/drawer_item/setting/setting_items/my_adresses/my_adresses.dart';
+import 'package:muharek_app/views/drawer_item/setting/setting_items/my_cars/my_cars.dart';
+import 'package:muharek_app/views/drawer_item/setting/setting_items/payment_way/payment_way.dart';
 
 class NormalUserSetting extends StatefulWidget {
   @override
@@ -147,7 +151,13 @@ class _NormalUserSettingState extends State<NormalUserSetting> {
                   color: Color(0xFFF8F8F8),
                 ),
                 child: ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context,
+                      MaterialPageRoute(builder: (_) =>
+                          PersonalDataScreen(),
+                      ),
+                    );
+                  },
                   title: Text(
                     'personal data settings'.tr().toString(),
                     style: _textStyle,
@@ -167,7 +177,13 @@ class _NormalUserSettingState extends State<NormalUserSetting> {
                   color: Color(0xFFF8F8F8),
                 ),
                 child: ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context,
+                      MaterialPageRoute(builder: (_) =>
+                          PaymentWayScreen(),
+                      ),
+                    );
+                  },
                   title: Text(
                     'payment methods'.tr().toString(),
                     style: _textStyle,
@@ -187,7 +203,12 @@ class _NormalUserSettingState extends State<NormalUserSetting> {
                   color: Color(0xFFF8F8F8),
                 ),
                 child: ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (_) => MyAddressesScreen(),
+                    ),
+                    );
+                  },
                   title: Text(
                     'my addresses'.tr().toString(),
                     style: _textStyle,
@@ -207,7 +228,13 @@ class _NormalUserSettingState extends State<NormalUserSetting> {
                   color: Color(0xFFF8F8F8),
                 ),
                 child: ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context,
+                      MaterialPageRoute(
+                        builder: (_) =>  MyCarsScreen(),
+                      ),
+                    );
+                  },
                   title: Text(
                     'my cars'.tr().toString(),
                     style: _textStyle,

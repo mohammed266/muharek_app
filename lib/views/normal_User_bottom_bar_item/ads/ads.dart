@@ -294,22 +294,7 @@ class _AdsScreenState extends State<AdsScreen> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: buildAppBar(context),
-        floatingActionButton: FloatingActionButton(
-          elevation: 1,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => AddAdvScreen(),
-              ),
-            );
-          },
-          backgroundColor: Color(0xFF1C608D),
-          child: Icon(
-            Icons.add,
-            color: Colors.white,
-          ),
-        ),
+        floatingActionButton: buildFloatingActionButton(context),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: ListView(
@@ -317,46 +302,7 @@ class _AdsScreenState extends State<AdsScreen> {
               SizedBox(
                 height: 25,
               ),
-              Row(
-                children: [
-                  Text(
-                    'اقسام الاعلانات',
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Color(0xFF1C608D),
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                  Spacer(
-                    flex: 1,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => FilterAdsScreen(),
-                        ),
-                      );
-                    },
-                    child: Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                        color: Color(0xFFF8F8F8),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Center(
-                        child: Icon(
-                          Icons.sort,
-                          color: Color(0xFF2777B2),
-                          size: 18,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              Title(),
               SizedBox(
                 height: 15,
               ),
@@ -747,6 +693,25 @@ class _AdsScreenState extends State<AdsScreen> {
     );
   }
 
+  FloatingActionButton buildFloatingActionButton(BuildContext context) {
+    return FloatingActionButton(
+        elevation: 1,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => AddAdvScreen(),
+            ),
+          );
+        },
+        backgroundColor: Color(0xFF1C608D),
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+      );
+  }
+
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
         leading: SizedBox(),
@@ -825,5 +790,55 @@ class _AdsScreenState extends State<AdsScreen> {
           ),
         ],
       );
+  }
+}
+
+class Title extends StatelessWidget {
+  const Title({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text(
+          'اقسام الاعلانات',
+          style: TextStyle(
+            fontSize: 12,
+            color: Color(0xFF1C608D),
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        Spacer(
+          flex: 1,
+        ),
+        InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => FilterAdsScreen(),
+              ),
+            );
+          },
+          child: Container(
+            height: 30,
+            width: 30,
+            decoration: BoxDecoration(
+              color: Color(0xFFF8F8F8),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Center(
+              child: Icon(
+                Icons.sort,
+                color: Color(0xFF2777B2),
+                size: 18,
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }

@@ -8,6 +8,8 @@ class CheckingRepScreen extends StatefulWidget {
 }
 
 class _CheckingRepScreenState extends State<CheckingRepScreen> {
+
+
   Widget _title({String title}) {
     return Padding(
       padding: EdgeInsets.only(bottom: 5),
@@ -82,7 +84,8 @@ class _CheckingRepScreenState extends State<CheckingRepScreen> {
               ],
             ),
           );
-        });
+        },
+    );
   }
 
   @override

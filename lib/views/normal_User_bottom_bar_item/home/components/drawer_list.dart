@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/views/setting/normal_user_setting.dart';
+import 'package:muharek_app/views/drawer_item/about_mouharek/about_mouharek.dart';
+import 'package:muharek_app/views/drawer_item/alerts/alerts.dart';
+import 'package:muharek_app/views/drawer_item/contact_us/contact_us.dart';
+import 'package:muharek_app/views/drawer_item/messages/messages.dart';
+import 'package:muharek_app/views/drawer_item/my_adv/my_adv.dart';
+import 'package:muharek_app/views/drawer_item/my_fav/my_fav.dart';
+import 'package:muharek_app/views/drawer_item/my_orders/my_orders.dart';
+import 'package:muharek_app/views/drawer_item/pay_commission/pay_commission.dart';
+import 'package:muharek_app/views/drawer_item/setting/normal_user_setting.dart';
+import 'package:muharek_app/views/drawer_item/technical_support/technical_support.dart';
 
 
 Widget drawerList(BuildContext context) {
@@ -49,60 +58,60 @@ Widget drawerList(BuildContext context) {
           title: 'طلباتى',
           image: 'assets/icons/icon29.png',
           onTap: (){
-            // Navigator.of(context).pop();
-            // Navigator.of(context).push(
-            //   MaterialPageRoute(
-            //     builder: (_) => NormalUserSetting(),
-            //   ),
-            // );
+            Navigator.of(context).pop();
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => MyOrdersScreen(),
+              ),
+            );
           },
         ),
         ServiceDrawerList(
           title: 'الرسائل',
           image: 'assets/icons/icon17.png',
           onTap: (){
-            // Navigator.of(context).pop();
-            // Navigator.of(context).push(
-            //   MaterialPageRoute(
-            //     builder: (_) => NormalUserSetting(),
-            //   ),
-            // );
+            Navigator.of(context).pop();
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => MessagesScreen(),
+              ),
+            );
           },
         ),
         ServiceDrawerList(
           title: 'اعلاناتى',
           image: 'assets/icons/icon21.png',
           onTap: (){
-            // Navigator.of(context).pop();
-            // Navigator.of(context).push(
-            //   MaterialPageRoute(
-            //     builder: (_) => NormalUserSetting(),
-            //   ),
-            // );
+            Navigator.of(context).pop();
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => MyAdvScreen(),
+              ),
+            );
           },
         ),
         ServiceDrawerList(
           title: 'المفضله',
           image: 'assets/icons/icon18.png',
           onTap: (){
-            // Navigator.of(context).pop();
-            // Navigator.of(context).push(
-            //   MaterialPageRoute(
-            //     builder: (_) => NormalUserSetting(),
-            //   ),
-            // );
+            Navigator.of(context).pop();
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => MyFavScreen(),
+              ),
+            );
           },
         ),
         ServiceDrawerList(
           title: 'التنبيهات',
           image: 'assets/icons/icon19.png',
           onTap: (){
-            // Navigator.of(context).pop();
-            // Navigator.of(context).push(
-            //   MaterialPageRoute(
-            //     builder: (_) => NormalUserSetting(),
-            //   ),
-            // );
+            Navigator.of(context).pop();
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => AlertsScreen(),
+              ),
+            );
           },
         ),
         ServiceDrawerList(
@@ -121,48 +130,48 @@ Widget drawerList(BuildContext context) {
           title: 'الدعم الفنى',
           image: 'assets/icons/icon27.png',
           onTap: (){
-            // Navigator.of(context).pop();
-            // Navigator.of(context).push(
-            //   MaterialPageRoute(
-            //     builder: (_) => NormalUserSetting(),
-            //   ),
-            // );
+            Navigator.of(context).pop();
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => TechnicalSupportScreen(),
+              ),
+            );
           },
         ),
         ServiceDrawerList(
           title: 'عن محرك',
           image: 'assets/icons/icon22.png',
           onTap: (){
-            // Navigator.of(context).pop();
-            // Navigator.of(context).push(
-            //   MaterialPageRoute(
-            //     builder: (_) => NormalUserSetting(),
-            //   ),
-            // );
+            Navigator.of(context).pop();
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => AboutMouharekScreen(),
+              ),
+            );
           },
         ),
         ServiceDrawerList(
           title: 'دفع العموله',
           image: 'assets/icons/icon23.png',
           onTap: (){
-            // Navigator.of(context).pop();
-            // Navigator.of(context).push(
-            //   MaterialPageRoute(
-            //     builder: (_) => NormalUserSetting(),
-            //   ),
-            // );
+            Navigator.of(context).pop();
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) =>  PayCommissionScreen(),
+              ),
+            );
           },
         ),
         ServiceDrawerList(
           title: 'تواصل معنا',
           image: 'assets/icons/icon24.png',
           onTap: (){
-            // Navigator.of(context).pop();
-            // Navigator.of(context).push(
-            //   MaterialPageRoute(
-            //     builder: (_) => NormalUserSetting(),
-            //   ),
-            // );
+            Navigator.of(context).pop();
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => ContactUsScreen(),
+              ),
+            );
           },
         ),
         ServiceDrawerList(

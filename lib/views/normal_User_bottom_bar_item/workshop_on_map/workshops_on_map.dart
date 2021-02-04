@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:muharek_app/shared/components/component.dart';
@@ -235,7 +236,8 @@ class _WorkshopOnMapScreenState extends State<WorkshopOnMapScreen> {
                 text: 'طلب خدمة',
                 function: () {
                   setState(() {
-                    selectService = false;
+                    Navigator.pop(context);
+                    _showDialog2();
                   });
                 },
                 color: Color(0xFF1C608D),
@@ -247,6 +249,207 @@ class _WorkshopOnMapScreenState extends State<WorkshopOnMapScreen> {
     );
   }
 
+  Future<void> _showDialog2() async {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Padding(
+          padding: EdgeInsets.only(left: 20, right: 20),
+          child: Column(
+            children: [
+              SizedBox(height: MediaQuery.of(context).size.height * .49),
+              Container(
+                width: double.infinity,
+                height: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(17),
+                  color: Colors.white,
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              print('fd');
+                            },
+                            child: Container(
+                              height: 49.5,
+                              child: Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  CircleAvatar(
+                                    backgroundImage: AssetImage(
+                                        'assets/icons/icon9.png'),
+                                    child: Image.asset(
+                                      'assets/icons/icon4.png',
+                                      height: 12,
+                                      width: 12,
+                                    ),
+                                    radius: 10,
+                                  ),
+                                  Text(
+                                    'فحص كمبيوتر',
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        color: Color(0xFF4C5264)),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: .5,
+                            width: MediaQuery.of(context).size.width,
+                            color: Colors.grey,
+                          ),
+                          Container(
+                            height: 50,
+                            child: Row(
+                              mainAxisAlignment:
+                              MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text(
+                                  '150',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color(0xFF2777B2)),
+                                ),
+                                Text(
+                                  'ريال',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: Color(0xFF4C5264)),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 100,
+                      width: .5,
+                      color: Colors.grey,
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          GestureDetector(
+                            onTap: (){
+                              // _modalBottomSheetMenu();
+                            },
+                            child: Container(
+                              height: 49.5,
+                              child: Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text(
+                                    'CL اكورا 2018',
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        color: Color(0xFF4C5264),
+                                    ),
+                                  ),
+                                  Icon(Icons.keyboard_arrow_down_rounded),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: .5,
+                            width: MediaQuery.of(context).size.width,
+                            color: Colors.grey,
+                          ),
+                          GestureDetector(
+                            onTap: (){
+                              // _modalBottomSheetMenu1();
+                            },
+                            child: Container(
+                              height: 50,
+                              child: Row(
+                                mainAxisAlignment:
+                                MainAxisAlignment.spaceAround,
+                                children: [
+                                  Text(
+                                    'نقدى',
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        color: Color(0xFF4C5264)),
+                                  ),
+                                  // SizedBox(
+                                  //   width: 22,
+                                  // ),
+                                  Icon(Icons.keyboard_arrow_down_rounded),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                width: double.infinity,
+                height: 40,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () {
+                          print('lll');
+                        },
+                        child: Container(
+                          height: 40,
+                          width: MediaQuery.of(context).size.width/ 2.2,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment:
+                            MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                'طلب مجدول',
+                                style: TextStyle(fontSize: 12,color: Colors.green),
+                              ),
+                              Image.asset('assets/icons/icon42.png'),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Expanded(
+                      child: Container(
+                        child: defaultButton(
+                          color: Color(0xFF1C608D),
+                          text: 'طلب',
+                          function: () {},
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

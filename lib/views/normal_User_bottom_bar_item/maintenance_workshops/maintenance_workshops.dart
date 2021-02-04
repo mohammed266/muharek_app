@@ -25,32 +25,7 @@ class _MaintenanceWorkshopsScreenState
                 color: Color(0xFF4C5264),
             ),
           ),
-          leading: Column(
-            children: [
-              SizedBox(
-                height: 15,
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Container(
-                  height: 35,
-                  width: 35,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Center(
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Color(0xFF4C5264),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+          leading: SizedBox(),
           elevation: 0.0,
           backgroundColor: Color(0xFFF8F8F8),
           toolbarHeight: 60,
