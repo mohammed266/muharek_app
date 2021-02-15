@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
-import 'package:muharek_app/views/splash/splash2_screen.dart';
+import '../../shared/components/component.dart';
+import 'splash2_screen.dart';
 
 class Splash1Screen extends StatefulWidget {
   @override

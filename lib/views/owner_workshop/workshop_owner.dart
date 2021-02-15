@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:muharek_app/shared/components/component.dart';
-import 'package:muharek_app/views/checking_service_details/checking_service_details.dart';
-import 'package:muharek_app/views/offers_from_workshop/workshop_offers.dart';
-import 'package:muharek_app/views/screening_service_details/screening_service_details.dart';
+import '../../shared/components/component.dart';
+import '../checking_service_details/checking_service_details.dart';
+import '../offers_from_workshop/workshop_offers.dart';
+import '../screening_service_details/screening_service_details.dart';
 
 class WorkshopOwnerScreen extends StatefulWidget {
   @override
@@ -95,7 +95,7 @@ class _WorkshopOwnerScreenState extends State<WorkshopOwnerScreen> {
                         children: [
                           Row(
                             children: [
-                              Image.asset('assets/icons/icon26.png'),
+                              Image.asset('assets/icons/icon26.png',height: 16,width: 16,),
                               SizedBox(
                                 width: 5,
                               ),

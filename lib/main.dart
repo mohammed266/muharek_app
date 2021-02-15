@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/views/splash/splash_screen.dart';
+import 'views/splash/splash_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 void main() {
   runApp(
     EasyLocalization(
       child: MyApp(),
-      supportedLocales: [Locale('en', 'US'), Locale('ar', 'SA')],
+      supportedLocales: [Locale('ar', 'SA'),Locale('en', 'US')],
       path: 'assets/lang', // <-- change patch to your
       // fallbackLocale: Locale('en', 'US'),
       saveLocale: true,
+      startLocale: Locale('ar','SA'),
     ),
   );
 }

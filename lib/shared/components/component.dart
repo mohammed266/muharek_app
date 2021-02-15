@@ -20,7 +20,7 @@ class RoundedDiagonalPathClipper extends CustomClipper<Path> {
     return true;
   }
 }
-
+//
 class SocialLogin extends StatelessWidget {
   const SocialLogin({
     Key key,
@@ -67,7 +67,7 @@ class SocialLogin extends StatelessWidget {
     );
   }
 }
-
+//
 class ImageAndTitle extends StatelessWidget {
   const ImageAndTitle({
     Key key,
@@ -204,7 +204,7 @@ class ImageAndTitle extends StatelessWidget {
     );
   }
 }
-
+//
 class WorkshopContainer extends StatelessWidget {
   const WorkshopContainer({
     Key key, this.image, this.title, this.onTap,
@@ -248,7 +248,7 @@ class WorkshopContainer extends StatelessWidget {
     );
   }
 }
-
+//
 class TitleContainer extends StatelessWidget {
   const TitleContainer({
     Key key,
@@ -289,6 +289,135 @@ class TitleContainer extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+//
+class ServiceDrawerList extends StatefulWidget {
+  const ServiceDrawerList({
+    Key key,
+    this.title,
+    this.image, this.onTap,
+  }) : super(key: key);
+  final String title, image;
+  final Function onTap;
+
+  @override
+  _ServiceListState createState() => _ServiceListState();
+}
+
+class _ServiceListState extends State<ServiceDrawerList> {
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      onTap: widget.onTap,
+      contentPadding: EdgeInsets.only(left: 10),
+      title: Text(
+        widget.title,
+        style: TextStyle(
+          fontSize: 14,
+          color: Color(0xFFA2A2A2),
+        ),
+      ),
+      leading: Padding(
+        padding: EdgeInsets.only(right: 20),
+        child: Container(
+          height: 36,
+          width: 36,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Center(
+            child: Image.asset(
+              widget.image,
+              height: 14,
+              width: 18,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+//
+
+class ServiceListTitle extends StatefulWidget {
+  const ServiceListTitle({
+    Key key,
+    this.title,
+    this.image,
+  }) : super(key: key);
+  final String title, image;
+
+  @override
+  _ServiceListTitleState createState() => _ServiceListTitleState();
+}
+
+class _ServiceListTitleState extends State<ServiceListTitle> {
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      onTap: toggleSelection,
+      contentPadding: EdgeInsets.only(left: 10),
+      title: Text(
+        widget.title,
+        style: TextStyle(
+          fontSize: 12,
+          color: isSelected ? Color(0xFF0BC500) : Color(0xFFA2A2A2),
+        ),
+        // textDirection: TextDirection.rtl,
+      ),
+      trailing: isSelected ? Image.asset('assets/icons/icon8.png',height: 25,width: 35,) : Image.asset('assets/icons/icon3.png',height: 25,width: 35,),
+      leading: CircleAvatar(
+        radius: 22,
+        child: Center(
+          child: Image.asset(
+            widget.image,
+            height: 30,
+            width: 30,
+          ),
+        ),
+      ),
+      selected: isSelected,
+    );
+  }
+
+  bool isSelected = false;
+  void toggleSelection() {
+    setState(() {
+      if (isSelected) {
+        isSelected = false;
+      } else {
+        isSelected = true;
+      }
+    });
+  }
+}
+//
+
+class Details extends StatelessWidget {
+  const Details({
+    Key key,
+    this.title,
+    this.text,
+  }) : super(key: key);
+
+  final String title, text;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text(
+          title,
+          style: TextStyle(fontSize: 15, color: Color(0xFF3192D9)),
+        ),
+        Spacer(),
+        Text(
+          text,
+          style: TextStyle(fontSize: 15, color: Color(0xFF707070)),
+        ),
+      ],
     );
   }
 }

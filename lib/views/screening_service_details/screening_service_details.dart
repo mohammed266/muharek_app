@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
-import 'package:muharek_app/views/screening_service_order/screening_service_order.dart';
+import '../../shared/components/component.dart';
+import '../screening_service_order/screening_service_order.dart';
 
 class ScreeningServiceDetailsScreen extends StatelessWidget {
   @override
@@ -216,10 +216,10 @@ class ScreeningServiceDetailsScreen extends StatelessWidget {
               height: 30,
             ),
             Padding(
-              padding: EdgeInsets.only(left: 40,right: 40),
+              padding: EdgeInsets.only(left: 60,right: 60),
               child: defaultButton(
                 text: 'طلب الخدمة',
-                color: Color(0xFF3192D9),
+                color: Color(0xFF1C608D),
                 function: () {
                   Navigator.push(context, MaterialPageRoute(builder: (_)=> ScreeningServiceOrderScreen(),),);
                 },

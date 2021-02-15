@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/views/add_bank_card/add_bank_card.dart';
+import '../add_bank_card/add_bank_card.dart';
 
 class AddNewCardScreen extends StatelessWidget {
   @override

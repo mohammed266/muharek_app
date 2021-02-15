@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/views/offer_details/offer_details.dart';
+import '../offer_details/offer_details.dart';
 
 class AllWorkshopOffersScreen extends StatelessWidget {
   @override

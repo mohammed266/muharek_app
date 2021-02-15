@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
-import 'package:muharek_app/views/add_new_card/add_new_card.dart';
+import '../../../../../shared/components/component.dart';
+import '../../../../add_new_card/add_new_card.dart';
 
 class PaymentWayScreen extends StatefulWidget {
   @override
@@ -67,16 +67,19 @@ class _PaymentWayScreenState extends State<PaymentWayScreen> {
                 SizedBox(
                   height:  MediaQuery.of(context).size.height* 0.3,
                 ),
-                defaultButton(
-                  color: Color(0xFF3192D9),
-                  text: 'اضف بطاقة دفع',
-                  function: () {
-                    Navigator.push(context,
-                      MaterialPageRoute(builder: (_) =>
-                          AddNewCardScreen(),
-                      ),
-                    );
-                  }
+                Padding(
+                  padding: EdgeInsets.only(left: 40,right: 40),
+                  child: defaultButton(
+                    color: Color(0xFF1C608D),
+                    text: 'اضف بطاقة دفع',
+                    function: () {
+                      Navigator.push(context,
+                        MaterialPageRoute(builder: (_) =>
+                            AddNewCardScreen(),
+                        ),
+                      );
+                    }
+                  ),
                 ),
                 SizedBox(
                   height: 30,

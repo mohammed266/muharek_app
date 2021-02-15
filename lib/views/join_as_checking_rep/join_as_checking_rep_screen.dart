@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
-import 'package:muharek_app/views/checking_rep_home/checking_rep_home_screen.dart';
+import '../../shared/components/component.dart';
+import '../checking_rep_user/checking_rep_home/checking_rep_home_screen.dart';
 
 class CheckingRepScreen extends StatefulWidget {
   @override
@@ -72,7 +72,7 @@ class _CheckingRepScreenState extends State<CheckingRepScreen> {
                         'يرجى الانتظار لحين \n مراجعة بياناتك من قبل \n الادارة',
                         style: TextStyle(
                           color: Colors.blueGrey,
-                          fontSize: 25,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                         textAlign: TextAlign.center,
@@ -218,6 +218,7 @@ class _CheckingRepScreenState extends State<CheckingRepScreen> {
                                 child: Directionality(
                                   textDirection: TextDirection.rtl,
                                   child: DropdownButton<String>(
+                                    underline: Text(''),
                                     items: city.map((String value) {
                                       return new DropdownMenuItem<String>(
                                         value: value,
@@ -298,19 +299,19 @@ class _CheckingRepScreenState extends State<CheckingRepScreen> {
                           )
                         : Column(
                             children: [
-                              ServiceList(
+                              ServiceListTitle(
                                 title: 'فحص كمبيوتر',
                                 image: 'assets/icons/icon4.png',
                               ),
-                              ServiceList(
+                              ServiceListTitle(
                                 title: 'فحص بادى',
                                 image: 'assets/icons/icon5.png',
                               ),
-                              ServiceList(
+                              ServiceListTitle(
                                 title: 'فحص محرك',
                                 image: 'assets/icons/icon6.png',
                               ),
-                              ServiceList(
+                              ServiceListTitle(
                                 title: 'فحص كمبيوتر',
                                 image: 'assets/icons/icon7.png',
                               ),
@@ -340,56 +341,4 @@ class _CheckingRepScreenState extends State<CheckingRepScreen> {
   }
 }
 
-class ServiceList extends StatefulWidget {
-  const ServiceList({
-    Key key,
-    this.title,
-    this.image,
-  }) : super(key: key);
-  final String title, image;
-
-  @override
-  _ServiceListState createState() => _ServiceListState();
-}
-
-class _ServiceListState extends State<ServiceList> {
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      onTap: toggleSelection,
-      contentPadding: EdgeInsets.only(left: 10),
-      title: Text(
-        widget.title,
-        style: TextStyle(
-          fontSize: 12,
-          color: isSelected ? Color(0xFF0BC500) : Color(0xFFA2A2A2),
-        ),
-        textDirection: TextDirection.rtl,
-      ),
-      leading: isSelected ? Image.asset('assets/icons/icon8.png') : Image.asset('assets/icons/icon3.png'),
-      trailing: CircleAvatar(
-        radius: 22,
-        child: Center(
-            child: Image.asset(
-          widget.image,
-          height: 30,
-          width: 30,
-        ),
-        ),
-      ),
-      selected: isSelected,
-    );
-  }
-
-  bool isSelected = false;
-  void toggleSelection() {
-    setState(() {
-      if (isSelected) {
-        isSelected = false;
-      } else {
-        isSelected = true;
-      }
-    });
-  }
-}
 

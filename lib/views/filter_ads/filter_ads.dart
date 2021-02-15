@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
+import '../../shared/components/component.dart';
 
 class FilterAdsScreen extends StatefulWidget {
   @override
@@ -90,6 +90,7 @@ class _FilterAdsScreenState extends State<FilterAdsScreen> {
                           color: Color(0xFFF8F8F8),
                         ),
                         child: DropdownButton<String>(
+                          underline: Text(''),
                           items: sortAs.map((String value) {
                             return new DropdownMenuItem<String>(
                               value: value,
@@ -124,6 +125,7 @@ class _FilterAdsScreenState extends State<FilterAdsScreen> {
                           color: Color(0xFFF8F8F8),
                         ),
                         child: DropdownButton<String>(
+                          underline: Text(''),
                           items: city.map((String value) {
                             return new DropdownMenuItem<String>(
                               value: value,
@@ -158,6 +160,7 @@ class _FilterAdsScreenState extends State<FilterAdsScreen> {
                           color: Color(0xFFF8F8F8),
                         ),
                         child: DropdownButton<String>(
+                          underline: Text(''),
                           items: items.map((String value) {
                             return new DropdownMenuItem<String>(
                               value: value,
@@ -200,6 +203,7 @@ class _FilterAdsScreenState extends State<FilterAdsScreen> {
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: DropdownButton<String>(
+                                      underline: Text(''),
                                       items: madeYear1.map((String value) {
                                         return new DropdownMenuItem<String>(
                                           value: value,
@@ -240,6 +244,7 @@ class _FilterAdsScreenState extends State<FilterAdsScreen> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: DropdownButton<String>(
+                                    underline: Text(''),
                                     items: madeYear2.map((String value) {
                                       return new DropdownMenuItem<String>(
                                         value: value,
@@ -279,6 +284,7 @@ class _FilterAdsScreenState extends State<FilterAdsScreen> {
                           color: Color(0xFFF8F8F8),
                         ),
                         child: DropdownButton<String>(
+                          underline: Text(''),
                           items: carType.map((String value) {
                             return new DropdownMenuItem<String>(
                               value: value,
@@ -313,6 +319,7 @@ class _FilterAdsScreenState extends State<FilterAdsScreen> {
                           color: Color(0xFFF8F8F8),
                         ),
                         child: DropdownButton<String>(
+                          underline: Text(''),
                           items: carModel.map((String value) {
                             return new DropdownMenuItem<String>(
                               value: value,
@@ -333,14 +340,17 @@ class _FilterAdsScreenState extends State<FilterAdsScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 30,
+                        height: 50,
                       ),
-                      defaultButton(
-                        text: 'اظهر النتائج',
-                        color: Color(0xFF3192D9),
-                        function: () {
-                          // _showDialog();
-                        },
+                      Padding(
+                        padding: EdgeInsets.only(left: 50,right: 50),
+                        child: defaultButton(
+                          text: 'اظهر النتائج',
+                          color: Color(0xFF1C608D),
+                          function: () {
+                            // _showDialog();
+                          },
+                        ),
                       ),
                       SizedBox(
                         height: 30,

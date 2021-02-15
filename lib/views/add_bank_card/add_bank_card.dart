@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
-import 'package:muharek_app/views/drawer_item/setting/setting_items/payment_way/payment_way.dart';
+import '../../shared/components/component.dart';
+import '../drawer_item/setting/setting_items/payment_way/payment_way.dart';
 
 class AddBankCardScreen extends StatefulWidget {
   @override
@@ -43,6 +43,8 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
                                     color: masterCard
                                         ? Color(0xFF3192D9)
                                         : Colors.grey,
+                                    height: 31,
+                                    width: 80,
                                   ),
                                   SizedBox(
                                     height: 15,
@@ -75,6 +77,8 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
                                     color: masterCard
                                         ? Colors.grey
                                         : Color(0xFF3192D9),
+                                    height: 28,
+                                    width: 60,
                                   ),
                                   SizedBox(
                                     height: 15,
@@ -219,9 +223,9 @@ class MasterCard extends StatelessWidget {
           height: 30,
         ),
         Padding(
-          padding: EdgeInsets.only(left: 30,right: 30),
+          padding: EdgeInsets.only(left: 60,right: 60),
           child: defaultButton(
-            color: Color(0xFF3192D9),
+            color: Color(0xFF1C608D),
             text: 'اضافة',
             function: (){
               Navigator.push(context, MaterialPageRoute(builder: (_) => PaymentWayScreen(),),);

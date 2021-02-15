@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:muharek_app/shared/components/component.dart';
 import 'package:muharek_app/views/drawer_item/about_mouharek/about_mouharek.dart';
 import 'package:muharek_app/views/drawer_item/alerts/alerts.dart';
 import 'package:muharek_app/views/drawer_item/contact_us/contact_us.dart';
@@ -218,50 +219,4 @@ Widget drawerList(BuildContext context) {
   );
 }
 
-class ServiceDrawerList extends StatefulWidget {
-  const ServiceDrawerList({
-    Key key,
-    this.title,
-    this.image, this.onTap,
-  }) : super(key: key);
-  final String title, image;
-  final Function onTap;
 
-  @override
-  _ServiceListState createState() => _ServiceListState();
-}
-
-class _ServiceListState extends State<ServiceDrawerList> {
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      onTap: widget.onTap,
-      contentPadding: EdgeInsets.only(left: 10),
-      title: Text(
-        widget.title,
-        style: TextStyle(
-          fontSize: 14,
-          color: Color(0xFFA2A2A2),
-        ),
-      ),
-      leading: Padding(
-        padding: EdgeInsets.only(right: 20),
-        child: Container(
-          height: 36,
-          width: 36,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(5),
-          ),
-          child: Center(
-            child: Image.asset(
-              widget.image,
-              height: 30,
-              width: 30,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
+import '../../shared/components/component.dart';
+import '../add_new_car/add_new_car.dart';
+import '../add_new_card/add_new_card.dart';
+import '../order_details/order_details.dart';
+import '../tabular_order/tabular_order.dart';
+
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:avatar_glow/avatar_glow.dart';
-import 'package:muharek_app/views/order_details/order_details.dart';
 
 class ScreeningServiceAfterChoice extends StatefulWidget {
   @override
@@ -13,288 +17,470 @@ class ScreeningServiceAfterChoice extends StatefulWidget {
 class _ScreeningServiceAfterChoiceState
     extends State<ScreeningServiceAfterChoice> {
   final LatLng _center = const LatLng(31.037933, 31.381523);
+  final List _city = [
+    {
+      'name': 'الخبر',
+    },
+    {
+      'name': 'الرياض',
+    },
+    {
+      'name': 'المدينة',
+    },
+  ];
+
+  @override
+  void initState() {
+    createVariables();
+    super.initState();
+  }
+
+  List<bool> citySelectedList = [];
+  createVariables() {
+    citySelectedList = List.generate(_city.length, (i) => false);
+  }
+
   Future<void> _showDialog() async {
     return showDialog(
       context: context,
-      builder: (BuildContext context) {
-        return Container(
-          child: Column(
-            children: [
-              SizedBox(height: 50),
-              Dialog(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                backgroundColor: Color(0xFFFFFFFF),
-                insetPadding: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height / 20,
-                  bottom: MediaQuery.of(context).size.height / 20,
-                  right: 10,
-                  left: 10,
-                ),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 19,
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setState) {
+            return Container(
+              child: Column(
+                children: [
+                  SizedBox(height: 50),
+                  Dialog(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 15, right: 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'عناوينى',
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Color(0xFF2777B2),
-                            ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pop(context);
-                            },
-                            child: Icon(
-                              Icons.close,
-                              color: Color(0xFF2777B2),
-                            ),
-                          ),
-                        ],
-                      ),
+                    backgroundColor: Color(0xFFFFFFFF),
+                    insetPadding: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height / 20,
+                      bottom: MediaQuery.of(context).size.height / 20,
+                      right: 10,
+                      left: 10,
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 15, right: 15),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 40,
-                            width: MediaQuery.of(context).size.width * 0.65,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFF8F8F8),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Row(
-                              children: [
-                                Radio(
-                                  value: null,
-                                  groupValue: null,
-                                  onChanged: null,
-                                ),
-                                Text(
-                                  'الخبر',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          InkWell(
-                            onTap: () {
-                              //
-                            },
-                            child: Container(
-                              height: 40,
-                              width: 40,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFF8F8F8),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Center(
-                                child: Icon(
-                                  Icons.delete,
-                                  color: Colors.red,
-                                  size: 20,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 15, right: 15),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 40,
-                            width: MediaQuery.of(context).size.width * 0.65,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFF8F8F8),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Row(
-                              children: [
-                                Radio(
-                                  value: null,
-                                  groupValue: null,
-                                  onChanged: null,
-                                ),
-                                Text(
-                                  'الخبر',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          InkWell(
-                            onTap: () {
-                              //
-                            },
-                            child: Container(
-                              height: 40,
-                              width: 40,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFF8F8F8),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Center(
-                                child: Icon(
-                                  Icons.delete,
-                                  color: Colors.red,
-                                  size: 20,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 15, right: 15),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 40,
-                            width: MediaQuery.of(context).size.width * 0.65,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFF8F8F8),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Row(
-                              children: [
-                                Radio(
-                                    value: null,
-                                    groupValue: null,
-                                    onChanged: null),
-                                Text(
-                                  'الخبر',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          InkWell(
-                            onTap: () {
-                              //
-                            },
-                            child: Container(
-                              height: 40,
-                              width: 40,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFF8F8F8),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Center(
-                                child: Icon(
-                                  Icons.delete,
-                                  color: Colors.red,
-                                  size: 20,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 27, right: 15),
-                      child: InkWell(
-                        onTap: () {
-                          print('jjj');
-                        },
-                        child: Container(
-                          padding: EdgeInsets.only(right: 15, left: 15),
-                          height: 40,
-                          width: MediaQuery.of(context).size.width,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFF8F8F8),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 19,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 15, right: 15),
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Container(
-                                height: 22,
-                                width: 22,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Color(0xFF2777B2),
-                                  size: 14,
-                                ),
-                              ),
-                              SizedBox(
-                                width: 15,
-                              ),
                               Text(
-                                'إضافة عنوان',
+                                'عناوينى',
                                 style: TextStyle(
-                                    fontSize: 15, color: Color(0xFF2777B2)),
+                                  fontSize: 15,
+                                  color: Color(0xFF2777B2),
+                                ),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Icon(
+                                  Icons.close,
+                                  color: Color(0xFF2777B2),
+                                ),
                               ),
                             ],
                           ),
                         ),
-                      ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 15, right: 15),
+                          child: ListView.builder(
+                            itemCount: _city.length,
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            itemBuilder: (_, i) => Padding(
+                              padding: EdgeInsets.only(bottom: 8),
+                              child: Container(
+                                height: 40,
+                                width: double.infinity,
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        padding: EdgeInsets.only(right: 20),
+                                        height: 40,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFF8F8F8),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        child: Row(
+                                          children: [
+                                            InkWell(
+                                              onTap: () {
+                                                setState(
+                                                  () {
+                                                    createVariables();
+                                                    citySelectedList[i] = true;
+                                                  },
+                                                );
+                                              },
+                                              child: Container(
+                                                padding: EdgeInsets.all(3),
+                                                height: 20,
+                                                width: 20,
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(10),
+                                                  border: Border.all(
+                                                    width: 1.3,
+                                                    color: citySelectedList[i]
+                                                        ? Color(0xFF2777B2)
+                                                        : Color(0xFFBFBFBF),
+                                                  ),
+                                                ),
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    color: citySelectedList[i]
+                                                        ? Color(0xFF2777B2)
+                                                        : Color(0xFFBFBFBF),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            Text(
+                                              '${_city[i]['name']}',
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                          // _city.removeAt(i);
+                                        Navigator.pop(context);
+                                        showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return Container(
+                                              child: Padding(
+                                                padding: EdgeInsets.only(
+                                                    left: 10, right: 10),
+                                                child: Column(
+                                                  children: [
+                                                    SizedBox(height: 120),
+                                                    Dialog(
+                                                      shape:
+                                                      RoundedRectangleBorder(
+                                                        borderRadius:
+                                                        BorderRadius
+                                                            .circular(20),
+                                                      ),
+                                                      backgroundColor:
+                                                      Color(0xFFFFFFFF),
+                                                      insetPadding:
+                                                      EdgeInsets.only(
+                                                        top: MediaQuery.of(
+                                                            context)
+                                                            .size
+                                                            .height /
+                                                            20,
+                                                        bottom: MediaQuery.of(
+                                                            context)
+                                                            .size
+                                                            .height /
+                                                            20,
+                                                        right: 10,
+                                                        left: 10,
+                                                      ),
+                                                      child: Column(
+                                                        children: [
+                                                          SizedBox(
+                                                            height: 10,
+                                                          ),
+                                                          Container(
+                                                            height: 60,
+                                                            width: 60,
+                                                            decoration:
+                                                            BoxDecoration(
+                                                              borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                  30),
+                                                              color: Color(
+                                                                  0xFFFF5A5A),
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 20,
+                                                          ),
+                                                          Text(
+                                                            'متأكد من رغبتك في حذف \n العنوان :اسم العنوان',
+                                                            style: TextStyle(
+                                                              color:
+                                                              Colors.black,
+                                                              fontSize: 18,
+                                                              fontWeight:
+                                                              FontWeight
+                                                                  .bold,
+                                                            ),
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                          ),
+                                                          SizedBox(
+                                                            height: 10,
+                                                          ),
+                                                          Padding(
+                                                            padding:
+                                                            EdgeInsets.only(
+                                                                left: 15,
+                                                                right: 15),
+                                                            child: Row(
+                                                              children: [
+                                                                Expanded(
+                                                                  child:
+                                                                  GestureDetector(
+                                                                    onTap: () {
+                                                                      Navigator.pop(
+                                                                          context);
+                                                                      _city.removeAt(
+                                                                          i);
+                                                                    },
+                                                                    child:
+                                                                    Container(
+                                                                      height:
+                                                                      40,
+                                                                      decoration:
+                                                                      BoxDecoration(
+                                                                        borderRadius:
+                                                                        BorderRadius.circular(25),
+                                                                        color: Color(
+                                                                            0xFFFF5A5A),
+                                                                      ),
+                                                                      child: Center(
+                                                                          child: Text(
+                                                                            'نعم',
+                                                                            style:
+                                                                            TextStyle(
+                                                                              color:
+                                                                              Colors.white,
+                                                                              fontSize:
+                                                                              12,
+                                                                            ),
+                                                                          )),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                                SizedBox(
+                                                                  width: 10,
+                                                                ),
+                                                                Expanded(
+                                                                  child:
+                                                                  InkWell(
+                                                                    onTap: () {
+                                                                      Navigator.of(
+                                                                          context)
+                                                                          .pop();
+                                                                    },
+                                                                    child:
+                                                                    Container(
+                                                                      height:
+                                                                      40,
+                                                                      decoration:
+                                                                      BoxDecoration(
+                                                                        borderRadius:
+                                                                        BorderRadius.circular(25),
+                                                                        border:
+                                                                        Border.all(
+                                                                          color:
+                                                                          Color(0xFF0BC500),
+                                                                        ),
+                                                                      ),
+                                                                      child:
+                                                                      Center(
+                                                                        child:
+                                                                        Text(
+                                                                          'لا',
+                                                                          style:
+                                                                          TextStyle(
+                                                                            color:
+                                                                            Color(0xFF0BC500),
+                                                                            fontSize:
+                                                                            12,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                          Padding(
+                                                            padding: EdgeInsets
+                                                                .only(
+                                                                top: 50),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        );
+                                      },
+                                      child: Container(
+                                        height: 40,
+                                        width: 40,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFF8F8F8),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        child: Center(
+                                          child: Icon(
+                                            Icons.delete,
+                                            color: Colors.red,
+                                            size: 20,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 27, right: 15),
+                          child: InkWell(
+                            onTap: () {
+                              print('jjj');
+                            },
+                            child: Container(
+                              padding: EdgeInsets.only(right: 15, left: 15),
+                              height: 40,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFF8F8F8),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    height: 22,
+                                    width: 22,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Icon(
+                                      Icons.add,
+                                      color: Color(0xFF2777B2),
+                                      size: 14,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Text(
+                                    'إضافة عنوان',
+                                    style: TextStyle(
+                                        fontSize: 15, color: Color(0xFF2777B2)),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 35, right: 35),
+                          child: defaultButton(
+                            text: 'تأكيد',
+                            function: () {},
+                            color: Color(0xFF1C608D),
+                            r: 10,
+                          ),
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 20)),
+                      ],
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 35, right: 35),
-                      child: defaultButton(
-                        text: 'تأكيد',
-                        function: () {},
-                        color: Color(0xFF2777B2),
-                        r: 10,
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 20)),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            );
+          },
         );
       },
     );
   }
+  // Future<void> _showDialog2()async{
+  //   return showDialog(
+  //       context: context,
+  //       builder: (context) {
+  //         return StatefulBuilder(
+  //             builder: (context, setState) {
+  //               return Container(
+  //                 child: Column(
+  //                   children: [
+  //                     SizedBox(height: 50),
+  //                     Dialog(
+  //                       shape: RoundedRectangleBorder(
+  //                         borderRadius: BorderRadius.circular(20),
+  //                       ),
+  //                       backgroundColor: Color(0xFFFFFFFF),
+  //                       insetPadding: EdgeInsets.only(
+  //                         top: MediaQuery.of(context).size.height / 20,
+  //                         bottom: MediaQuery.of(context).size.height / 20,
+  //                         right: 10,
+  //                         left: 10,
+  //                       ),
+  //                       child: Column(
+  //                         children: [
+  //                           FlatButton(
+  //                             onPressed: () {
+  //
+  //                             },
+  //                             child: const Text("مسح"),
+  //                           ),
+  //                           FlatButton(
+  //                             onPressed: () => Navigator.of(context).pop(false),
+  //                             child: const Text("تراجع"),
+  //                           ),
+  //                           Padding(padding: EdgeInsets.only(top: 20)),
+  //                         ],
+  //                       ),
+  //                     ),
+  //                   ],
+  //                 ),
+  //               );
+  //             }
+  //         );
+  //       }
+  //   );
+  // }
   void _modalBottomSheetMenu() {
     showModalBottomSheet(
         context: context,
@@ -303,8 +489,7 @@ class _ScreeningServiceAfterChoiceState
         builder: (builder) {
           return Container(
             height: 250.0,
-            color:
-            Colors.transparent, //could change this to Color(0xFF737373),
+            color: Colors.transparent, //could change this to Color(0xFF737373),
             //so you don't have to change MaterialApp canvasColor
             child: Container(
               decoration: BoxDecoration(
@@ -324,23 +509,28 @@ class _ScreeningServiceAfterChoiceState
                     width: double.infinity,
                     child: Center(
                         child: Text(
-                          'حدد سيارة واحدة',
-                          style: TextStyle(color: Colors.white,fontSize: 15),
-                        )),
+                      'حدد سيارة واحدة',
+                      style: TextStyle(color: Colors.white, fontSize: 15),
+                    )),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 15,right: 20),
+                    padding: EdgeInsets.only(top: 15, right: 20),
                     child: ListTile(
                       title: Text('CL اكورا 2018'),
-                      leading: Image.asset('assets/icons/icon48.png',height: 50,width: 50,),
+                      leading: Image.asset(
+                        'assets/icons/icon48.png',
+                        height: 50,
+                        width: 50,
+                      ),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 15,right: 20),
+                    padding: EdgeInsets.only(top: 15, right: 20),
                     child: ListTile(
-                      title: Text('اضف سيارة جديدة',
+                      title: Text(
+                        'اضف سيارة جديدة',
                         style: TextStyle(
-                          fontSize: 19,
+                          fontSize: 14,
                           fontWeight: FontWeight.w600,
                           color: Color(0xFF4C5264),
                         ),
@@ -353,10 +543,19 @@ class _ScreeningServiceAfterChoiceState
                             image: AssetImage('assets/icons/icon49.png'),
                           ),
                         ),
-                        child: Icon(Icons.add,color: Color(0xFF4C5264),),
+                        child: Icon(
+                          Icons.add,
+                          color: Color(0xFF4C5264),
+                        ),
                       ),
-                      onTap: (){
+                      onTap: () {
                         Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => AddNewCarScreen(),
+                          ),
+                        );
                       },
                     ),
                   ),
@@ -366,6 +565,7 @@ class _ScreeningServiceAfterChoiceState
           );
         });
   }
+
   void _modalBottomSheetMenu1() {
     showModalBottomSheet(
         context: context,
@@ -374,8 +574,7 @@ class _ScreeningServiceAfterChoiceState
         builder: (builder) {
           return Container(
             height: 250.0,
-            color:
-            Colors.transparent, //could change this to Color(0xFF737373),
+            color: Colors.transparent, //could change this to Color(0xFF737373),
             //so you don't have to change MaterialApp canvasColor
             child: Container(
               decoration: BoxDecoration(
@@ -395,23 +594,28 @@ class _ScreeningServiceAfterChoiceState
                     width: double.infinity,
                     child: Center(
                         child: Text(
-                          'اختر طريقة الدفع',
-                          style: TextStyle(color: Colors.white,fontSize: 15),
-                        )),
+                      'اختر طريقة الدفع',
+                      style: TextStyle(color: Colors.white, fontSize: 15),
+                    )),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 15,right: 20),
+                    padding: EdgeInsets.only(top: 15, right: 20),
                     child: ListTile(
                       title: Text('نقدى'),
-                      leading: Image.asset('assets/icons/icon50.png',height: 50,width: 50,),
+                      leading: Image.asset(
+                        'assets/icons/icon50.png',
+                        height: 50,
+                        width: 50,
+                      ),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 15,right: 20),
+                    padding: EdgeInsets.only(top: 15, right: 20),
                     child: ListTile(
-                      title: Text('اضف بطاقة دفع',
+                      title: Text(
+                        'اضف بطاقة دفع',
                         style: TextStyle(
-                          fontSize: 19,
+                          fontSize: 14,
                           fontWeight: FontWeight.w600,
                           color: Color(0xFF4C5264),
                         ),
@@ -424,10 +628,19 @@ class _ScreeningServiceAfterChoiceState
                             image: AssetImage('assets/icons/icon49.png'),
                           ),
                         ),
-                        child: Icon(Icons.add,color: Color(0xFF4C5264),),
+                        child: Icon(
+                          Icons.add,
+                          color: Color(0xFF4C5264),
+                        ),
                       ),
-                      onTap: (){
+                      onTap: () {
                         Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => AddNewCardScreen(),
+                          ),
+                        );
                       },
                     ),
                   ),
@@ -443,14 +656,18 @@ class _ScreeningServiceAfterChoiceState
       context: context,
       builder: (BuildContext context) {
         Future.delayed(Duration(seconds: 5), () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (_) => OrderDetailsScreen(),),);
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (_) => OrderDetailsScreen(),
+            )
+          );
         });
         return Column(
           children: [
             SizedBox(height: MediaQuery.of(context).size.height * .03),
             Container(
               height: MediaQuery.of(context).size.height * 0.9,
-              width: double.infinity,
+              width: MediaQuery.of(context).size.width,
               child: Dialog(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(17),
@@ -486,7 +703,11 @@ class _ScreeningServiceAfterChoiceState
                       ),
                     ),
                     Spacer(),
-                    Image.asset('assets/images/image21.png'),
+                    Image.asset(
+                      'assets/images/image21.png',
+                      width: 70,
+                      height: 100,
+                    ),
                     SizedBox(
                       height: 7,
                     ),
@@ -512,10 +733,10 @@ class _ScreeningServiceAfterChoiceState
                         ),
                         child: Center(
                             child: Text(
-                              'الغاء الطلب',
-                              style:
+                          'الغاء الطلب',
+                          style:
                               TextStyle(fontSize: 12, color: Color(0xFFA2A2A2)),
-                            )),
+                        )),
                       ),
                     ),
                     SizedBox(
@@ -623,7 +844,7 @@ class _ScreeningServiceAfterChoiceState
                             child: Column(
                               children: [
                                 InkWell(
-                                  onTap: (){
+                                  onTap: () {
                                     _modalBottomSheetMenu();
                                   },
                                   child: Container(
@@ -649,7 +870,7 @@ class _ScreeningServiceAfterChoiceState
                                   color: Colors.grey,
                                 ),
                                 InkWell(
-                                  onTap: (){
+                                  onTap: () {
                                     _modalBottomSheetMenu1();
                                   },
                                   child: Container(
@@ -689,7 +910,12 @@ class _ScreeningServiceAfterChoiceState
                           Expanded(
                             child: InkWell(
                               onTap: () {
-                                print('lll');
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => TabularOrderScreen(),
+                                  ),
+                                );
                               },
                               child: Container(
                                 height: 40,
@@ -706,7 +932,11 @@ class _ScreeningServiceAfterChoiceState
                                       'طلب مجدول',
                                       style: TextStyle(fontSize: 12),
                                     ),
-                                    Image.asset('assets/icons/icon42.png'),
+                                    Image.asset(
+                                      'assets/icons/icon42.png',
+                                      height: 14,
+                                      width: 13,
+                                    ),
                                   ],
                                 ),
                               ),

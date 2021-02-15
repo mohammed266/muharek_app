@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
+import '../../shared/components/component.dart';
 import 'package:date_time_picker/date_time_picker.dart';
 
 class OffersFromWorkshopScreen extends StatefulWidget {
@@ -57,7 +57,7 @@ class _OffersFromWorkshopScreenState extends State<OffersFromWorkshopScreen> {
                       ),
                     ),
                     Spacer(),
-                    Image.asset('assets/images/image16.png'),
+                    Image.asset('assets/images/image16.png',height: 80,width: 100,),
                     SizedBox(
                       height: 7,
                     ),
@@ -138,6 +138,7 @@ class _OffersFromWorkshopScreenState extends State<OffersFromWorkshopScreen> {
                   color: Color(0xFFF8F8F8),
                 ),
                 child: DropdownButton<String>(
+                  underline: Text(''),
                   items: cars.map((String value) {
                     return new DropdownMenuItem<String>(
                       value: value,
@@ -230,6 +231,7 @@ class _OffersFromWorkshopScreenState extends State<OffersFromWorkshopScreen> {
                   color: Color(0xFFF8F8F8),
                 ),
                 child: DropdownButton<String>(
+                  underline: Text(''),
                   items: payment.map((String value) {
                     return new DropdownMenuItem<String>(
                       value: value,
@@ -290,12 +292,15 @@ class _OffersFromWorkshopScreenState extends State<OffersFromWorkshopScreen> {
               SizedBox(
                 height: 25,
               ),
-              defaultButton(
-                text: 'حجز',
-                color: Color(0xFF3192D9),
-                function: () {
-                  _showDialog();
-                },
+              Padding(
+                padding: EdgeInsets.only(left: 50,right: 50),
+                child: defaultButton(
+                  text: 'حجز',
+                  color: Color(0xFF1C608D),
+                  function: () {
+                    _showDialog();
+                  },
+                ),
               ),
               SizedBox(
                 height: 25,

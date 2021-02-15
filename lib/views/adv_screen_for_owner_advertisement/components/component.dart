@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
-
-
+import '../../../shared/components/component.dart';
 
 class Details extends StatelessWidget {
   @override
@@ -234,18 +232,18 @@ class Details extends StatelessWidget {
                       Text(
                         'الرياض',
                         style:
-                        TextStyle(fontSize: 12, color: Color(0xFFA2A2A2)),
+                            TextStyle(fontSize: 12, color: Color(0xFFA2A2A2)),
                       ),
                       Text(
                         'اخر اعلان بتاريخ 15 ديسمبر 2020',
                         style:
-                        TextStyle(fontSize: 12, color: Color(0xFFA2A2A2)),
+                            TextStyle(fontSize: 12, color: Color(0xFFA2A2A2)),
                       ),
                       Row(
                         children: [
                           Expanded(
                             child: InkWell(
-                              onTap: (){
+                              onTap: () {
                                 //
                               },
                               child: Container(
@@ -256,10 +254,18 @@ class Details extends StatelessWidget {
                                 ),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    Image.asset('assets/icons/icon24.png',color: Colors.white,),
-                                    Text('اتصال',style: TextStyle(color: Colors.white,fontSize: 13),),
+                                    Image.asset(
+                                      'assets/icons/icon24.png',
+                                      color: Colors.white,
+                                    ),
+                                    Text(
+                                      'اتصال',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 13),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -270,7 +276,7 @@ class Details extends StatelessWidget {
                           ),
                           Expanded(
                             child: InkWell(
-                              onTap: (){
+                              onTap: () {
                                 //
                               },
                               child: Container(
@@ -281,10 +287,18 @@ class Details extends StatelessWidget {
                                 ),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    Image.asset('assets/icons/icon17.png',color: Colors.white,),
-                                    Text('محادثة',style: TextStyle(color: Colors.white,fontSize: 13),),
+                                    Image.asset(
+                                      'assets/icons/icon17.png',
+                                      color: Colors.white,
+                                    ),
+                                    Text(
+                                      'محادثة',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 13),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -310,7 +324,7 @@ class Details extends StatelessWidget {
           defaultButton(
             text: 'طلب فحص كمبيوتر',
             color: Color(0xFF3192D9),
-            function: (){
+            function: () {
               //
             },
           ),
@@ -332,16 +346,19 @@ class Comments extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20,right: 20),
+      padding: EdgeInsets.only(left: 20, right: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('إضافة تعليق',style: TextStyle(fontSize: 12,color: Color(0xFF707070)),),
+          Text(
+            'إضافة تعليق',
+            style: TextStyle(fontSize: 12, color: Color(0xFF707070)),
+          ),
           SizedBox(
             height: 10,
           ),
           Container(
-            padding: EdgeInsets.only(left: 15,right: 15),
+            padding: EdgeInsets.only(left: 15, right: 15),
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(17),
@@ -362,99 +379,62 @@ class Comments extends StatelessWidget {
           defaultButton(
             text: 'اضف تعليق',
             color: Color(0xFF3192D9),
-            function: (){
+            function: () {
               //
             },
           ),
           SizedBox(
             height: 30,
           ),
-          Container(
-            width: double.infinity,
-            child: Column(
-              children: [
-                Container(
-                  height: 65,
-                  child: ListTile(
-                    title: Text('محمد حسن ابراهيم',style: TextStyle(fontSize: 12),),
-                    subtitle: Text('05:20 am',style: TextStyle(fontSize: 12),),
-                    leading: CircleAvatar(
-                      radius: 20,
+          ListView.builder(
+            itemCount: 3,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemBuilder: (_, i) => Padding(
+              padding: EdgeInsets.only(bottom: 20),
+              child: Container(
+                child: Column(
+                  children: [
+                    Container(
+                      height: 65,
+                      child: ListTile(
+                        title: Text(
+                          'محمد حسن ابراهيم',
+                          style: TextStyle(fontSize: 12),
+                        ),
+                        subtitle: Text(
+                          '05:20 am',
+                          style: TextStyle(fontSize: 12),
+                        ),
+                        leading: CircleAvatar(
+                          radius: 20,
+                        ),
+                        trailing: Text(
+                          '‏15-10-2020',
+                          style: TextStyle(fontSize: 12),
+                        ),
+                      ),
                     ),
-                    trailing: Text('‏15-10-2020',style: TextStyle(fontSize: 12),),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(right: 20,top: 5),
-                  height: 35,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      bottomRight: Radius.circular(15),
-                      bottomLeft: Radius.circular(15),
+                    Container(
+                      padding: EdgeInsets.only(right: 20, top: 5),
+                      height: 35,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15),
+                          bottomRight: Radius.circular(15),
+                          bottomLeft: Radius.circular(15),
+                        ),
+                        color: Color(0xFFFCFCFC),
+                      ),
+                      child: Text(
+                        'سيارة جميلة بس السعر مبالغ فيه',
+                        style: TextStyle(fontSize: 12, color: Color(0xFF707070)),
+                      ),
                     ),
-                    color: Color(0xFFFCFCFC),
-                  ),
-                  child: Text('سيارة جميلة بس السعر مبالغ فيه',style: TextStyle(fontSize: 12,color: Color(0xFF707070)),),
+                  ],
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  height: 65,
-                  child: ListTile(
-                    title: Text('محمد حسن ابراهيم',style: TextStyle(fontSize: 12),),
-                    subtitle: Text('05:20 am',style: TextStyle(fontSize: 12),),
-                    leading: CircleAvatar(
-                      radius: 20,
-                    ),
-                    trailing: Text('‏15-10-2020',style: TextStyle(fontSize: 12),),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(right: 20,top: 5),
-                  height: 35,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      bottomRight: Radius.circular(15),
-                      bottomLeft: Radius.circular(15),
-                    ),
-                    color: Color(0xFFFCFCFC),
-                  ),
-                  child: Text('سيارة جميلة بس السعر مبالغ فيه',style: TextStyle(fontSize: 12,color: Color(0xFF707070)),),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  height: 65,
-                  child: ListTile(
-                    title: Text('محمد حسن ابراهيم',style: TextStyle(fontSize: 12),),
-                    subtitle: Text('05:20 am',style: TextStyle(fontSize: 12),),
-                    leading: CircleAvatar(
-                      radius: 20,
-                    ),
-                    trailing: Text('‏15-10-2020',style: TextStyle(fontSize: 12),),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(right: 20,top: 5),
-                  height: 35,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      bottomRight: Radius.circular(15),
-                      bottomLeft: Radius.circular(15),
-                    ),
-                    color: Color(0xFFFCFCFC),
-                  ),
-                  child: Text('سيارة جميلة بس السعر مبالغ فيه',style: TextStyle(fontSize: 12,color: Color(0xFF707070)),),
-                ),
-              ],
+              ),
             ),
           ),
           SizedBox(
@@ -470,7 +450,7 @@ class SameAds extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20,right: 20),
+      padding: EdgeInsets.only(left: 20, right: 20),
       child: Column(
         children: [
           Container(
@@ -507,8 +487,7 @@ class SameAds extends StatelessWidget {
                                 onTap: () {
                                   print('22');
                                 },
-                                child:
-                                Image.asset('assets/icons/icon35.png'),
+                                child: Image.asset('assets/icons/icon35.png'),
                               ),
                               Text(
                                 'تويوتا لاندكروزر',
@@ -529,8 +508,7 @@ class SameAds extends StatelessWidget {
                                 height: 30,
                               ),
                               Row(
-                                crossAxisAlignment:
-                                CrossAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(
@@ -566,8 +544,7 @@ class SameAds extends StatelessWidget {
                         ),
                         Spacer(),
                         Padding(
-                          padding:
-                          const EdgeInsets.only(left: 15, bottom: 15),
+                          padding: const EdgeInsets.only(left: 15, bottom: 15),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -587,14 +564,12 @@ class SameAds extends StatelessWidget {
                                     ),
                                   ),
                                   child: Row(
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
                                         '5',
                                         style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 10),
+                                            color: Colors.white, fontSize: 10),
                                       ),
                                       SizedBox(
                                         width: 4,

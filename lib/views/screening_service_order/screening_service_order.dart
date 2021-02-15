@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
+import '../../shared/components/component.dart';
+import '../tabular_order/tabular_order.dart';
 
 class ScreeningServiceOrderScreen extends StatefulWidget {
   @override
@@ -58,7 +59,7 @@ class _ScreeningServiceOrderScreenState extends State<ScreeningServiceOrderScree
                       ),
                     ),
                     Spacer(),
-                    Image.asset('assets/images/image16.png'),
+                    Image.asset('assets/images/image16.png',height: 80,width: 110,),
                     SizedBox(
                       height: 7,
                     ),
@@ -139,6 +140,7 @@ class _ScreeningServiceOrderScreenState extends State<ScreeningServiceOrderScree
                   color: Color(0xFFF8F8F8),
                 ),
                 child: DropdownButton<String>(
+                  underline: Text(''),
                   items: cars.map((String value) {
                     return new DropdownMenuItem<String>(
                       value: value,
@@ -202,6 +204,7 @@ class _ScreeningServiceOrderScreenState extends State<ScreeningServiceOrderScree
                   color: Color(0xFFF8F8F8),
                 ),
                 child: DropdownButton<String>(
+                  underline: Text(''),
                   items: payment.map((String value) {
                     return new DropdownMenuItem<String>(
                       value: value,
@@ -258,7 +261,7 @@ class _ScreeningServiceOrderScreenState extends State<ScreeningServiceOrderScree
                   Expanded(
                     child: InkWell(
                       onTap: (){
-                        //
+                        Navigator.push(context, MaterialPageRoute(builder: (_) => TabularOrderScreen(),),);
                       },
                       child: Container(
                         height: 42,
@@ -271,7 +274,7 @@ class _ScreeningServiceOrderScreenState extends State<ScreeningServiceOrderScree
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Text('طلب مجدول',style: TextStyle(fontSize: 12,color: Color(0xFF4C5264)),),
-                            Image.asset('assets/icons/icon42.png'),
+                            Image.asset('assets/icons/icon42.png',height: 14,width: 13,),
                           ],
                         ),
                    ),
@@ -283,7 +286,7 @@ class _ScreeningServiceOrderScreenState extends State<ScreeningServiceOrderScree
                   Expanded(
                     child: defaultButton(
                       text: 'طلب',
-                      color: Color(0xFF3192D9),
+                      color: Color(0xFF1C608D),
                       function: () {
                         _showDialog();
                       },

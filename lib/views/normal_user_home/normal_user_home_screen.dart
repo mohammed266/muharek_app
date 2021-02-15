@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/views/normal_User_bottom_bar_item/ads/ads.dart';
-import 'package:muharek_app/views/normal_User_bottom_bar_item/home/home.dart';
-import 'package:muharek_app/views/normal_User_bottom_bar_item/maintenance_workshops/maintenance_workshops.dart';
-import 'package:muharek_app/views/normal_User_bottom_bar_item/screening_service/screening_services.dart';
-import 'package:muharek_app/views/normal_User_bottom_bar_item/workshop_on_map/workshops_on_map.dart';
+import '../normal_User_bottom_bar_item/ads/ads.dart';
+import '../normal_User_bottom_bar_item/home/home.dart';
+import '../normal_User_bottom_bar_item/maintenance_workshops/maintenance_workshops.dart';
+import '../normal_User_bottom_bar_item/screening_service/screening_services.dart';
+import '../normal_User_bottom_bar_item/workshop_on_map/workshops_on_map.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       borderRadius: BorderRadius.circular(5),
                       color: Colors.white),
                   width: 30,
-                  child: Image.asset('assets/icons/icon32.png'),
+                  child: Image.asset('assets/icons/icon32.png',height: 10,width: 10,),
                 ),
               ),
               label: 'الرئيسية',
@@ -66,21 +66,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.white,
                   ),
                   width: 30,
-                  child: Image.asset('assets/icons/icon26.png'),
+                  child: Image.asset('assets/icons/icon26.png',height: 15,width: 15,),
                 ),
               ),
               label: 'ورش الصيانة',
             ),
             BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.only(top: 8),
+                padding: EdgeInsets.only(top: 7),
                 child: CircleAvatar(
-                  radius: 30,
+                  radius: 20,
                   backgroundColor: Colors.white,
                   child: Image.asset(
                     'assets/icons/icon30.png',
-                    height: 25,
-                    width: 25,
+                    height: 17,
+                    width: 20,
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -97,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.white,
                   ),
                   width: 30,
-                  child: Image.asset('assets/icons/icon21.png'),
+                  child: Image.asset('assets/icons/icon21.png',height: 10,width: 10,),
                 ),
               ),
               // Icon(Icons.home_outlined,color: Color(0xFF2777B2),size: 25,)),
@@ -113,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.white,
                   ),
                   width: 30,
-                  child: Image.asset('assets/icons/icon31.png'),
+                  child: Image.asset('assets/icons/icon31.png',height: 10,width: 10,),
                 ),
               ),
               label: 'خدمات الفحص',

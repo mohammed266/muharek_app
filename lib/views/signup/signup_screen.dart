@@ -61,7 +61,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Image.asset('assets/icons/icon1.png'),
+                              Image.asset('assets/icons/icon1.png',height: 45,width: 45,),
                               Text(
                                 'normal user'.tr().toString(),
                                 style: TextStyle(
@@ -97,7 +97,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Image.asset('assets/icons/icon2.png'),
+                              Image.asset('assets/icons/icon2.png',height: 45,width: 45,),
                               Text(
                                 'captain checked'.tr().toString(),
                                 style: TextStyle(
@@ -196,6 +196,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 borderRadius: BorderRadius.circular(30),
                               ),
                               child: DropdownButton<String>(
+                                underline: Text(''),
                                 items: city.map((String value) {
                                   return new DropdownMenuItem<String>(
                                     value: value,
@@ -299,7 +300,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             height: 30,
                           ),
                           defaultButton(
-                            color: Color(0xFF3192D9),
+                            color: Color(0xFF1C608D),
                             text: 'تسجيل',
                             function: () {
                               if (!_formKey.currentState.validate()) {

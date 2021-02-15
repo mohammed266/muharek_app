@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/views/all_workshop_offers/all_workshop_offers.dart';
-import 'package:muharek_app/views/owner_workshop/workshop_owner.dart';
+import '../../all_workshop_offers/all_workshop_offers.dart';
+import '../../normal_user_home/normal_user_home_screen.dart';
+import '../../owner_workshop/workshop_owner.dart';
 
 class MaintenanceWorkshopsScreen extends StatefulWidget {
   @override
@@ -25,7 +26,33 @@ class _MaintenanceWorkshopsScreenState
                 color: Color(0xFF4C5264),
             ),
           ),
-          leading: SizedBox(),
+          leading: Column(
+            children: [
+              SizedBox(
+                height: 13,
+              ),
+              InkWell(
+                onTap: () {
+                  // Navigator.of(context).pop();
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => HomeScreen(),),);
+                },
+                child: Container(
+                  width: 36,
+                  height: 36,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Center(
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Color(0xFF4C5264),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
           elevation: 0.0,
           backgroundColor: Color(0xFFF8F8F8),
           toolbarHeight: 60,

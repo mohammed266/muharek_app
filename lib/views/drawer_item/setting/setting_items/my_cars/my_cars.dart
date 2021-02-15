@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
+import '../../../../add_new_car/add_new_car.dart';
+import '../../../../../shared/components/component.dart';
 
 class MyCarsScreen extends StatelessWidget {
   @override
@@ -47,16 +48,19 @@ class MyCarsScreen extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height* 0.4,
                 ),
-                defaultButton(
-                    color: Color(0xFF3192D9),
-                    text: 'اضف سيارة جديدة',
-                    function: () {
-                      // Navigator.push(context,
-                      //   MaterialPageRoute(builder: (_) =>
-                      //       AddNewCardScreen(),
-                      //   ),
-                      // );
-                    }
+                Padding(
+                  padding: EdgeInsets.only(left: 40,right: 40),
+                  child: defaultButton(
+                      color: Color(0xFF1C608D),
+                      text: 'اضف سيارة جديدة',
+                      function: () {
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (_) =>
+                              AddNewCarScreen(),
+                          ),
+                        );
+                      }
+                  ),
                 ),
                 SizedBox(
                   height: 30,

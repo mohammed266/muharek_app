@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
-import 'package:muharek_app/views/checking_service_order/checking_service_order.dart';
+import '../../shared/components/component.dart';
+import '../checking_service_order/checking_service_order.dart';
 
 class CheckingServiceDetailsScreen extends StatelessWidget {
   @override
@@ -210,16 +210,16 @@ class CheckingServiceDetailsScreen extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(left: 20,right: 20),
-              child: Text('‏150 ريال',style: TextStyle(fontSize: 14,),),
+              child: Text('‏300 ريال',style: TextStyle(fontSize: 14,),),
             ),
             SizedBox(
               height: 30,
             ),
             Padding(
-              padding: EdgeInsets.only(left: 40,right: 40),
+              padding: EdgeInsets.only(left: 60,right: 60),
               child: defaultButton(
                 text: 'طلب الخدمة',
-                color: Color(0xFF3192D9),
+                color: Color(0xFF1C608D),
                 function: () {
                   Navigator.push(context, MaterialPageRoute(builder: (_)=> CheckingServiceOrderScreen(),),);
                 },

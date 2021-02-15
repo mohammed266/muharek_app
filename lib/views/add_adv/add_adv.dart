@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'components/adv_rating.dart';
+import 'components/commission.dart';
+import 'components/extra_info.dart';
+
 import 'package:material_segmented_control/material_segmented_control.dart';
-import 'package:muharek_app/views/add_adv/components/adv_rating.dart';
-import 'package:muharek_app/views/add_adv/components/commission.dart';
-import 'package:muharek_app/views/add_adv/components/extra_info.dart';
 
 
 
@@ -12,7 +13,7 @@ class AddAdvScreen extends StatefulWidget {
 }
 
 class _AddAdvScreenState extends State<AddAdvScreen> {
-  int _currentSelection = 0;
+   int _currentSelection = 0;
 
   Map<int, Widget> _children = {
     0: Text(
@@ -29,25 +30,39 @@ class _AddAdvScreenState extends State<AddAdvScreen> {
     ),
   };
 
-  Map<int, Widget> icons = <int, Widget>{
-    0: Center(
-      child: CommissionAgreement(),
-    ),
-    1: Center(
-      child: AdvRating(),
-    ),
-    2: Center(
-      child: ExtraInfo(),
-    ),
-  };
-
   @override
   Widget build(BuildContext context) {
+    ScrollController controller = ScrollController(initialScrollOffset: 0.0);
+    final Map<int, Widget> icons = <int, Widget>{
+      0: Center(
+        child: CommissionAgreement(onSegmentChosen: (){
+          setState(() {
+            _currentSelection = 1;
+          });
+          controller.animateTo(0,curve: Curves.elasticInOut,duration: Duration(microseconds: 1000));
+        },
+        ),
+      ),
+      1: Center(
+        child: AdvRating(
+          onSegmentChosen1: (){
+            setState(() {
+              _currentSelection = 2;
+            });
+            controller.animateTo(0,curve: Curves.elasticInOut,duration: Duration(microseconds: 1000));
+          },
+        ),
+      ),
+      2: Center(
+        child: ExtraInfo(),
+      ),
+    };
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: buildAppBar(context),
         body: ListView(
+          controller: controller,
           children: [
             SizedBox(
               height: 20,
@@ -126,3 +141,4 @@ class _AddAdvScreenState extends State<AddAdvScreen> {
     );
   }
 }
+

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
+import '../../../../../shared/components/component.dart';
 
 class PersonalDataScreen extends StatelessWidget {
   @override
@@ -111,9 +111,9 @@ class PersonalDataScreen extends StatelessWidget {
                   height: 30,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 30,right: 30),
+                  padding: EdgeInsets.only(left: 50,right: 50),
                   child: defaultButton(
-                    color: Color(0xFF3192D9),
+                    color: Color(0xFF1C608D),
                     text: 'حفظ',
                     function: (){
 

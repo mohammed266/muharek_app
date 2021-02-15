@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/views/normal_User_bottom_bar_item/home/components/screen_top.dart';
+import '../../../shared/components/component.dart';
+import 'components/screen_top.dart';
 import 'components/drawer_list.dart';
 import 'components/screen_ middle.dart';
 import 'components/screen_bottom.dart';
-
 
 class Home1Screen extends StatefulWidget {
   @override
@@ -19,7 +19,7 @@ class _Home1ScreenState extends State<Home1Screen> {
         appBar: AppBar(
           backgroundColor: Color(0xFFF8F8F8),
           iconTheme: IconThemeData(
-            color: Colors.indigo,
+            color: Color(0xFF2777B2),
           ),
           toolbarHeight: 75,
           elevation: 0.0,
@@ -35,6 +35,18 @@ class _Home1ScreenState extends State<Home1Screen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
                     color: Colors.white,
+                  ),
+                  child: inputField(
+                    icon: true,
+                    onSave: (value) {},
+                    onChanged: (value) {},
+                    prefix: Icon(
+                      Icons.search,
+                      color: Color(0xFF2777B2),
+                      size: 17,
+                    ),
+                    hint: '',
+                    secure: false,
                   ),
                 ),
               ],
@@ -55,12 +67,12 @@ class _Home1ScreenState extends State<Home1Screen> {
                     height: 35,
                     width: 35,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(13),
                       color: Colors.white,
                     ),
                     child: Icon(
                       Icons.notifications_none,
-                      color: Colors.indigo,
+                      color: Color(0xFF2777B2),
                     ),
                   ),
                 ),

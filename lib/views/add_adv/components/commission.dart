@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
+import '../../../shared/components/component.dart';
 
 
 class CommissionAgreement extends StatefulWidget {
+  const CommissionAgreement({
+    Key key,
+   this.onSegmentChosen
+  }) : super(key: key);
+
+  final Function onSegmentChosen;
+
   @override
   _CommissionAgreementState createState() => _CommissionAgreementState();
 }
@@ -11,6 +18,8 @@ class _CommissionAgreementState extends State<CommissionAgreement> {
   bool checkboxValue1 = false;
   bool checkboxValue2 = false;
   bool checkboxValue3 = false;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -64,12 +73,13 @@ class _CommissionAgreementState extends State<CommissionAgreement> {
                         });
                       },
                       child: Container(
-                        height: 30,
-                        width: 30,
+                        height: MediaQuery.of(context).size.width * 0.095,
+                        width: MediaQuery.of(context).size.width * 0.095,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           color:
                           checkboxValue1 ? Colors.green : Color(0xFFF8F8F8),
+                          border: Border.all(color: Colors.white,width: 2),
                         ),
                         child: Center(
                           child: checkboxValue1
@@ -124,12 +134,13 @@ class _CommissionAgreementState extends State<CommissionAgreement> {
                         });
                       },
                       child: Container(
-                        height: 30,
-                        width: 30,
+                        height: MediaQuery.of(context).size.width * 0.095,
+                        width: MediaQuery.of(context).size.width * 0.095,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           color:
                           checkboxValue2 ? Colors.green : Color(0xFFF8F8F8),
+                          border: Border.all(color: Colors.white,width: 2),
                         ),
                         child: Center(
                           child: checkboxValue2
@@ -184,12 +195,13 @@ class _CommissionAgreementState extends State<CommissionAgreement> {
                         });
                       },
                       child: Container(
-                        height: 30,
-                        width: 30,
+                        height: MediaQuery.of(context).size.width * 0.095,
+                        width: MediaQuery.of(context).size.width * 0.095,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           color:
                           checkboxValue3 ? Colors.green : Color(0xFFF8F8F8),
+                          border: Border.all(color: Colors.white,width: 2),
                         ),
                         child: Center(
                           child: checkboxValue3
@@ -209,10 +221,15 @@ class _CommissionAgreementState extends State<CommissionAgreement> {
             SizedBox(
               height: 20,
             ),
-            defaultButton(
-              text: 'استمرار',
-              color: Color(0xFF3192D9),
-              function: () {},
+            Padding(
+              padding: EdgeInsets.only(left: 50,right: 50),
+              child: defaultButton(
+                text: 'استمرار',
+                color: Color(0xFF1C608D),
+                function: () {
+                  widget.onSegmentChosen();
+                },
+              ),
             ),
           ],
         ),

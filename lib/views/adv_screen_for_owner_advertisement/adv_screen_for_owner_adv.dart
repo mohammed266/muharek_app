@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'components/component.dart';
+
 import 'package:material_segmented_control/material_segmented_control.dart';
-import 'package:muharek_app/views/adv_screen_for_owner_advertisement/components/component.dart';
+
 
 class AdvScreenForOwnerAdv extends StatefulWidget {
   @override
@@ -133,8 +135,10 @@ class _AdvScreenForOwnerAdvState extends State<AdvScreenForOwnerAdv> {
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                          color: Color(0xFF000000).withOpacity(0.1),
-                          offset: Offset(-4, 5),
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3), // changes position of shadow
                         ),
                       ],
                     ),

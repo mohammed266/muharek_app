@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
+import '../../shared/components/component.dart';
 
 class ForgetPassScreen extends StatefulWidget {
   @override
@@ -94,10 +94,10 @@ class _ForgetPassScreenState extends State<ForgetPassScreen> {
                             height: 30,
                           ),
                           defaultButton(
-                            color: Color(0xFF3192D9),
+                            color: Color(0xFF1C608D),
                             text: 'ارسال',
                             function: () {
-                              if (!_formKey.currentState.validate()) {
+                              if (_formKey.currentState.validate()) {
                                  print('validated');
                                 return;
                               } else {

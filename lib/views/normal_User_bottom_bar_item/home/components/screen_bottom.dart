@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:muharek_app/shared/components/component.dart';
 import 'package:muharek_app/views/normal_User_bottom_bar_item/home/components/service_title.dart';
+import 'package:muharek_app/views/screening_service_after_choice/screening_service_after_choice.dart';
 
 
 class ScreenBottom extends StatelessWidget {
@@ -26,7 +27,11 @@ class ScreenBottom extends StatelessWidget {
               title: 'فحص كمبيوتر',
               image: 'assets/icons/icon4.png',
               onTap: (){
-                print('pp');
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (_) =>
+                      ScreeningServiceAfterChoice(),
+                  ),
+                );
               },
             ),
             Spacer(),

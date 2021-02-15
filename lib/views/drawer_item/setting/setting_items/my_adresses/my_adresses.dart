@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
+import '../../../../../shared/components/component.dart';
 
 class MyAddressesScreen extends StatelessWidget {
   @override
@@ -47,16 +47,19 @@ class MyAddressesScreen extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height* 0.4,
                 ),
-                defaultButton(
-                    color: Color(0xFF3192D9),
-                    text: 'اضف عنوان جديد',
-                    function: () {
-                      // Navigator.push(context,
-                      //   MaterialPageRoute(builder: (_) =>
-                      //       AddNewCardScreen(),
-                      //   ),
-                      // );
-                    }
+                Padding(
+                  padding: EdgeInsets.only(left: 40,right: 40),
+                  child: defaultButton(
+                      color: Color(0xFF1C608D),
+                      text: 'اضف عنوان جديد',
+                      function: () {
+                        // Navigator.push(context,
+                        //   MaterialPageRoute(builder: (_) =>
+                        //       AddNewCardScreen(),
+                        //   ),
+                        // );
+                      }
+                  ),
                 ),
                 SizedBox(
                   height: 30,

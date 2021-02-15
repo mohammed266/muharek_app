@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:material_segmented_control/material_segmented_control.dart';
+import 'package:muharek_app/views/orders_sections/current_orders_details.dart';
+import 'package:muharek_app/views/orders_sections/past_orders_details.dart';
+import 'package:muharek_app/views/orders_sections/up_coming_orders_details.dart';
 
 class MyOrdersScreen extends StatefulWidget {
   @override
@@ -133,61 +136,66 @@ class CurrentOrders extends StatelessWidget {
         itemCount: 2,
         itemBuilder: (_, i) => Padding(
           padding: EdgeInsets.only(bottom: 10),
-          child: Container(
-            height: 100,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Color(0xFFDCDCDC),),
-            ),
-            child: Row(
-              children: [
-                Column(
-                  children: [
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 15),
-                      child: Row(
-                        children: [
-                          Text('كابتن فحص',style: TextStyle(fontSize: 10,color: Color(0xFF2B2F3B)),),
-                          Text('(طلب رقم 2154658497)',style: TextStyle(fontSize: 10,color: Color(0xFF2B2F3B)),),
-                        ],
+          child: InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (_) => CurrentOrdersDetailsScreen(),),);
+            },
+            child: Container(
+              height: 100,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: Color(0xFFDCDCDC),),
+              ),
+              child: Row(
+                children: [
+                  Column(
+                    children: [
+                      SizedBox(
+                        height: 10,
                       ),
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset('assets/icons/icon7.png'),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                      Padding(
+                        padding: EdgeInsets.only(right: 15),
+                        child: Row(
                           children: [
-                            Text('خدمة فحص',style: TextStyle(fontSize: 12,color: Color(0xFF3192D9))),
-                            Text('فحص شامل',style: TextStyle(fontSize: 10,color: Color(0xFF555555))),
+                            Text('كابتن فحص',style: TextStyle(fontSize: 10,color: Color(0xFF2B2F3B)),),
+                            Text('(طلب رقم 2154658497)',style: TextStyle(fontSize: 10,color: Color(0xFF2B2F3B)),),
                           ],
                         ),
-                      ],
-                    ),
-                  ],
-                ),
-                Spacer(),
-                Padding(
-                  padding: EdgeInsets.only(left: 15),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('‏15 يناير',style: TextStyle(fontSize: 10,color: Color(0xFFBFBFBF))),
-                      Text('قيد الاجراء',style: TextStyle(fontSize: 12,color: Color(0xFF3192D9))),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.asset('assets/icons/icon7.png'),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('خدمة فحص',style: TextStyle(fontSize: 12,color: Color(0xFF3192D9))),
+                              Text('فحص شامل',style: TextStyle(fontSize: 10,color: Color(0xFF555555))),
+                            ],
+                          ),
+                        ],
+                      ),
                     ],
                   ),
-                ),
-              ],
+                  Spacer(),
+                  Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('‏15 يناير',style: TextStyle(fontSize: 10,color: Color(0xFFBFBFBF))),
+                        Text('قيد الاجراء',style: TextStyle(fontSize: 12,color: Color(0xFF3192D9))),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -207,64 +215,69 @@ class UpcomingOrders extends StatelessWidget {
         itemCount: 2,
         itemBuilder: (_, i) => Padding(
           padding: EdgeInsets.only(bottom: 10),
-          child: Container(
-            height: 100,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Color(0xFFDCDCDC),),
-            ),
-            child: Row(
-              children: [
-                Column(
-                  children: [
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 15),
-                      child: Row(
-                        children: [
-                          Text('كابتن فحص',style: TextStyle(fontSize: 10,color: Color(0xFF2B2F3B)),),
-                          Text('(طلب رقم 2154658497)',style: TextStyle(fontSize: 10,color: Color(0xFF2B2F3B)),),
-                        ],
+          child: InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (_) => UpComingOrdersDetailsScreen(),),);
+            },
+            child: Container(
+              height: 100,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: Color(0xFFDCDCDC),),
+              ),
+              child: Row(
+                children: [
+                  Column(
+                    children: [
+                      SizedBox(
+                        height: 10,
                       ),
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset('assets/icons/icon4.png'),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                      Padding(
+                        padding: EdgeInsets.only(right: 15),
+                        child: Row(
                           children: [
-                            Text('خدمة فحص',style: TextStyle(fontSize: 12,color: Color(0xFF3192D9))),
-                            Text('فحص كمبيوتر',style: TextStyle(fontSize: 10,color: Color(0xFF555555))),
+                            Text('كابتن فحص',style: TextStyle(fontSize: 10,color: Color(0xFF2B2F3B)),),
+                            Text('(طلب رقم 2154658497)',style: TextStyle(fontSize: 10,color: Color(0xFF2B2F3B)),),
                           ],
                         ),
-                      ],
-                    ),
-                  ],
-                ),
-                Spacer(),
-                Padding(
-                  padding: EdgeInsets.only(left: 15),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('‏15 يناير',style: TextStyle(fontSize: 10,color: Color(0xFFBFBFBF))),
-                      Text('مجدول',style: TextStyle(fontSize: 12,color: Color(0xFF3192D9))),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.asset('assets/icons/icon4.png'),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('خدمة فحص',style: TextStyle(fontSize: 12,color: Color(0xFF3192D9))),
+                              Text('فحص كمبيوتر',style: TextStyle(fontSize: 10,color: Color(0xFF555555))),
+                            ],
+                          ),
+                        ],
+                      ),
                     ],
                   ),
-                ),
-              ],
+                  Spacer(),
+                  Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('‏15 يناير',style: TextStyle(fontSize: 10,color: Color(0xFFBFBFBF))),
+                        Text('مجدول',style: TextStyle(fontSize: 12,color: Color(0xFF3192D9))),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -284,64 +297,69 @@ class PastOrders extends StatelessWidget {
         itemCount: 2,
         itemBuilder: (_, i) => Padding(
           padding: EdgeInsets.only(bottom: 10),
-          child: Container(
-            height: 100,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Color(0xFFDCDCDC),),
-            ),
-            child: Row(
-              children: [
-                Column(
-                  children: [
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 15),
-                      child: Row(
-                        children: [
-                          Text('كابتن فحص',style: TextStyle(fontSize: 10,color: Color(0xFF2B2F3B)),),
-                          Text('(طلب رقم 2154658497)',style: TextStyle(fontSize: 10,color: Color(0xFF2B2F3B)),),
-                        ],
+          child: InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (_) => PastOrdersDetailsScreen(),),);
+            },
+            child: Container(
+              height: 100,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: Color(0xFFDCDCDC),),
+              ),
+              child: Row(
+                children: [
+                  Column(
+                    children: [
+                      SizedBox(
+                        height: 10,
                       ),
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Image.asset('assets/icons/icon4.png'),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                      Padding(
+                        padding: EdgeInsets.only(right: 15),
+                        child: Row(
                           children: [
-                            Text('خدمة فحص',style: TextStyle(fontSize: 12,color: Color(0xFF3192D9))),
-                            Text('فحص هيكل',style: TextStyle(fontSize: 10,color: Color(0xFF555555))),
+                            Text('كابتن فحص',style: TextStyle(fontSize: 10,color: Color(0xFF2B2F3B)),),
+                            Text('(طلب رقم 2154658497)',style: TextStyle(fontSize: 10,color: Color(0xFF2B2F3B)),),
                           ],
                         ),
-                      ],
-                    ),
-                  ],
-                ),
-                Spacer(),
-                Padding(
-                  padding: EdgeInsets.only(left: 15),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('‏15 يناير',style: TextStyle(fontSize: 10,color: Color(0xFFBFBFBF))),
-                      Text('تم الالغاء',style: TextStyle(fontSize: 12,color: Color(0xFF3192D9))),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.asset('assets/icons/icon4.png'),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('خدمة فحص',style: TextStyle(fontSize: 12,color: Color(0xFF3192D9))),
+                              Text('فحص هيكل',style: TextStyle(fontSize: 10,color: Color(0xFF555555))),
+                            ],
+                          ),
+                        ],
+                      ),
                     ],
                   ),
-                ),
-              ],
+                  Spacer(),
+                  Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('‏15 يناير',style: TextStyle(fontSize: 10,color: Color(0xFFBFBFBF))),
+                        Text('تم الالغاء',style: TextStyle(fontSize: 12,color: Color(0xFF3192D9))),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
+import '../../../shared/components/component.dart';
 
 
 class AdvRating extends StatefulWidget {
+  const AdvRating({
+    Key key,
+    this.onSegmentChosen1,
+  }) : super(key: key);
+
+  final Function onSegmentChosen1;
   @override
   _AdvRatingState createState() => _AdvRatingState();
 }
@@ -22,6 +28,7 @@ class _AdvRatingState extends State<AdvRating> {
   String _newCarModel;
   String _newMadeYear1;
   String _newGearType;
+
 
   @override
   Widget build(BuildContext context) {
@@ -97,6 +104,7 @@ class _AdvRatingState extends State<AdvRating> {
                 color: Color(0xFFF8F8F8),
               ),
               child: DropdownButton<String>(
+                underline: Text(''),
                 items: section.map((String value) {
                   return new DropdownMenuItem<String>(
                     value: value,
@@ -145,6 +153,7 @@ class _AdvRatingState extends State<AdvRating> {
                 color: Color(0xFFF8F8F8),
               ),
               child: DropdownButton<String>(
+                underline: Text(''),
                 items: subSection.map((String value) {
                   return new DropdownMenuItem<String>(
                     value: value,
@@ -198,6 +207,7 @@ class _AdvRatingState extends State<AdvRating> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: DropdownButton<String>(
+                          underline: Text(''),
                           items: carType.map((String value) {
                             return new DropdownMenuItem<String>(
                               value: value,
@@ -254,6 +264,7 @@ class _AdvRatingState extends State<AdvRating> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: DropdownButton<String>(
+                          underline: Text(''),
                           items: carModel.map((String value) {
                             return new DropdownMenuItem<String>(
                               value: value,
@@ -313,6 +324,7 @@ class _AdvRatingState extends State<AdvRating> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: DropdownButton<String>(
+                          underline: Text(''),
                           items: madeYear1.map((String value) {
                             return new DropdownMenuItem<String>(
                               value: value,
@@ -368,6 +380,7 @@ class _AdvRatingState extends State<AdvRating> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: DropdownButton<String>(
+                          underline: Text(''),
                           items: gearType.map((String value) {
                             return new DropdownMenuItem<String>(
                               value: value,
@@ -618,10 +631,17 @@ class _AdvRatingState extends State<AdvRating> {
             SizedBox(
               height: 40,
             ),
-            defaultButton(
-              text: 'استمرار',
-              color: Color(0xFF3192D9),
-              function: () {},
+            Padding(
+              padding: EdgeInsets.only(left: 50,right: 50),
+              child: defaultButton(
+                text: 'استمرار',
+                color: Color(0xFF1C608D),
+                function: () {
+                  setState(() {
+                    widget.onSegmentChosen1();
+                  });
+                },
+              ),
             ),
           ],
         ),

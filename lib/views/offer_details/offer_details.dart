@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
-import 'package:muharek_app/views/offers_from_workshop/workshop_offers.dart';
+import '../../shared/components/component.dart';
+import '../offers_from_workshop/workshop_offers.dart';
 
 class OfferDetailScreen extends StatelessWidget {
   @override
@@ -216,10 +216,10 @@ class OfferDetailScreen extends StatelessWidget {
               height: 30,
             ),
             Padding(
-              padding: EdgeInsets.only(left: 40,right: 40),
+              padding: EdgeInsets.only(left: 60,right: 60),
               child: defaultButton(
                 text: 'استفد من العرض',
-                color: Color(0xFF3192D9),
+                color: Color(0xFF1C608D),
                 function: () {
                   Navigator.push(context,
                     MaterialPageRoute(

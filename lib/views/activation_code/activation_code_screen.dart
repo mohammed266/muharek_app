@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
-import 'package:muharek_app/views/normal_user_home/normal_user_home_screen.dart';
+import '../../shared/components/component.dart';
+import '../normal_user_home/normal_user_home_screen.dart';
 
 class ActivationCodeScreen extends StatefulWidget {
   @override
@@ -101,7 +101,7 @@ class _ActivationCodeScreenState extends State<ActivationCodeScreen> {
                             height: 30,
                           ),
                           defaultButton(
-                            color: Color(0xFF3192D9),
+                            color: Color(0xFF1C608D),
                             text: 'تفعيل',
                             function: () {
                               if (_formKey.currentState.validate()) {

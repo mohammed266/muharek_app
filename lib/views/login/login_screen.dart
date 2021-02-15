@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
-import 'package:muharek_app/views/forget_password/forget_pass_screen.dart';
-import 'package:muharek_app/views/normal_user_home/normal_user_home_screen.dart';
-import 'package:muharek_app/views/login/components/screen_top.dart';
-import 'package:muharek_app/views/signup/signup_screen.dart';
+import '../../shared/components/component.dart';
+import '../forget_password/forget_pass_screen.dart';
+import '../normal_user_home/normal_user_home_screen.dart';
+import 'components/screen_top.dart';
+import '../signup/signup_screen.dart';
 
 class LogInScreen extends StatefulWidget {
   @override
@@ -127,7 +127,7 @@ class _LogInScreenState extends State<LogInScreen> {
                                 height: 20,
                               ),
                               defaultButton(
-                                color: Color(0xFF3192D9),
+                                color: Color(0xFF1C608D),
                                 text: 'تسجيل الدخول',
                                 function: () {
                                   if (!_formKey.currentState.validate()) {

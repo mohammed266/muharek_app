@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
-import 'package:muharek_app/views/join_as_checking_rep/join_as_checking_rep_screen.dart';
+import '../../shared/components/component.dart';
+import '../join_as_checking_rep/join_as_checking_rep_screen.dart';
 
 
 class ActivationCodeScreen2 extends StatefulWidget {
@@ -103,7 +103,7 @@ class _ActivationCodeScreen2State extends State<ActivationCodeScreen2> {
                             height: 30,
                           ),
                           defaultButton(
-                            color: Color(0xFF3192D9),
+                            color: Color(0xFF1C608D),
                             text: 'تفعيل',
                             function: () {
                               if (_formKey.currentState.validate()) {

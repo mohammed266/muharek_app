@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:muharek_app/views/drawer_item/setting/setting_items/edite_personal_data/personal_data.dart';
-import 'package:muharek_app/views/drawer_item/setting/setting_items/my_adresses/my_adresses.dart';
-import 'package:muharek_app/views/drawer_item/setting/setting_items/my_cars/my_cars.dart';
-import 'package:muharek_app/views/drawer_item/setting/setting_items/payment_way/payment_way.dart';
+import 'setting_items/edite_personal_data/personal_data.dart';
+import 'setting_items/my_adresses/my_adresses.dart';
+import 'setting_items/my_cars/my_cars.dart';
+import 'setting_items/payment_way/payment_way.dart';
 
 class NormalUserSetting extends StatefulWidget {
   @override
@@ -13,6 +13,7 @@ class NormalUserSetting extends StatefulWidget {
 class _NormalUserSettingState extends State<NormalUserSetting> {
   @override
   Widget build(BuildContext context) {
+
     TextStyle _textStyle = TextStyle(
       fontSize: 14,
       color: Color(0xFF4C5264),

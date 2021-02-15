@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
+import '../../../shared/components/component.dart';
 
 class PayCommissionScreen extends StatefulWidget {
 
@@ -275,6 +275,7 @@ class _PayCommissionScreenState extends State<PayCommissionScreen> {
                           border: Border.all(color: Color(0xFFD1D1D1)),
                         ),
                         child: DropdownButton<String>(
+                          underline: Text(''),
                           items: banks.map((String value) {
                             return new DropdownMenuItem<String>(
                               value: value,
@@ -365,15 +366,15 @@ class _PayCommissionScreenState extends State<PayCommissionScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 25,
+                        height: 50,
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 30,right: 30),
                         child: defaultButton(
                           text: 'ارسال',
-                          color: Color(0xFF3192D9),
+                          color: Color(0xFF1C608D),
                           function: (){
-
+                            //
                           },
                         ),
                       ),

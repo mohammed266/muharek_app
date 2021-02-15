@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
-import 'package:muharek_app/views/normal_user_home/normal_user_home_screen.dart';
-import 'package:muharek_app/views/login/login_screen.dart';
-import 'package:muharek_app/views/signup/signup_screen.dart';
-import 'package:muharek_app/views/splash/components/icon_image_splash2.dart';
+import '../../shared/components/component.dart';
+import '../normal_user_home/normal_user_home_screen.dart';
+import '../login/login_screen.dart';
+import '../signup/signup_screen.dart';
+import 'components/icon_image_splash2.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class Splash2Screen extends StatefulWidget {
@@ -93,7 +93,7 @@ class _Splash2ScreenState extends State<Splash2Screen> {
                         child: Text(
                           'splash2 skip'.tr().toString(),
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 14,
                             color: Color(0xFFFFFFFF),
                             fontWeight: FontWeight.w100,
                           ),

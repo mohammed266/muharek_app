@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
-import 'package:muharek_app/views/normal_user_home/normal_user_home_screen.dart';
+import '../../../shared/components/component.dart';
+import '../../normal_user_home/normal_user_home_screen.dart';
 
 class ExtraInfo extends StatefulWidget {
   @override
@@ -164,6 +164,7 @@ class _ExtraInfoState extends State<ExtraInfo> {
                 color: Color(0xFFF8F8F8),
               ),
               child: DropdownButton<String>(
+                underline: Text(''),
                 items: city.map((String value) {
                   return new DropdownMenuItem<String>(
                     value: value,
@@ -198,6 +199,7 @@ class _ExtraInfoState extends State<ExtraInfo> {
                 color: Color(0xFFF8F8F8),
               ),
               child: DropdownButton<String>(
+                underline: Text(''),
                 items: showNum.map((String value) {
                   return new DropdownMenuItem<String>(
                     value: value,
@@ -232,6 +234,7 @@ class _ExtraInfoState extends State<ExtraInfo> {
                 color: Color(0xFFF8F8F8),
               ),
               child: DropdownButton<String>(
+                underline: Text(''),
                 items: showCom.map((String value) {
                   return new DropdownMenuItem<String>(
                     value: value,
@@ -266,6 +269,7 @@ class _ExtraInfoState extends State<ExtraInfo> {
                 color: Color(0xFFF8F8F8),
               ),
               child: DropdownButton<String>(
+                underline: Text(''),
                 items: shareLocation.map((String value) {
                   return new DropdownMenuItem<String>(
                     value: value,
@@ -288,12 +292,15 @@ class _ExtraInfoState extends State<ExtraInfo> {
             SizedBox(
               height: 30,
             ),
-            defaultButton(
-              text: 'إضافة الاعلان',
-              color: Color(0xFF3192D9),
-              function: () {
-                _showDialog();
-              },
+            Padding(
+              padding: EdgeInsets.only(left: 50,right: 50),
+              child: defaultButton(
+                text: 'إضافة الاعلان',
+                color: Color(0xFF1C608D),
+                function: () {
+                  _showDialog();
+                },
+              ),
             ),
           ],
         ),
