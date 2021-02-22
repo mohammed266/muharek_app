@@ -17,7 +17,7 @@ class IconAndImage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             SizedBox(
-              width: 25,
+              width: 15,
             ),
             Image.asset('assets/images/image1.png', width: 50),
             // SizedBox(

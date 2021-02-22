@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:material_segmented_control/material_segmented_control.dart';
-import 'package:muharek_app/views/orders_sections/current_orders_details.dart';
-import 'package:muharek_app/views/orders_sections/past_orders_details.dart';
-import 'package:muharek_app/views/orders_sections/up_coming_orders_details.dart';
+import '../../orders_sections/current_orders_details.dart';
+import '../../orders_sections/past_orders_details.dart';
+import '../../orders_sections/up_coming_orders_details.dart';
 
 class MyOrdersScreen extends StatefulWidget {
   @override
@@ -170,7 +170,13 @@ class CurrentOrders extends StatelessWidget {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image.asset('assets/icons/icon7.png'),
+                          Container(
+                              height: 35,
+                              width: 35,
+                              child: Image.asset('assets/icons/icon7.png')),
+                          SizedBox(
+                            width: 5,
+                          ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -249,7 +255,10 @@ class UpcomingOrders extends StatelessWidget {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image.asset('assets/icons/icon4.png'),
+                          Container(
+                              height: 35,
+                              width: 35,
+                              child: Image.asset('assets/icons/icon4.png')),
                           SizedBox(
                             width: 10,
                           ),
@@ -331,7 +340,10 @@ class PastOrders extends StatelessWidget {
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image.asset('assets/icons/icon4.png'),
+                          Container(
+                              height: 35,
+                              width: 35,
+                              child: Image.asset('assets/icons/icon4.png')),
                           SizedBox(
                             width: 10,
                           ),

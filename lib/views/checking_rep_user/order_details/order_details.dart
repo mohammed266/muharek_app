@@ -16,9 +16,9 @@ class OrderDetailsScreen extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(20),
                   width: double.infinity,
-                  height:
-                  // 680,
-                   MediaQuery.of(context).size.height * 1.27,
+                  // height:
+                  // // 680,
+                  //  MediaQuery.of(context).size.height * 1.27,
                   decoration: BoxDecoration(
                     color: Color(0xFFFCFCFC),
                     borderRadius: BorderRadius.circular(20),

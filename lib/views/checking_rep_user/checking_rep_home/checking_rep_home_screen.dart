@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
-import 'package:muharek_app/views/checking_rep_user/checking_rep_home/drawer_list.dart';
+import '../../../shared/components/component.dart';
+import 'drawer_list.dart';
 
 class CheckingRepHomeScreen extends StatefulWidget {
   @override
@@ -31,7 +31,7 @@ class _CheckingRepHomeScreenState extends State<CheckingRepHomeScreen> {
                   height: 20,
                 ),
                 Container(
-                  height: 35,
+                  height: 30,
                   width: MediaQuery.of(context).size.width / 1.5,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
@@ -46,7 +46,7 @@ class _CheckingRepHomeScreenState extends State<CheckingRepHomeScreen> {
               ],
             ),
             SizedBox(
-              width: 10,
+              width: 15,
             ),
             Column(
               children: [
@@ -54,8 +54,8 @@ class _CheckingRepHomeScreenState extends State<CheckingRepHomeScreen> {
                   height: 20,
                 ),
                 Container(
-                  height: 35,
-                  width: 35,
+                  height: 30,
+                  width: 30,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
                     color: Colors.red,
@@ -68,6 +68,28 @@ class _CheckingRepHomeScreenState extends State<CheckingRepHomeScreen> {
               width: 10,
             ),
           ],
+          leading: Builder(
+            builder: (BuildContext context) {
+              return GestureDetector(
+                onTap: () { Scaffold.of(context).openDrawer(); },
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 18,
+                    ),
+                    Container(
+                      height: 35,
+                      width: 35,
+                      child: Image.asset(
+                        'assets/icons/icon64.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
         ),
         body: Stack(
           children: [
@@ -115,12 +137,14 @@ class _CheckingRepHomeScreenState extends State<CheckingRepHomeScreen> {
             Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
-                padding: EdgeInsets.only(bottom: 50),
+                padding: EdgeInsets.only(bottom: 35,left: 20,right: 20),
                 child: isReady
                     ? Container(
-                        height: MediaQuery.of(context).size.height * 0.35,
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        decoration: BoxDecoration(
+                        height: 200,
+                        // MediaQuery.of(context).size.height * 0.35,
+                        width: double.infinity,
+                        // MediaQuery.of(context).size.width * 0.9,
+                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(300),
@@ -170,8 +194,8 @@ class _CheckingRepHomeScreenState extends State<CheckingRepHomeScreen> {
                         ),
                       )
                     : Container(
-                        height: MediaQuery.of(context).size.height * 0.35,
-                        width: MediaQuery.of(context).size.width * 0.9,
+                        height: 200,
+                        width: double.infinity,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
@@ -227,14 +251,14 @@ class _CheckingRepHomeScreenState extends State<CheckingRepHomeScreen> {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
-                  padding: EdgeInsets.only(bottom: 50),
+                  padding: EdgeInsets.only(bottom: 35,left: 18,right: 18),
                   child: Stack(
                     children: [
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: Container(
-                          height: MediaQuery.of(context).size.height * 0.35,
-                          width: MediaQuery.of(context).size.width * 0.9,
+                          height:200,
+                          width: double.infinity,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.only(
@@ -289,56 +313,53 @@ class _CheckingRepHomeScreenState extends State<CheckingRepHomeScreen> {
                       ),
                       Align(
                         alignment: Alignment.bottomCenter,
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 16, right: 16),
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: InkWell(
-                                  onTap: () {
-                                    print('kk');
-                                  },
-                                  child: Container(
-                                    height: 40,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.only(
-                                        bottomRight: Radius.circular(13),
-                                        topRight: Radius.circular(13),
-                                      ),
-                                      color: Color(0xFF0BC500),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {
+                                  print('kk');
+                                },
+                                child: Container(
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                      bottomRight: Radius.circular(13),
+                                      topRight: Radius.circular(13),
                                     ),
-                                    child: Center(
-                                        child: Text(
-                                      'قبول',
-                                      style: TextStyle(color: Colors.white),
-                                    )),
+                                    color: Color(0xFF0BC500),
                                   ),
+                                  child: Center(
+                                      child: Text(
+                                    'قبول',
+                                    style: TextStyle(color: Colors.white),
+                                  )),
                                 ),
                               ),
-                              Expanded(
-                                child: InkWell(
-                                  onTap: () {
-                                    print('kk');
-                                  },
-                                  child: Container(
-                                    height: 40,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(13),
-                                        bottomLeft: Radius.circular(13),
-                                      ),
-                                      color: Color(0xFFFF5A5A),
+                            ),
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {
+                                  print('kk');
+                                },
+                                child: Container(
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(13),
+                                      bottomLeft: Radius.circular(13),
                                     ),
-                                    child: Center(
-                                        child: Text(
-                                      'رفض',
-                                      style: TextStyle(color: Colors.white),
-                                    )),
+                                    color: Color(0xFFFF5A5A),
                                   ),
+                                  child: Center(
+                                      child: Text(
+                                    'رفض',
+                                    style: TextStyle(color: Colors.white),
+                                  )),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ],

@@ -22,113 +22,118 @@ class _ActivationCodeScreen2State extends State<ActivationCodeScreen2> {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-              ImageAndTitle(
-                title: 'كود التفعيل',
-                image: 'assets/images/image5.png',
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Text(
-                'يرجى ادخال الكود المكون من أربعة \n ارقام المرسل على الرقم ',
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 15,
-                  color: Color(0xFFA2A2A2),
+          child: GestureDetector(
+            onTap: (){
+              FocusScope.of(context).requestFocus(new FocusNode());
+            },
+            child: Column(
+              children: [
+                ImageAndTitle(
+                  title: 'كود التفعيل',
+                  image: 'assets/images/image5.png',
                 ),
-                textAlign: TextAlign.center,
-              ),
-              Text(
-                '$_num',
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 15,
-                  color: Color(0xFF2777B2),
+                SizedBox(
+                  height: 30,
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(30),
-                child: Container(
-                  height: 300,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFF8F8F8),
-                    borderRadius: BorderRadius.circular(25),
+                Text(
+                  'يرجى ادخال الكود المكون من أربعة \n ارقام المرسل على الرقم ',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 15,
+                    color: Color(0xFFA2A2A2),
                   ),
-                  child: Padding(
-                    padding:
-                    const EdgeInsets.only(left: 30, right: 30, top: 30),
-                    child: Form(
-                      key: _formKey,
-                      child: Column(
-                        children: [
-                          inputField(
-                            validate: (value) {
-                              if (value.toString().isEmpty) {
-                                return 'ادخل كود التفعيل';
-                              } else {
-                                return null;
-                              }
-                            },
-                            onSave: (value) {
-                              setState(() {
-                                _phone = value;
-                              });
-                            },
-                            secure: false,
-                            textInputType: TextInputType.number,
-                            icon: true,
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          buildTimer(),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          InkWell(
-                            onTap: () {
-                              //
-                            },
-                            child: Text(
-                              'إعادة ارسال الكود',
-                              style: TextStyle(
-                                color: Color(0xFF2777B2),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  '$_num',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 15,
+                    color: Color(0xFF2777B2),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(30),
+                  child: Container(
+                    height: 300,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFF8F8F8),
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: Padding(
+                      padding:
+                      const EdgeInsets.only(left: 30, right: 30, top: 30),
+                      child: Form(
+                        key: _formKey,
+                        child: Column(
+                          children: [
+                            inputField(
+                              validate: (value) {
+                                if (value.toString().isEmpty) {
+                                  return 'ادخل كود التفعيل';
+                                } else {
+                                  return null;
+                                }
+                              },
+                              onSave: (value) {
+                                setState(() {
+                                  _phone = value;
+                                });
+                              },
+                              secure: false,
+                              textInputType: TextInputType.number,
+                              icon: true,
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            buildTimer(),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            InkWell(
+                              onTap: () {
+                                //
+                              },
+                              child: Text(
+                                'إعادة ارسال الكود',
+                                style: TextStyle(
+                                  color: Color(0xFF2777B2),
+                                ),
                               ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          defaultButton(
-                            color: Color(0xFF1C608D),
-                            text: 'تفعيل',
-                            function: () {
-                              if (_formKey.currentState.validate()) {
-                                print('validated');
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (_) => CheckingRepScreen(),
-                                    ),
-                                  );
-                              } else {
-                                print('not validated');
-                              }
-                            },
-                          ),
-                        ],
+                            SizedBox(
+                              height: 30,
+                            ),
+                            defaultButton(
+                              color: Color(0xFF1C608D),
+                              text: 'تفعيل',
+                              function: () {
+                                if (_formKey.currentState.validate()) {
+                                  print('validated');
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (_) => CheckingRepScreen(),
+                                      ),
+                                    );
+                                } else {
+                                  print('not validated');
+                                }
+                              },
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-            ],
+                SizedBox(
+                  height: 30,
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
-import 'package:muharek_app/views/drawer_item/about_mouharek/about_mouharek.dart';
-import 'package:muharek_app/views/drawer_item/alerts/alerts.dart';
-import 'package:muharek_app/views/drawer_item/contact_us/contact_us.dart';
-import 'package:muharek_app/views/drawer_item/messages/messages.dart';
-import 'package:muharek_app/views/drawer_item/my_adv/my_adv.dart';
-import 'package:muharek_app/views/drawer_item/my_fav/my_fav.dart';
-import 'package:muharek_app/views/drawer_item/my_orders/my_orders.dart';
-import 'package:muharek_app/views/drawer_item/pay_commission/pay_commission.dart';
-import 'package:muharek_app/views/drawer_item/setting/normal_user_setting.dart';
-import 'package:muharek_app/views/drawer_item/technical_support/technical_support.dart';
+import 'package:flutter_svg/svg.dart';
+import '../../../../shared/components/component.dart';
+import '../../../drawer_item/about_mouharek/about_mouharek.dart';
+import '../../../drawer_item/alerts/alerts.dart';
+import '../../../drawer_item/contact_us/contact_us.dart';
+import '../../../drawer_item/messages/messages.dart';
+import '../../../drawer_item/my_adv/my_adv.dart';
+import '../../../drawer_item/my_fav/my_fav.dart';
+import '../../../drawer_item/my_orders/my_orders.dart';
+import '../../../drawer_item/pay_commission/pay_commission.dart';
+import '../../../drawer_item/setting/normal_user_setting.dart';
+import '../../../drawer_item/technical_support/technical_support.dart';
 
 
 Widget drawerList(BuildContext context) {
@@ -67,7 +68,7 @@ Widget drawerList(BuildContext context) {
             );
           },
         ),
-        ServiceDrawerList(
+         ServiceDrawerList(
           title: 'الرسائل',
           image: 'assets/icons/icon17.png',
           onTap: (){
@@ -212,7 +213,8 @@ Widget drawerList(BuildContext context) {
           },
         ),
         SizedBox(
-          height: 10,
+          height: MediaQuery.of(context).size.height* 0.15,
+          // 80,
         ),
       ],
     ),

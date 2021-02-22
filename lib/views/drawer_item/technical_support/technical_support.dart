@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/views/drawer_item/technical_support/tickets/open_new_ticket.dart';
-import 'package:muharek_app/views/drawer_item/technical_support/tickets/previous_tickets.dart';
+import 'tickets/open_new_ticket.dart';
+import 'tickets/previous_tickets.dart';
 
 class TechnicalSupportScreen extends StatelessWidget {
   @override

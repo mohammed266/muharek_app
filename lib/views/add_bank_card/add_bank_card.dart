@@ -19,91 +19,96 @@ class _AddBankCardScreenState extends State<AddBankCardScreen> {
         appBar: buildAppBar(context),
         body: Padding(
           padding: EdgeInsets.only(left: 20, right: 20, top: 20),
-          child: ListView(
-            children: [
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {
-                            setState(() {
+          child: GestureDetector(
+            onTap: (){
+              FocusScope.of(context).requestFocus(new FocusNode());
+            },
+            child: ListView(
+              children: [
+                Column(
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: GestureDetector(
+                            onTap: () {
+                              setState(() {
 
-                            });
-                            masterCard = true;
-                          },
-                          child: Container(
-                              height: 50,
-                              width: 60,
-                              child: Column(
-                                children: [
-                                  Image.asset(
-                                    'assets/images/image24.png',
-                                    color: masterCard
-                                        ? Color(0xFF3192D9)
-                                        : Colors.grey,
-                                    height: 31,
-                                    width: 80,
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  Container(
-                                    width: 30,
-                                    height: 2,
-                                    color: masterCard
-                                        ? Color(0xFF3192D9)
-                                        : Colors.grey,
-                                  ),
-                                ],
-                              )),
+                              });
+                              masterCard = true;
+                            },
+                            child: Container(
+                                height: 50,
+                                width: 60,
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/image24.png',
+                                      color: masterCard
+                                          ? Color(0xFF3192D9)
+                                          : Colors.grey,
+                                      height: 31,
+                                      width: 80,
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    Container(
+                                      width: 30,
+                                      height: 2,
+                                      color: masterCard
+                                          ? Color(0xFF3192D9)
+                                          : Colors.grey,
+                                    ),
+                                  ],
+                                )),
+                          ),
                         ),
-                      ),
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {
-                            setState(() {
-                              masterCard = false;
-                            });
-                          },
-                          child: Container(
-                              height: 50,
-                              width: 60,
-                              child: Column(
-                                children: [
-                                  Image.asset(
-                                    'assets/images/image25.png',
-                                    color: masterCard
-                                        ? Colors.grey
-                                        : Color(0xFF3192D9),
-                                    height: 28,
-                                    width: 60,
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  Container(
-                                    width: 30,
-                                    height: 2,
-                                    color: masterCard
-                                        ? Colors.grey
-                                        : Color(0xFF3192D9),
-                                  ),
-                                ],
-                              )),
+                        Expanded(
+                          child: GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                masterCard = false;
+                              });
+                            },
+                            child: Container(
+                                height: 50,
+                                width: 60,
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/image25.png',
+                                      color: masterCard
+                                          ? Colors.grey
+                                          : Color(0xFF3192D9),
+                                      height: 28,
+                                      width: 60,
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    Container(
+                                      width: 30,
+                                      height: 2,
+                                      color: masterCard
+                                          ? Colors.grey
+                                          : Color(0xFF3192D9),
+                                    ),
+                                  ],
+                                )),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  if (masterCard) MasterCard(),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    if (masterCard) MasterCard(),
 
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

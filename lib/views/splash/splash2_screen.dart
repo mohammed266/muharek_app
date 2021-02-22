@@ -30,14 +30,14 @@ class _Splash2ScreenState extends State<Splash2Screen> {
                   child: Container(
                     height: size.height * 0.6,
                     width: double.infinity,
-                    color: Color(0xFF1C608D),
+                    color: Color(0xFF1C608D).withOpacity(.9),
                     // child: Center(child: ),
                   ),
                 ),
                 Positioned(
                   top: 0,
-                  width: 230,
-                  height: 140,
+                  width: size.width* 0.75,
+                  height: size.height* 0.26,
                   left: 15,
                   child: Image.asset(
                     'assets/images/car.png',
@@ -45,61 +45,76 @@ class _Splash2ScreenState extends State<Splash2Screen> {
                   ),
                 ),
                 Positioned(
-                  top: 150,
+                  top: size.height* 0.3,
                   left: size.width * 0.03,
                   right: size.width * 0.03,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      defaultButton(
-                        color: Color(0xFF3192D9),
-                        function: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (_) => LogInScreen(),
-                            ),
-                          );
-                        },
-                        text: 'splash2 sign up'.tr().toString(),
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      defaultButton(
-                        color: Colors.white,
-                        function: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => SignUpScreen(),
-                            ),
-                          );
-                        },
-                        text: 'splash2 new sign Up'.tr().toString(),
-                        c: Color(0xFF1C608D),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => HomeScreen(),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          'splash2 skip'.tr().toString(),
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Color(0xFFFFFFFF),
-                            fontWeight: FontWeight.w100,
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 35,right: 35),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          child: defaultButton(
+                            opa: 0.5,
+                            function: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => LogInScreen(),
+                                ),
+                              );
+                            },
+                            text: 'splash2 sign up'.tr().toString(),
                           ),
                         ),
-                      ),
-                    ],
+                        SizedBox(
+                          height: 15,
+                        ),
+                        GestureDetector(
+                          onTap: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => SignUpScreen(),
+                                  ),
+                                );
+                          },
+                          child: Container(
+                            width: double.infinity,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Center(
+                              child: Text('splash2 new sign Up'.tr().toString(),
+                                style: TextStyle(color: Color(0xFF1C608D)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => HomeScreen(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'splash2 skip'.tr().toString(),
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Color(0xFFFFFFFF),
+                              fontWeight: FontWeight.w100,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],

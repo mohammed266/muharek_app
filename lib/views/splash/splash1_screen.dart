@@ -51,8 +51,8 @@ class _Splash1ScreenState extends State<Splash1Screen> {
                 ),
                 Positioned(
                   bottom: 30,
-                  width: 300,
-                  height: 230,
+                  width: size.height* 0.58,
+                  height: size.height * 0.4,
                   child: Image.asset('assets/images/car.png'),
                 ),
               ],

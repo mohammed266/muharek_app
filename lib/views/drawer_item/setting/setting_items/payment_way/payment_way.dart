@@ -10,13 +10,12 @@ class PaymentWayScreen extends StatefulWidget {
 class _PaymentWayScreenState extends State<PaymentWayScreen> {
   final List _paymentWay = [
     {
-      'name': 'نقدى',
-    },
-    {
       'name': '548274**********5081',
+      'image' : 'assets/icons/icon67.png',
     },
     {
       'name': '548474**********5638',
+      'image' : 'assets/icons/icon68.png',
     },
   ];
 
@@ -31,6 +30,27 @@ class _PaymentWayScreenState extends State<PaymentWayScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(17),
+                    color: Color(0xFFF8F8F8),
+                  ),
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      radius: 20,
+                      backgroundColor: Colors.white,
+                      child: Image.asset(
+                          'assets/icons/icon50.png',
+                        height: 25,
+                        width: 25,
+                      ),
+                    ),
+                    title: Text('نقدى',style: TextStyle(fontSize: 14),),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
                 ListView.builder(
                   itemCount: _paymentWay.length,
                   shrinkWrap: true,
@@ -46,7 +66,7 @@ class _PaymentWayScreenState extends State<PaymentWayScreen> {
                         leading: CircleAvatar(
                           radius: 20,
                           backgroundColor: Colors.white,
-                          backgroundImage: AssetImage('assets/icons/icon50.png'),
+                          child: Image.asset('${_paymentWay[index]['image']}',height: 25,width: 25,),
                         ),
                         title: Text('${_paymentWay[index]['name']}',style: TextStyle(fontSize: 14),),
                         trailing: InkWell(
@@ -70,7 +90,6 @@ class _PaymentWayScreenState extends State<PaymentWayScreen> {
                 Padding(
                   padding: EdgeInsets.only(left: 40,right: 40),
                   child: defaultButton(
-                    color: Color(0xFF1C608D),
                     text: 'اضف بطاقة دفع',
                     function: () {
                       Navigator.push(context,

@@ -143,63 +143,65 @@ class _MyFavScreenState extends State<MyFavScreen> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(6.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '${_fav[index]['type']}',
-                              style: TextStyle(
-                                  color: Color(0xFF2777B2),
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                            SizedBox(
-                              height: 6,
-                            ),
-                            Text(
-                              '2005',
-                              style: TextStyle(
-                                  color: Color(0xFF555555), fontSize: 10),
-                            ),
-                            SizedBox(
-                              height: 6,
-                            ),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.place,
-                                  color: Color(0xFF555555),
-                                  size: 15,
-                                ),
-                                Text(
-                                  'الرياض',
-                                  style: TextStyle(
-                                    color: Color(0xFF555555),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '${_fav[index]['type']}',
+                                style: TextStyle(
+                                    color: Color(0xFF2777B2),
                                     fontSize: 10,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              SizedBox(
+                                height: 6,
+                              ),
+                              Text(
+                                '2005',
+                                style: TextStyle(
+                                    color: Color(0xFF555555), fontSize: 10),
+                              ),
+                              SizedBox(
+                                height: 6,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.place,
+                                    color: Color(0xFF555555),
+                                    size: 15,
                                   ),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Icon(
-                                  Icons.watch_later_outlined,
-                                  color: Color(0xFF555555),
-                                  size: 15,
-                                ),
-                                Text(
-                                  'منذ10ساعة',
-                                  style: TextStyle(
+                                  Text(
+                                    'الرياض',
+                                    style: TextStyle(
                                       color: Color(0xFF555555),
-                                      fontSize: 10),
-                                ),
-                              ],
-                            ),
-                          ],
+                                      fontSize: 10,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Icon(
+                                    Icons.watch_later_outlined,
+                                    color: Color(0xFF555555),
+                                    size: 15,
+                                  ),
+                                  Text(
+                                    'منذ10ساعة',
+                                    style: TextStyle(
+                                        color: Color(0xFF555555),
+                                        fontSize: 10),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       Container(

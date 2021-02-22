@@ -165,7 +165,11 @@ class _NormalUserSettingState extends State<NormalUserSetting> {
                   ),
                   leading: CircleAvatar(
                       backgroundColor: Colors.white,
-                      child: Image.asset('assets/icons/icon13.png')),
+                      child: Image.asset(
+                          'assets/icons/icon13.png',
+                        height: 20,
+                        width: 23,
+                      )),
                 ),
               ),
               SizedBox(
@@ -191,7 +195,11 @@ class _NormalUserSettingState extends State<NormalUserSetting> {
                   ),
                   leading: CircleAvatar(
                       backgroundColor: Colors.white,
-                      child: Image.asset('assets/icons/icon14.png')),
+                      child: Image.asset(
+                          'assets/icons/icon14.png',
+                        height: 17,
+                        width: 23,
+                      )),
                 ),
               ),
               SizedBox(
@@ -216,7 +224,11 @@ class _NormalUserSettingState extends State<NormalUserSetting> {
                   ),
                   leading: CircleAvatar(
                       backgroundColor: Colors.white,
-                      child: Image.asset('assets/icons/icon15.png')),
+                      child: Image.asset(
+                          'assets/icons/icon15.png',
+                        height: 23,
+                        width: 23,
+                      )),
                 ),
               ),
               SizedBox(
@@ -242,7 +254,11 @@ class _NormalUserSettingState extends State<NormalUserSetting> {
                   ),
                   leading: CircleAvatar(
                       backgroundColor: Colors.white,
-                      child: Image.asset('assets/icons/icon16.png')),
+                      child: Image.asset(
+                          'assets/icons/icon16.png',
+                        height: 17,
+                        width: 23,
+                      )),
                 ),
               ),
               SizedBox(
@@ -262,8 +278,20 @@ class _NormalUserSettingState extends State<NormalUserSetting> {
                     'the Language'.tr().toString(),
                     style: _textStyle,
                   ),
-                  leading: Image.asset(
-                    'assets/icons/icon12.png',
+                  leading: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
+                    ),
+                    child: Center(
+                      child: Image.asset(
+                        'assets/icons/icon12.png',
+                        height: 20,
+                        width: 23,
+                      ),
+                    ),
                   ),
                 ),
               ),

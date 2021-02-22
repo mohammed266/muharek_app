@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
+import '../../shared/components/component.dart';
 
 class CurrentOrdersDetailsScreen extends StatelessWidget {
   @override
@@ -44,12 +44,15 @@ class CurrentOrdersDetailsScreen extends StatelessWidget {
               ),
               Container(
                 width: double.infinity,
+                // padding: EdgeInsets.all(10),
                 height: 140,
                 decoration: BoxDecoration(
                   color: Color(0xFF555555),
                   borderRadius: BorderRadius.circular(17),
                 ),
                 child: Column(
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  // mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
                       height: 40,
@@ -58,7 +61,7 @@ class CurrentOrdersDetailsScreen extends StatelessWidget {
                       // mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         SizedBox(
-                          width: 30,
+                          width: 22,
                         ),
                         Image.asset('assets/icons/icon8.png',height: 25,width: 35,),
                         Container(
@@ -69,7 +72,7 @@ class CurrentOrdersDetailsScreen extends StatelessWidget {
                         Image.asset('assets/icons/icon3.png',height: 25,width: 35,),
                         Container(
                           height: 1,
-                          width: MediaQuery.of(context).size.width* 0.18,
+                          width: MediaQuery.of(context).size.width* 0.19,
                           color: Colors.grey,
                         ),
                         Image.asset('assets/icons/icon3.png',height: 25,width: 35,),
@@ -78,22 +81,30 @@ class CurrentOrdersDetailsScreen extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          'الكابتن استقبل \n الطلب',
-                          style: TextStyle(fontSize: 8, color: Colors.white),
-                        ),
-                        Text(
-                          'الكابتن جاى لك \n في الطريق',
-                          style: TextStyle(fontSize: 8, color: Colors.white),
-                        ),
-                        Text(
-                          'تم المطلوب',
-                          style: TextStyle(fontSize: 8, color: Colors.white),
-                        ),
-                      ],
+                    Padding(
+                      padding: EdgeInsets.only(left: 10,right: 20),
+                      child: Row(
+                        children: [
+                          Text(
+                            'الكابتن استقبل \n الطلب',
+                            style: TextStyle(fontSize: 8, color: Colors.white),
+                          ),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width* 0.18,
+                          ),
+                          Text(
+                            'الكابتن جاى لك \n في الطريق',
+                            style: TextStyle(fontSize: 8, color: Colors.white),
+                          ),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width* 0.17,
+                          ),
+                          Text(
+                            'تم المطلوب',
+                            style: TextStyle(fontSize: 8, color: Colors.white),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -135,12 +146,19 @@ class CurrentOrdersDetailsScreen extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 12, color: Color(0xFFA2A2A2)),
                           ),
-                          defaultButton(
-                            text: 'محادثة',
-                            color: Color(0xFF0BC500),
-                            function: () {
+                          GestureDetector(
+                            onTap: (){
 
                             },
+                            child: Container(
+                              height: 40,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: Color(0xFF0BC500),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Center(child: Text('محادثة',style: TextStyle(fontSize: 15,color: Colors.white),)),
+                            ),
                           ),
                         ],
                       ),
@@ -296,13 +314,23 @@ class CurrentOrdersDetailsScreen extends StatelessWidget {
                 height: 40,
               ),
               Padding(
-                padding: EdgeInsets.only(left: 30,right: 30),
-                child: defaultButton(
-                  text: 'الغاء الطلب',
-                  color: Color(0xFFFF5A5A),
-                  function: () {},
+                padding: EdgeInsets.only(left: 30, right: 30),
+                child:  GestureDetector(
+                  onTap: (){
+
+                  },
+                  child: Container(
+                    height: 40,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFFF5A5A),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Center(child: Text('الغاء الطلب',style: TextStyle(fontSize: 12,color: Colors.white),)),
+                  ),
                 ),
               ),
+
               SizedBox(
                 height: 40,
               ),
@@ -312,6 +340,7 @@ class CurrentOrdersDetailsScreen extends StatelessWidget {
       ),
     );
   }
+
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
       centerTitle: true,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
+import '../../shared/components/component.dart';
 
 class PastOrdersDetailsScreen extends StatelessWidget {
   @override
@@ -59,10 +59,13 @@ class PastOrdersDetailsScreen extends StatelessWidget {
                       // mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Image.asset('assets/icons/icon8.png',height: 25,width: 35,),
-                        Container(
-                          height: 1,
-                          width: MediaQuery.of(context).size.width* 0.46,
-                          color: Colors.green,
+                        Expanded(
+                          child: Container(
+                            height: 1,
+                            // width: double.infinity,
+                            // MediaQuery.of(context).size.width* 0.46,
+                            color: Colors.grey,
+                          ),
                         ),
                         Image.asset('assets/icons/icon8.png',height: 25,width: 35,),
                       ],
@@ -71,7 +74,6 @@ class PastOrdersDetailsScreen extends StatelessWidget {
                       height: 10,
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text(
                           'تم استقبال الطلب',
@@ -127,13 +129,16 @@ class PastOrdersDetailsScreen extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 12, color: Color(0xFFA2A2A2)),
                           ),
-                          defaultButton(
-                            text: 'محادثة',
-                            color: Color(0xFFDCDCDC),
-                            function: () {
-
-                            },
-                            c: Colors.white,
+                          GestureDetector(
+                            onTap: (){},
+                            child: Container(
+                              height: 40,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFDCDCDC),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Center(child: Text('محادثة',style: TextStyle(fontSize: 12,color: Colors.white,),)),
+                            ),
                           ),
                         ],
                       ),
@@ -291,21 +296,36 @@ class PastOrdersDetailsScreen extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                    child: defaultButton(
-                      text: 'الفاتورة',
-                      color: Color(0xFF2777B2),
-                      function: () {},
+                    child: GestureDetector(
+                      onTap: (){
+                        // Navigator.push(context, MaterialPageRoute(builder: (_) => DelegateEvaluationScreen(),),);
+                      },
+                      child: Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF3192D9),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Center(child: Text('تقييم الخدمة',style: TextStyle(fontSize: 10,color: Colors.white),)),
+                      ),
                     ),
                   ),
                   SizedBox(
                     width: 10,
                   ),
                   Expanded(
-                    child: defaultButton(
-                      text: 'التقييم',
-                      color: Color(0xFF0BC500),
-                      function: () {},
-                      c: Color(0xFFDCDCDC),
+                    child: GestureDetector(
+                      onTap: (){
+                        // Navigator.push(context, MaterialPageRoute(builder: (_) => CaptainBillScreen()));
+                      },
+                      child: Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color(0xFF0BC500),
+                        ),
+                        child: Center(child: Text('الفاتورة',style: TextStyle(fontSize: 10,color: Colors.white),)),
+                      ),
                     ),
                   ),
                 ],

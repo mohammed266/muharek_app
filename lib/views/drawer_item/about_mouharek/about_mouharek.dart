@@ -76,7 +76,7 @@ class _AboutMouharekScreenState extends State<AboutMouharekScreen> {
                   Container(
                     padding: EdgeInsets.all(20),
                     width: double.infinity,
-                    height: 500,
+                    height: 440,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(17),
                       color: Colors.white,
@@ -135,7 +135,7 @@ class _AboutMouharekScreenState extends State<AboutMouharekScreen> {
                   Container(
                     padding: EdgeInsets.all(20),
                     width: double.infinity,
-                    height: 500,
+                    height: 440,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(17),
                       color: Colors.white,

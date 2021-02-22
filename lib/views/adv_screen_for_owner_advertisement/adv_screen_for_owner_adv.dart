@@ -129,21 +129,21 @@ class _AdvScreenForOwnerAdvState extends State<AdvScreenForOwnerAdv> {
                   right: 20,
                   child: Container(
                     width: double.infinity,
-                    height: 150,
+                    height: 160,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(17),
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3), // changes position of shadow
+                          color: Colors.grey.withOpacity(0.3),
+                          spreadRadius: 3,
+                          blurRadius: 5,
+                          offset: Offset(0, 2), // changes position of shadow
                         ),
                       ],
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 8),
+                      padding: const EdgeInsets.only(top: 10,bottom: 10),
                       child: Column(
                         children: [
                           Text(

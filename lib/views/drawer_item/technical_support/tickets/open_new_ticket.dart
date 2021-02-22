@@ -77,7 +77,7 @@ class _NewTicketScreenState extends State<NewTicketScreen> {
           children: [
             SizedBox(height: MediaQuery.of(context).size.height * .2),
             Container(
-              height: MediaQuery.of(context).size.height * 0.6,
+              height: MediaQuery.of(context).size.height * 0.5,
               width: double.infinity,
               child: Dialog(
                 shape: RoundedRectangleBorder(
@@ -85,8 +85,8 @@ class _NewTicketScreenState extends State<NewTicketScreen> {
                 ),
                 insetPadding: EdgeInsets.only(
                   bottom: 10,
-                  right: 20,
-                  left: 20,
+                  right: 10,
+                  left: 10,
                 ),
                 child: Column(
                   children: [
@@ -128,104 +128,111 @@ class _NewTicketScreenState extends State<NewTicketScreen> {
         appBar: buildAppBar(context),
         body: Padding(
           padding: EdgeInsets.only(left: 20,right: 20,top: 20),
-          child: Column(
-            children: [
-              Container(
-                padding: EdgeInsets.only(left: 15,right: 15),
-                height: 40,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(22),
-                  color: Color(0xFFF8F8F8),
-                ),
-                child: DropdownButton<String>(
-                  underline: Text(''),
-                  items: rating.map((String value) {
-                    return new DropdownMenuItem<String>(
-                      value: value,
-                      child: new Text(value),
-                    );
-                  }).toList(),
-                  onChanged: (newValue) {
-                    setState(() {
-                      _newRating = newValue;
-                    });
-                  },
-                  value: _newRating,
-                  isExpanded: true,
-                  hint: Text(
-                    'تصنيف التذكرة',
-                    style: TextStyle(fontSize: 12, color: Color(0xFFBFBFBF)),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 15,right: 15),
-                height: 40,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(22),
-                  color: Color(0xFFF8F8F8),
-                ),
-                child: DropdownButton<String>(
-                  underline: Text(''),
-                  items: type.map((String value) {
-                    return new DropdownMenuItem<String>(
-                      value: value,
-                      child: new Text(value),
-                    );
-                  }).toList(),
-                  onChanged: (newValue) {
-                    setState(() {
-                      _newType = newValue;
-                    });
-                  },
-                  value: _newType,
-                  isExpanded: true,
-                  hint: Text(
-                    'نوع التذكرة',
-                    style: TextStyle(fontSize: 12, color: Color(0xFFBFBFBF)),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 15,right: 15),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(22),
-                  color: Color(0xFFF8F8F8),
-                ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    focusedBorder: InputBorder.none,
-                    enabledBorder: InputBorder.none,
-                    border: InputBorder.none,
-                    hintText: 'الرسالة',
-                    hintStyle: TextStyle(
-                      fontSize: 12,
-                      color: Color(0xFFBFBFBF),
+          child: GestureDetector(
+            onTap: (){
+              FocusScope.of(context).requestFocus(new FocusNode());
+            },
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(left: 15,right: 15),
+                    height: 40,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(22),
+                      color: Color(0xFFF8F8F8),
+                    ),
+                    child: DropdownButton<String>(
+                      underline: Text(''),
+                      items: rating.map((String value) {
+                        return new DropdownMenuItem<String>(
+                          value: value,
+                          child: new Text(value),
+                        );
+                      }).toList(),
+                      onChanged: (newValue) {
+                        setState(() {
+                          _newRating = newValue;
+                        });
+                      },
+                      value: _newRating,
+                      isExpanded: true,
+                      hint: Text(
+                        'تصنيف التذكرة',
+                        style: TextStyle(fontSize: 12, color: Color(0xFFBFBFBF)),
+                      ),
                     ),
                   ),
-                  maxLines: 4,
-                ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(left: 15,right: 15),
+                    height: 40,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(22),
+                      color: Color(0xFFF8F8F8),
+                    ),
+                    child: DropdownButton<String>(
+                      underline: Text(''),
+                      items: type.map((String value) {
+                        return new DropdownMenuItem<String>(
+                          value: value,
+                          child: new Text(value),
+                        );
+                      }).toList(),
+                      onChanged: (newValue) {
+                        setState(() {
+                          _newType = newValue;
+                        });
+                      },
+                      value: _newType,
+                      isExpanded: true,
+                      hint: Text(
+                        'نوع التذكرة',
+                        style: TextStyle(fontSize: 12, color: Color(0xFFBFBFBF)),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(left: 15,right: 15),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(22),
+                      color: Color(0xFFF8F8F8),
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        focusedBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        border: InputBorder.none,
+                        hintText: 'الرسالة',
+                        hintStyle: TextStyle(
+                          fontSize: 12,
+                          color: Color(0xFFBFBFBF),
+                        ),
+                      ),
+                      maxLines: 4,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  defaultButton(
+                    text: 'ارسال',
+                    color: Color(0xFF1C608D),
+                    function: (){
+                      _showDialog();
+                    },
+                  ),
+                ],
               ),
-              SizedBox(
-                height: 30,
-              ),
-              defaultButton(
-                text: 'ارسال',
-                color: Color(0xFF1C608D),
-                function: (){
-                  _showDialog();
-                },
-              ),
-            ],
+            ),
           ),
         ),
       ),

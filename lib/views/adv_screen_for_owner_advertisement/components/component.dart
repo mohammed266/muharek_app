@@ -28,6 +28,8 @@ class Details extends StatelessWidget {
                       children: [
                         Image.asset(
                           'assets/icons/icon16.png',
+                          height: 18,
+                          width: 24,
                           color: Color(0xFF3192D9),
                         ),
                         SizedBox(
@@ -57,6 +59,8 @@ class Details extends StatelessWidget {
                       children: [
                         Image.asset(
                           'assets/icons/icon16.png',
+                          height: 18,
+                          width: 24,
                           color: Color(0xFF3192D9),
                         ),
                         SizedBox(
@@ -114,7 +118,7 @@ class Details extends StatelessWidget {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset('assets/icons/icon16.png'),
+                        Image.asset('assets/icons/icon65.png',height: 18,width: 24,),
                         SizedBox(
                           width: 15,
                         ),
@@ -140,7 +144,7 @@ class Details extends StatelessWidget {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image.asset('assets/icons/icon16.png'),
+                        Image.asset('assets/icons/icon66.png',height: 18,width: 24,),
                         SizedBox(
                           width: 15,
                         ),
@@ -259,6 +263,8 @@ class Details extends StatelessWidget {
                                   children: [
                                     Image.asset(
                                       'assets/icons/icon24.png',
+                                      height: 18,
+                                      width: 18,
                                       color: Colors.white,
                                     ),
                                     Text(
@@ -292,6 +298,8 @@ class Details extends StatelessWidget {
                                   children: [
                                     Image.asset(
                                       'assets/icons/icon17.png',
+                                      height: 18,
+                                      width: 18,
                                       color: Colors.white,
                                     ),
                                     Text(
@@ -487,7 +495,11 @@ class SameAds extends StatelessWidget {
                                 onTap: () {
                                   print('22');
                                 },
-                                child: Image.asset('assets/icons/icon35.png'),
+                                child: Image.asset(
+                                  'assets/icons/icon35.png',
+                                  height: 35,
+                                  width: 35,
+                                ),
                               ),
                               Text(
                                 'تويوتا لاندكروزر',

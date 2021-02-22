@@ -61,8 +61,9 @@ class ScreenTop extends StatelessWidget {
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black12,
-                            offset: Offset(-1, 3),
+                            color: Color(0xFF0000000D),
+                            offset: Offset(-6, 6),
+                            blurRadius: 12,
                           ),
                         ],
                       ),
@@ -88,8 +89,9 @@ class ScreenTop extends StatelessWidget {
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black12,
-                            offset: Offset(-1, 3),
+                            color: Color(0xFFBFBFBF).withOpacity(.3),
+                            offset: Offset(-6, 6),
+                            blurRadius: 12,
                           ),
                         ],
                       ),

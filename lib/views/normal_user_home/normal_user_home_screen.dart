@@ -23,104 +23,197 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Color(0xFF1C608D),
-          // Color(0xFF002659),
-          unselectedFontSize: 10,
-          unselectedItemColor: Colors.grey,
-          unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w400),
-          selectedItemColor: Colors.white,
-          selectedLabelStyle:
-              TextStyle(fontSize: 10, fontWeight: FontWeight.w600),
-          onTap: (value) {
-            _currentIndex = value;
-            setState(() {});
-          },
-          currentIndex: _currentIndex,
-          selectedFontSize: 20,
-          type: BottomNavigationBarType.fixed,
-          elevation: 0.0,
-          items: [
-            BottomNavigationBarItem(
-              icon: Padding(
-                padding: EdgeInsets.only(bottom: 5),
-                child: Container(
-                  height: 30,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.white),
-                  width: 30,
-                  child: Image.asset('assets/icons/icon32.png',height: 10,width: 10,),
-                ),
-              ),
-              label: 'الرئيسية',
-            ),
-            BottomNavigationBarItem(
-              icon: Padding(
-                padding: EdgeInsets.only(bottom: 5),
-                child: Container(
-                  height: 30,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Colors.white,
-                  ),
-                  width: 30,
-                  child: Image.asset('assets/icons/icon26.png',height: 15,width: 15,),
-                ),
-              ),
-              label: 'ورش الصيانة',
-            ),
-            BottomNavigationBarItem(
-              icon: Padding(
-                padding: EdgeInsets.only(top: 7),
-                child: CircleAvatar(
-                  radius: 20,
-                  backgroundColor: Colors.white,
-                  child: Image.asset(
-                    'assets/icons/icon30.png',
-                    height: 17,
-                    width: 20,
+        body: Stack(
+          children: [
+            _children[_currentIndex],
+            Positioned(
+              bottom: 0,
+              child: Container(
+                // height: 110,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/image29.png'),
                     fit: BoxFit.fill,
                   ),
+                   // color: Colors.white,
+                ),
+                child: BottomNavigationBar(
+                  backgroundColor: Colors.transparent,
+                  // Color(0xFF002659),
+                  unselectedFontSize: 10,
+                  unselectedItemColor: Colors.grey,
+                  unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w400),
+                  selectedItemColor: Colors.white,
+                  selectedLabelStyle:
+                      TextStyle(fontSize: 10, fontWeight: FontWeight.w600),
+                  onTap: (value) {
+                    _currentIndex = value;
+                    setState(() {});
+                  },
+                  currentIndex: _currentIndex,
+                  selectedFontSize: 20,
+                  type: BottomNavigationBarType.fixed,
+                  elevation: 0.0,
+                  items: [
+                    BottomNavigationBarItem(
+                      icon: Padding(
+                        padding: EdgeInsets.only(bottom: 5, top: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(7),
+                              height: 30,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: _currentIndex == 0
+                                    ? Colors.white
+                                    : Colors.white70,
+                              ),
+                              child: Image.asset(
+                                'assets/icons/icon32.png',
+                                height: 30,
+                                width: 30,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            Text(
+                              'الرئيسية',
+                              style: TextStyle(
+                                  fontSize: 10,
+                                  color: _currentIndex == 0
+                                      ? Colors.white
+                                      : Colors.white70,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          ],
+                        ),
+                      ),
+                      label: '',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Padding(
+                        padding: EdgeInsets.only(bottom: 5, top: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 30,
+                              padding: EdgeInsets.all(6),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: _currentIndex == 1
+                                    ? Colors.white
+                                    : Colors.white70,
+                              ),
+                              width: 30,
+                              child: Image.asset(
+                                'assets/icons/icon26.png',
+                                height: 15,
+                                width: 15,
+                              ),
+                            ),
+                            Text(
+                              'ورش الصيانة',
+                              style: TextStyle(
+                                  fontSize: 9,
+                                  color: _currentIndex == 1
+                                      ? Colors.white
+                                      : Colors.white70,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          ],
+                        ),
+                      ),
+                      label: '',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Padding(
+                        padding: EdgeInsets.only(top: 30),
+                        child: Image.asset(
+                          'assets/icons/icon30.png',
+                          fit: BoxFit.cover,
+                          height: 55,
+                          width: 55,
+                        ),
+                      ),
+                      label: '',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Padding(
+                        padding: EdgeInsets.only(bottom: 5, top: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(5),
+                              height: 30,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: _currentIndex == 3
+                                    ? Colors.white
+                                    : Colors.white70,
+                              ),
+                              width: 30,
+                              child: Image.asset(
+                                'assets/icons/icon21.png',
+                                height: 10,
+                                width: 10,
+                              ),
+                            ),
+                            Text(
+                              'الاعلانات',
+                              style: TextStyle(
+                                  fontSize: 9,
+                                  color: _currentIndex == 3
+                                      ? Colors.white
+                                      : Colors.white70,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          ],
+                        ),
+                      ),
+                      label: '',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Padding(
+                        padding: EdgeInsets.only(bottom: 5, top: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 30,
+                              width: 30,
+                              padding: EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: _currentIndex == 4
+                                    ? Colors.white
+                                    : Colors.white70,
+                              ),
+                              child: Image.asset(
+                                'assets/icons/icon31.png',
+                              ),
+                            ),
+                            Text(
+                              'خدمات الفحص',
+                              style: TextStyle(
+                                fontSize: 9,
+                                color: _currentIndex == 4
+                                    ? Colors.white
+                                    : Colors.white70,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      label: '',
+                    ),
+                  ],
                 ),
               ),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Padding(
-                padding: EdgeInsets.only(bottom: 5),
-                child: Container(
-                  height: 30,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Colors.white,
-                  ),
-                  width: 30,
-                  child: Image.asset('assets/icons/icon21.png',height: 10,width: 10,),
-                ),
-              ),
-              // Icon(Icons.home_outlined,color: Color(0xFF2777B2),size: 25,)),
-              label: 'الاعلانات',
-            ),
-            BottomNavigationBarItem(
-              icon: Padding(
-                padding: EdgeInsets.only(bottom: 5),
-                child: Container(
-                  height: 30,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Colors.white,
-                  ),
-                  width: 30,
-                  child: Image.asset('assets/icons/icon31.png',height: 10,width: 10,),
-                ),
-              ),
-              label: 'خدمات الفحص',
-            ),
+          ),
           ],
         ),
-        body: _children[_currentIndex],
       ),
     );
   }

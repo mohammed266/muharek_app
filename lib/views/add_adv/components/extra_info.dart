@@ -35,22 +35,24 @@ class _ExtraInfoState extends State<ExtraInfo> {
             },
             child: Column(
               children: [
-                SizedBox(height: 100),
+                SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.25,
+                ),
                 Dialog(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
                   backgroundColor: Color(0xFFFFFFFF),
                   insetPadding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height / 20,
-                    bottom: MediaQuery.of(context).size.height / 20,
+                    // top: MediaQuery.of(context).size.height / 20,
+                    // bottom: MediaQuery.of(context).size.height / 20,
                     right: 10,
                     left: 10,
                   ),
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 10,
+                        height: 20,
                       ),
                       Image.asset(
                         'assets/images/image21.png',
@@ -92,7 +94,8 @@ class _ExtraInfoState extends State<ExtraInfo> {
                                         color: Color(0xFF2777B2),
                                         fontSize: 12,
                                       ),
-                                    )),
+                                    ),
+                                ),
                               ),
                             ),
                             SizedBox(
@@ -145,166 +148,168 @@ class _ExtraInfoState extends State<ExtraInfo> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.75,
-      child: Padding(
-        padding: EdgeInsets.only(left: 20, right: 20),
-        child: Column(
-          children: [
-            _title(
-              title: 'المدينة',
-            ),
-            Container(
-              padding: EdgeInsets.only(left: 15, right: 15),
-              height: 40,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(22),
-                color: Color(0xFFF8F8F8),
+    return ListView(
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      children: [
+        Padding(
+          padding: EdgeInsets.only(left: 20, right: 20),
+          child: Column(
+            children: [
+              _title(
+                title: 'المدينة',
               ),
-              child: DropdownButton<String>(
-                underline: Text(''),
-                items: city.map((String value) {
-                  return new DropdownMenuItem<String>(
-                    value: value,
-                    child: new Text(value),
-                  );
-                }).toList(),
-                onChanged: (newValue) {
-                  setState(() {
-                    _newCity = newValue;
-                  });
-                },
-                value: _newCity,
-                isExpanded: true,
-                hint: Text(
-                  'الرياض',
-                  style: TextStyle(fontSize: 12, color: Color(0xFFBFBFBF)),
+              Container(
+                padding: EdgeInsets.only(left: 15, right: 15),
+                height: 40,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(22),
+                  color: Color(0xFFF8F8F8),
+                ),
+                child: DropdownButton<String>(
+                  underline: Text(''),
+                  items: city.map((String value) {
+                    return new DropdownMenuItem<String>(
+                      value: value,
+                      child: new Text(value),
+                    );
+                  }).toList(),
+                  onChanged: (newValue) {
+                    setState(() {
+                      _newCity = newValue;
+                    });
+                  },
+                  value: _newCity,
+                  isExpanded: true,
+                  hint: Text(
+                    'الرياض',
+                    style: TextStyle(fontSize: 12, color: Color(0xFFBFBFBF)),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            _title(
-              title: 'اظهار رقم الجوال',
-            ),
-            Container(
-              padding: EdgeInsets.only(left: 15, right: 15),
-              height: 40,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(22),
-                color: Color(0xFFF8F8F8),
+              SizedBox(
+                height: 15,
               ),
-              child: DropdownButton<String>(
-                underline: Text(''),
-                items: showNum.map((String value) {
-                  return new DropdownMenuItem<String>(
-                    value: value,
-                    child: new Text(value),
-                  );
-                }).toList(),
-                onChanged: (newValue) {
-                  setState(() {
-                    _newShowNum = newValue;
-                  });
-                },
-                value: _newShowNum,
-                isExpanded: true,
-                hint: Text(
-                  'نعم',
-                  style: TextStyle(fontSize: 12, color: Color(0xFFBFBFBF)),
+              _title(
+                title: 'اظهار رقم الجوال',
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 15, right: 15),
+                height: 40,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(22),
+                  color: Color(0xFFF8F8F8),
+                ),
+                child: DropdownButton<String>(
+                  underline: Text(''),
+                  items: showNum.map((String value) {
+                    return new DropdownMenuItem<String>(
+                      value: value,
+                      child: new Text(value),
+                    );
+                  }).toList(),
+                  onChanged: (newValue) {
+                    setState(() {
+                      _newShowNum = newValue;
+                    });
+                  },
+                  value: _newShowNum,
+                  isExpanded: true,
+                  hint: Text(
+                    'نعم',
+                    style: TextStyle(fontSize: 12, color: Color(0xFFBFBFBF)),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            _title(
-              title: 'السماح بالتعليقات',
-            ),
-            Container(
-              height: 40,
-              padding: EdgeInsets.only(left: 15, right: 15),
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(22),
-                color: Color(0xFFF8F8F8),
+              SizedBox(
+                height: 15,
               ),
-              child: DropdownButton<String>(
-                underline: Text(''),
-                items: showCom.map((String value) {
-                  return new DropdownMenuItem<String>(
-                    value: value,
-                    child: new Text(value),
-                  );
-                }).toList(),
-                onChanged: (newValue) {
-                  setState(() {
-                    _newShowCom = newValue;
-                  });
-                },
-                value: _newShowCom,
-                isExpanded: true,
-                hint: Text(
-                  'نعم',
-                  style: TextStyle(fontSize: 12, color: Color(0xFFBFBFBF)),
+              _title(
+                title: 'السماح بالتعليقات',
+              ),
+              Container(
+                height: 40,
+                padding: EdgeInsets.only(left: 15, right: 15),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(22),
+                  color: Color(0xFFF8F8F8),
+                ),
+                child: DropdownButton<String>(
+                  underline: Text(''),
+                  items: showCom.map((String value) {
+                    return new DropdownMenuItem<String>(
+                      value: value,
+                      child: new Text(value),
+                    );
+                  }).toList(),
+                  onChanged: (newValue) {
+                    setState(() {
+                      _newShowCom = newValue;
+                    });
+                  },
+                  value: _newShowCom,
+                  isExpanded: true,
+                  hint: Text(
+                    'نعم',
+                    style: TextStyle(fontSize: 12, color: Color(0xFFBFBFBF)),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            _title(
-              title: 'السماح بمشاركة موقعى مع المستخدمين',
-            ),
-            Container(
-              height: 40,
-              padding: EdgeInsets.only(left: 15, right: 15),
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(22),
-                color: Color(0xFFF8F8F8),
+              SizedBox(
+                height: 15,
               ),
-              child: DropdownButton<String>(
-                underline: Text(''),
-                items: shareLocation.map((String value) {
-                  return new DropdownMenuItem<String>(
-                    value: value,
-                    child: new Text(value),
-                  );
-                }).toList(),
-                onChanged: (newValue) {
-                  setState(() {
-                    _newShareLocation = newValue;
-                  });
-                },
-                value: _newShareLocation,
-                isExpanded: true,
-                hint: Text(
-                  'نعم',
-                  style: TextStyle(fontSize: 12, color: Color(0xFFBFBFBF)),
+              _title(
+                title: 'السماح بمشاركة موقعى مع المستخدمين',
+              ),
+              Container(
+                height: 40,
+                padding: EdgeInsets.only(left: 15, right: 15),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(22),
+                  color: Color(0xFFF8F8F8),
+                ),
+                child: DropdownButton<String>(
+                  underline: Text(''),
+                  items: shareLocation.map((String value) {
+                    return new DropdownMenuItem<String>(
+                      value: value,
+                      child: new Text(value),
+                    );
+                  }).toList(),
+                  onChanged: (newValue) {
+                    setState(() {
+                      _newShareLocation = newValue;
+                    });
+                  },
+                  value: _newShareLocation,
+                  isExpanded: true,
+                  hint: Text(
+                    'نعم',
+                    style: TextStyle(fontSize: 12, color: Color(0xFFBFBFBF)),
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 50,right: 50),
-              child: defaultButton(
-                text: 'إضافة الاعلان',
-                color: Color(0xFF1C608D),
-                function: () {
-                  _showDialog();
-                },
+              SizedBox(
+                height: 30,
               ),
-            ),
-          ],
+              Padding(
+                padding: EdgeInsets.only(left: 50,right: 50),
+                child: defaultButton(
+                  text: 'إضافة الاعلان',
+                  color: Color(0xFF1C608D),
+                  function: () {
+                    _showDialog();
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
+      ],
     );
   }
 

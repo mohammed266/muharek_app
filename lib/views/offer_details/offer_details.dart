@@ -50,6 +50,8 @@ class OfferDetailScreen extends StatelessWidget {
                               children: [
                                 Image.asset(
                                   'assets/icons/icon17.png',
+                                  height: 20,
+                                  width: 20,
                                   color: Colors.white,
                                 ),
                                 Text(
@@ -85,7 +87,10 @@ class OfferDetailScreen extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              Image.asset('assets/icons/icon26.png'),
+                              Container(
+                                  height: 16,
+                                  width: 18,
+                                  child: Image.asset('assets/icons/icon26.png')),
                               SizedBox(
                                 width: 5,
                               ),

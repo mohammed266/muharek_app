@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class RoundedDiagonalPathClipper extends CustomClipper<Path> {
   @override
@@ -152,8 +153,9 @@ class ImageAndTitle extends StatelessWidget {
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black12,
-                                offset: Offset(-1, 3),
+                                color: Color(0xFFBFBFBF).withOpacity(.3),
+                                offset: Offset(-6, 6),
+                                blurRadius: 12,
                               ),
                             ],
                           ),
@@ -179,8 +181,10 @@ class ImageAndTitle extends StatelessWidget {
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black12,
-                                offset: Offset(-1, 3),
+                                color: Color(0xFFBFBFBF).withOpacity(.3),
+                                offset: Offset(-6, 6),
+                                blurRadius: 12,
+                                // spreadRadius: 5,
                               ),
                             ],
                           ),
@@ -205,25 +209,37 @@ class ImageAndTitle extends StatelessWidget {
   }
 }
 //
-class WorkshopContainer extends StatelessWidget {
+class WorkshopContainer extends StatefulWidget {
   const WorkshopContainer({
-    Key key, this.image, this.title, this.onTap,
+    Key key, this.image, this.title, this.onTap,this.h = 25,this.w = 25,
   }) : super(key: key);
 
   final String image,title;
   final Function onTap;
+  final double h;
+
+  final double w;
+
+  @override
+  _WorkshopContainerState createState() => _WorkshopContainerState();
+}
+
+class _WorkshopContainerState extends State<WorkshopContainer> {
+
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: widget.onTap,
       child: Container(
-        height: 150,
+        height:
+        // MediaQuery.of(context).size.height / 3.3,
+        150,
         width: MediaQuery.of(context).size.width / 2.3,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(17),
           border: Border.all(color: Color(0xFFDCDCDC)),
-          color: Color(0xFFFCFCFC),
+          color: Colors.transparent,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -231,11 +247,15 @@ class WorkshopContainer extends StatelessWidget {
             CircleAvatar(
               backgroundImage:
               AssetImage('assets/icons/icon9.png'),
-              child: Image.asset(image),
+              child: Image.asset(
+                widget.image,
+                height: widget.h,
+                width: widget.w,
+              ),
               radius: 26,
             ),
             Text(
-              title,
+              widget.title,
               style: TextStyle(
                 fontSize: 12,
                 color: Color(0xFF4C5264),
@@ -271,8 +291,8 @@ class TitleContainer extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              height: 25,
-              width: 25,
+              height: 20,
+              width: 20,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(5),
@@ -322,8 +342,8 @@ class _ServiceListState extends State<ServiceDrawerList> {
       leading: Padding(
         padding: EdgeInsets.only(right: 20),
         child: Container(
-          height: 36,
-          width: 36,
+          height: 30,
+          width: 30,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(5),
@@ -331,8 +351,8 @@ class _ServiceListState extends State<ServiceDrawerList> {
           child: Center(
             child: Image.asset(
               widget.image,
-              height: 14,
-              width: 18,
+              height: 17,
+              width: 17,
             ),
           ),
         ),
@@ -429,6 +449,7 @@ Widget defaultButton({
   color,
   double r = 20,
   Color c = Colors.white,
+  double opa = 0.9,
 }) {
   return Container(
     width: double.infinity,
@@ -436,6 +457,11 @@ Widget defaultButton({
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(r),
       color: color,
+      gradient: LinearGradient(
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
+        colors: [Color(0xFF1C608D), Color(0xFF3192D9).withOpacity(opa)],
+      ),
     ),
     child: FlatButton(
       onPressed: function,

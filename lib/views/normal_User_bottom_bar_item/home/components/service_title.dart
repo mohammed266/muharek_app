@@ -21,7 +21,12 @@ class ServiceTitle extends StatelessWidget {
       height: 25,
       child: Row(
         children: [
-          Image.asset(image),
+          Container(
+              height: 25,
+              width: 25,
+              color: Colors.white,
+              padding: EdgeInsets.all(4),
+              child: Image.asset(image)),
           SizedBox(
             width: 12,
           ),

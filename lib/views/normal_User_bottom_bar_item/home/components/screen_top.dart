@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/views/normal_User_bottom_bar_item/home/components/service_title.dart';
-import 'package:muharek_app/views/normal_User_bottom_bar_item/maintenance_workshops/maintenance_workshops.dart';
-import 'package:muharek_app/views/owner_workshop/workshop_owner.dart';
+import 'service_title.dart';
+import '../../../owner_workshop/workshop_owner.dart';
 
 class ScreenTop extends StatefulWidget {
   @override
@@ -58,10 +57,10 @@ class _ScreenTopState extends State<ScreenTop> {
           place: '(الرياض)',
           allService: 'كل الورش',
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(
-              builder: (_)=> MaintenanceWorkshopsScreen(),
-            ),
-            );
+            // Navigator.push(context, MaterialPageRoute(
+            //   builder: (_)=> MaintenanceWorkshopsScreen(),
+            // ),
+            // );
           },
         ),
         SizedBox(
@@ -69,12 +68,12 @@ class _ScreenTopState extends State<ScreenTop> {
         ),
         Container(
           width: MediaQuery.of(context).size.width,
-          height: 140,
+          height: MediaQuery.of(context).size.height* 0.26,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: 3,
             itemBuilder: (_, i) => Padding(
-              padding: EdgeInsets.only(left: 10),
+              padding: EdgeInsets.only(left: 5),
               child: InkWell(
                 onTap: () {
                   Navigator.push(
@@ -88,12 +87,40 @@ class _ScreenTopState extends State<ScreenTop> {
                   width: MediaQuery.of(context).size.width / 2,
                   // height: 140,
                   decoration: BoxDecoration(
+                    color: Colors.transparent,
                     borderRadius: BorderRadius.circular(17),
+                    // boxShadow: [
+                    //   BoxShadow(
+                    //     color: Color(0xFFBFBFBF).withOpacity(.1),
+                    //     offset: Offset(-5,5),
+                    //     blurRadius: 5,
+                    //     spreadRadius: 2,
+                    //     // spreadRadius: 5,
+                    //   ),
+                    // ],
                   ),
                   child: Card(
+                    elevation: 4,
+                    shadowColor: Color(0xFFBFBFBF).withOpacity(.1),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(17),
+                    ),
                     child: Column(
                       children: [
-                        Image.asset('assets/images/image6.png'),
+                        Container(
+                          height: MediaQuery.of(context).size.height * .15,
+                            width: MediaQuery.of(context).size.width / 2,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(17),
+                                topRight: Radius.circular(17),
+                              ),
+                              image: DecorationImage(
+                                image: AssetImage('assets/images/image6.png',),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                        ),
                         SizedBox(
                           height: 10,
                         ),
@@ -189,7 +216,7 @@ class ServiceList extends StatelessWidget {
                       'تصفح الخدمات',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 14,
+                        fontSize: 10,
                       ),
                     ),
                   ),

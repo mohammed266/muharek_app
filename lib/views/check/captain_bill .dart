@@ -29,9 +29,9 @@ class CaptainBillScreen extends StatelessWidget {
                     child: Container(
                       padding: EdgeInsets.all(20),
                       width: double.infinity,
-                      height:
-                      // 680,
-                      MediaQuery.of(context).size.height * 1.43,
+                      // height:
+                      // // 680,
+                      // MediaQuery.of(context).size.height * 1.43,
                       decoration: BoxDecoration(
                         color: Color(0xFFFCFCFC),
                         borderRadius: BorderRadius.circular(20),
@@ -119,7 +119,7 @@ class CaptainBillScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 30,
+                height: 20,
               ),
             ],
           ),

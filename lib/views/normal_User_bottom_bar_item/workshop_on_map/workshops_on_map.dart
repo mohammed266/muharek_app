@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import '../home/components/drawer_list.dart';
 import '../../../shared/components/component.dart';
 import '../../add_new_car/add_new_car.dart';
 import '../../add_new_card/add_new_card.dart';
@@ -84,9 +85,10 @@ class _WorkshopOnMapScreenState extends State<WorkshopOnMapScreen> {
       builder: (BuildContext context) {
         return Column(
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height * .5),
+            SizedBox(height: MediaQuery.of(context).size.height * .53),
             Container(
-              height: MediaQuery.of(context).size.height * .24,
+              height: 120,
+              // MediaQuery.of(context).size.height * .24,
               width: double.infinity,
               child: Dialog(
                 shape: RoundedRectangleBorder(
@@ -190,9 +192,10 @@ class _WorkshopOnMapScreenState extends State<WorkshopOnMapScreen> {
          builder: (context,setState){
            return Column(
              children: [
-               SizedBox(height: MediaQuery.of(context).size.height * .5),
+               SizedBox(height: MediaQuery.of(context).size.height * .53),
                Container(
-                 height: MediaQuery.of(context).size.height * .24,
+                 height: 120,
+                 // MediaQuery.of(context).size.height * .24,
                  width: double.infinity,
                  child: Dialog(
                    shape: RoundedRectangleBorder(
@@ -263,213 +266,6 @@ class _WorkshopOnMapScreenState extends State<WorkshopOnMapScreen> {
     );
   }
 
-  // Future<void> _showDialog2() async {
-  //   return showDialog(
-  //     context: context,
-  //     builder: (BuildContext context) {
-  //       return Padding(
-  //         padding: EdgeInsets.only(left: 20, right: 20),
-  //         child: Column(
-  //           children: [
-  //             SizedBox(height: MediaQuery.of(context).size.height * .49),
-  //             Container(
-  //               width: double.infinity,
-  //               height: 100,
-  //               decoration: BoxDecoration(
-  //                 borderRadius: BorderRadius.circular(17),
-  //                 color: Colors.white,
-  //               ),
-  //               child: Row(
-  //                 children: [
-  //                   Expanded(
-  //                     child: Column(
-  //                       children: [
-  //                         GestureDetector(
-  //                           onTap: () {
-  //                             _modalBottomSheetMenu2();
-  //                           },
-  //                           child: Container(
-  //                             height: 49.5,
-  //                             child: Row(
-  //                               mainAxisAlignment:
-  //                                   MainAxisAlignment.spaceEvenly,
-  //                               children: [
-  //                                 CircleAvatar(
-  //                                   backgroundImage:
-  //                                       AssetImage('assets/icons/icon9.png'),
-  //                                   child: Image.asset(
-  //                                     'assets/icons/icon4.png',
-  //                                     height: 12,
-  //                                     width: 12,
-  //                                   ),
-  //                                   radius: 10,
-  //                                 ),
-  //                                 Text(
-  //                                   'اختر الخدمة',
-  //                                   style: TextStyle(
-  //                                       fontSize: 12, color: Color(0xFF4C5264)),
-  //                                 ),
-  //                               ],
-  //                             ),
-  //                           ),
-  //                         ),
-  //                         Container(
-  //                           height: .5,
-  //                           width: MediaQuery.of(context).size.width,
-  //                           color: Colors.grey,
-  //                         ),
-  //                         Container(
-  //                           height: 50,
-  //                           child: Row(
-  //                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-  //                             children: [
-  //                               Text(
-  //                                 'السعر',
-  //                                 style: TextStyle(
-  //                                     fontSize: 12, color: Color(0xFFDCDCDC)),
-  //                               ),
-  //                               Text(
-  //                                 'ريال',
-  //                                 style: TextStyle(
-  //                                     fontSize: 12, color: Color(0xFF4C5264)),
-  //                               ),
-  //                             ],
-  //                           ),
-  //                         ),
-  //                       ],
-  //                     ),
-  //                   ),
-  //                   Container(
-  //                     height: 100,
-  //                     width: .5,
-  //                     color: Colors.grey,
-  //                   ),
-  //                   Expanded(
-  //                     child: Column(
-  //                       children: [
-  //                         GestureDetector(
-  //                           onTap: () {
-  //                             _modalBottomSheetMenu();
-  //                           },
-  //                           child: Container(
-  //                             height: 49.5,
-  //                             child: Row(
-  //                               mainAxisAlignment:
-  //                                   MainAxisAlignment.spaceEvenly,
-  //                               children: [
-  //                                 Text(
-  //                                   'اختر السيارة ',
-  //                                   style: TextStyle(
-  //                                     fontSize: 12,
-  //                                     color: Color(0xFF4C5264),
-  //                                   ),
-  //                                 ),
-  //                                 Icon(Icons.keyboard_arrow_down_rounded),
-  //                               ],
-  //                             ),
-  //                           ),
-  //                         ),
-  //                         Container(
-  //                           height: .5,
-  //                           width: MediaQuery.of(context).size.width,
-  //                           color: Colors.grey,
-  //                         ),
-  //                         GestureDetector(
-  //                           onTap: () {
-  //                             _modalBottomSheetMenu1();
-  //                           },
-  //                           child: Container(
-  //                             height: 50,
-  //                             child: Row(
-  //                               mainAxisAlignment:
-  //                                   MainAxisAlignment.spaceAround,
-  //                               children: [
-  //                                 Text(
-  //                                   'اختر طريقة الدفع',
-  //                                   style: TextStyle(
-  //                                       fontSize: 12, color: Color(0xFF4C5264)),
-  //                                 ),
-  //                                 // SizedBox(
-  //                                 //   width: 22,
-  //                                 // ),
-  //                                 Icon(Icons.keyboard_arrow_down_rounded),
-  //                               ],
-  //                             ),
-  //                           ),
-  //                         ),
-  //                       ],
-  //                     ),
-  //                   ),
-  //                 ],
-  //               ),
-  //             ),
-  //             SizedBox(
-  //               height: 10,
-  //             ),
-  //             Container(
-  //               width: double.infinity,
-  //               height: 40,
-  //               child: Row(
-  //                 children: [
-  //                   Expanded(
-  //                     child: GestureDetector(
-  //                       onTap: () {
-  //                         Navigator.push(context,
-  //                           MaterialPageRoute(
-  //                             builder: (_) => TabularOrderScreen(),
-  //                           ),
-  //                         );
-  //                       },
-  //                       child: Container(
-  //                         height: 40,
-  //                         width: MediaQuery.of(context).size.width / 2.2,
-  //                         decoration: BoxDecoration(
-  //                           color: Colors.white,
-  //                           borderRadius: BorderRadius.circular(20),
-  //                         ),
-  //                         child: Row(
-  //                           crossAxisAlignment: CrossAxisAlignment.center,
-  //                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-  //                           children: [
-  //                             Text(
-  //                               'طلب مجدول',
-  //                               style: TextStyle(
-  //                                   fontSize: 12, color: Colors.green),
-  //                             ),
-  //                             Image.asset('assets/icons/icon42.png'),
-  //                           ],
-  //                         ),
-  //                       ),
-  //                     ),
-  //                   ),
-  //                   SizedBox(
-  //                     width: 10,
-  //                   ),
-  //                   Expanded(
-  //                     child: Container(
-  //                       child: defaultButton(
-  //                         color: Color(0xFF1C608D),
-  //                         text: 'طلب',
-  //                         function: () {
-  //                           Navigator.push(
-  //                             context,
-  //                             MaterialPageRoute(
-  //                               builder: (_) => OrderDetailsScreen(),
-  //                             ),
-  //                           );
-  //                         },
-  //                       ),
-  //                     ),
-  //                   ),
-  //                 ],
-  //               ),
-  //             ),
-  //           ],
-  //         ),
-  //       );
-  //     },
-  //   );
-  // }
   Future<void> _showDialog3() async {
     return showDialog(
       context: context,
@@ -480,11 +276,12 @@ class _WorkshopOnMapScreenState extends State<WorkshopOnMapScreen> {
               padding: EdgeInsets.only(left: 20, right: 20),
               child: Column(
                 children: [
-                  SizedBox(height: MediaQuery.of(context).size.height * .53),
+                  SizedBox(height: MediaQuery.of(context).size.height * .55),
                   Container(
                     width: double.infinity,
-                    height: MediaQuery.of(context).size.height * .19,
-                    decoration: BoxDecoration(
+                    height: 100,
+                    // MediaQuery.of(context).size.height * .19,
+                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(17),
                       color: Colors.white,
                     ),
@@ -659,7 +456,7 @@ class _WorkshopOnMapScreenState extends State<WorkshopOnMapScreen> {
                                     child: Text(
                                       'طلب مجدول',
                                       style: TextStyle(
-                                          fontSize: 12, color: Colors.green),
+                                          fontSize: 12, color: Color(0xFF4C5264)),
                                     ),
                                   ),
                                   Image.asset('assets/icons/icon42.png',height: 14,width: 13,),
@@ -878,6 +675,7 @@ class _WorkshopOnMapScreenState extends State<WorkshopOnMapScreen> {
         builder: (builder) {
           return Container(
             height: 327.0,
+            // MediaQuery.of(context).size.height* 0.615,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -946,8 +744,30 @@ class _WorkshopOnMapScreenState extends State<WorkshopOnMapScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        drawer: drawerList(context),
         appBar: AppBar(
-          leading: SizedBox(),
+          leading: Builder(
+            builder: (BuildContext context) {
+              return GestureDetector(
+                onTap: () { Scaffold.of(context).openDrawer(); },
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 18,
+                    ),
+                    Container(
+                      height: 35,
+                      width: 35,
+                      child: Image.asset(
+                        'assets/icons/icon64.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
           backgroundColor: Color(0xFFF8F8F8),
           iconTheme: IconThemeData(
             color: Colors.indigo,
@@ -961,44 +781,68 @@ class _WorkshopOnMapScreenState extends State<WorkshopOnMapScreen> {
                 SizedBox(
                   height: 20,
                 ),
+                // Container(
+                //   height: 35,
+                //   width: MediaQuery.of(context).size.width / 1.3,
+                //   decoration: BoxDecoration(
+                //     borderRadius: BorderRadius.circular(8),
+                //     color: Colors.white,
+                //   ),
+                //   child: Padding(
+                //     padding: const EdgeInsets.only(
+                //       right: 8,
+                //       top: 5,
+                //       bottom: 5,
+                //     ),
+                //     child: TextField(
+                //       scrollPadding: EdgeInsets.all(8),
+                //       decoration: InputDecoration(
+                //         border: InputBorder.none,
+                //         focusedBorder: InputBorder.none,
+                //         enabledBorder: InputBorder.none,
+                //         suffixIcon: Icon(
+                //           Icons.place,
+                //           color: Colors.indigo,
+                //           size: 18,
+                //         ),
+                //       ),
+                //       onChanged: (val) {
+                //         setState(() {});
+                //       },
+                //       onTap: () {},
+                //       textInputAction: TextInputAction.search,
+                //     ),
+                //   ),
+                // ),
                 Container(
-                  height: 35,
-                  width: MediaQuery.of(context).size.width / 1.2,
+                  padding: EdgeInsets.only(left: 16, right: 16),
+                  height: 30,
+                  width: MediaQuery.of(context).size.width / 1.27,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
                     color: Colors.white,
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                      right: 8,
-                      top: 5,
-                      bottom: 5,
-                    ),
-                    child: TextField(
-                      scrollPadding: EdgeInsets.all(8),
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        suffixIcon: Icon(
-                          Icons.place,
-                          color: Colors.indigo,
-                          size: 18,
-                        ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'الموقع الحالى',
+                        style:
+                        TextStyle(fontSize: 10, color: Color(0xFFDCDCDC)),
                       ),
-                      onChanged: (val) {
-                        setState(() {});
-                      },
-                      onTap: () {},
-                      textInputAction: TextInputAction.search,
-                    ),
+                      Icon(
+                        Icons.location_on,
+                        color: Color(0xFF2777B2),
+                        size: 10,
+                      ),
+                    ],
                   ),
-                ),
+                )
               ],
             ),
             SizedBox(
-              width: 30,
-            )
+              width: 20,
+            ),
           ],
         ),
         body: Stack(
@@ -1114,7 +958,7 @@ class _ServiceSelectState extends State<ServiceSelect> {
         ),
         onTap: toggleSelection,
         leading: Container(
-          padding: EdgeInsets.all(3),
+          padding: EdgeInsets.all(7),
           height: 40,
           width: 40,
           decoration: BoxDecoration(
@@ -1122,7 +966,11 @@ class _ServiceSelectState extends State<ServiceSelect> {
               image: AssetImage('assets/icons/icon9.png'),
             ),
           ),
-          child: Image.asset(widget.image),
+          child: Image.asset(
+              widget.image,
+            // height: 20,
+            // width: 20,
+          ),
         ),
       ),
     );

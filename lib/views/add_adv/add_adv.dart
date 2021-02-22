@@ -35,7 +35,8 @@ class _AddAdvScreenState extends State<AddAdvScreen> {
     ScrollController controller = ScrollController(initialScrollOffset: 0.0);
     final Map<int, Widget> icons = <int, Widget>{
       0: Center(
-        child: CommissionAgreement(onSegmentChosen: (){
+        child: CommissionAgreement(
+          onSegmentChosen: (){
           setState(() {
             _currentSelection = 1;
           });

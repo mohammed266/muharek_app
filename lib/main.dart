@@ -22,6 +22,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
+         // backgroundColor: Colors.transparent,
+         // bottomAppBarColor: Colors.transparent,
+        // canvasColor: Colors.transparent,
+         bottomNavigationBarTheme: BottomNavigationBarTheme.of(context),
       ),
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,

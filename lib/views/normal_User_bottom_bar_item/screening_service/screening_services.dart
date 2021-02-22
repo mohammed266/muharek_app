@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:muharek_app/views/normal_User_bottom_bar_item/home/components/drawer_list.dart';
 import '../../../shared/components/component.dart';
 import '../../screening_service_after_choice/screening_service_after_choice.dart';
 
@@ -41,15 +42,16 @@ class _ScreeningServicesScreenState extends State<ScreeningServicesScreen> {
             return Container(
               child: Column(
                 children: [
-                  SizedBox(height: 50),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height* 0.14,
+                  ),
                   Dialog(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
                     backgroundColor: Color(0xFFFFFFFF),
                     insetPadding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height / 20,
-                      bottom: MediaQuery.of(context).size.height / 20,
+                      bottom: 50,
                       right: 10,
                       left: 10,
                     ),
@@ -105,14 +107,14 @@ class _ScreeningServicesScreenState extends State<ScreeningServicesScreen> {
                                         decoration: BoxDecoration(
                                           color: Color(0xFFF8F8F8),
                                           borderRadius:
-                                              BorderRadius.circular(10),
+                                          BorderRadius.circular(10),
                                         ),
                                         child: Row(
                                           children: [
                                             InkWell(
                                               onTap: () {
                                                 setState(
-                                                  () {
+                                                      () {
                                                     createVariables();
                                                     citySelectedList[i] = true;
                                                   },
@@ -124,7 +126,7 @@ class _ScreeningServicesScreenState extends State<ScreeningServicesScreen> {
                                                 width: 20,
                                                 decoration: BoxDecoration(
                                                   borderRadius:
-                                                      BorderRadius.circular(10),
+                                                  BorderRadius.circular(10),
                                                   border: Border.all(
                                                     width: 1.3,
                                                     color: citySelectedList[i]
@@ -138,8 +140,8 @@ class _ScreeningServicesScreenState extends State<ScreeningServicesScreen> {
                                                         ? Color(0xFF2777B2)
                                                         : Color(0xFFBFBFBF),
                                                     borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
+                                                    BorderRadius.circular(
+                                                        10),
                                                   ),
                                                 ),
                                               ),
@@ -161,7 +163,7 @@ class _ScreeningServicesScreenState extends State<ScreeningServicesScreen> {
                                       width: 10,
                                     ),
                                     InkWell(
-                                      onTap: () async {
+                                      onTap: () {
                                         Navigator.pop(context);
                                         showDialog(
                                           context: context,
@@ -172,45 +174,36 @@ class _ScreeningServicesScreenState extends State<ScreeningServicesScreen> {
                                                     left: 10, right: 10),
                                                 child: Column(
                                                   children: [
-                                                    SizedBox(height: 120),
+                                                    SizedBox( height: MediaQuery.of(context).size.height* 0.2,),
                                                     Dialog(
                                                       shape:
-                                                          RoundedRectangleBorder(
+                                                      RoundedRectangleBorder(
                                                         borderRadius:
-                                                            BorderRadius
-                                                                .circular(20),
+                                                        BorderRadius
+                                                            .circular(20),
                                                       ),
                                                       backgroundColor:
-                                                          Color(0xFFFFFFFF),
+                                                      Color(0xFFFFFFFF),
                                                       insetPadding:
-                                                          EdgeInsets.only(
-                                                        top: MediaQuery.of(
-                                                                    context)
-                                                                .size
-                                                                .height /
-                                                            20,
-                                                        bottom: MediaQuery.of(
-                                                                    context)
-                                                                .size
-                                                                .height /
-                                                            20,
+                                                      EdgeInsets.only(
+                                                        // top: MediaQuery.of(context).size.height* 0.14,
                                                         right: 10,
                                                         left: 10,
                                                       ),
                                                       child: Column(
                                                         children: [
                                                           SizedBox(
-                                                            height: 10,
+                                                            height: 20,
                                                           ),
                                                           Container(
                                                             height: 60,
                                                             width: 60,
                                                             decoration:
-                                                                BoxDecoration(
+                                                            BoxDecoration(
                                                               borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          30),
+                                                              BorderRadius
+                                                                  .circular(
+                                                                  30),
                                                               color: Color(
                                                                   0xFFFF5A5A),
                                                             ),
@@ -222,11 +215,11 @@ class _ScreeningServicesScreenState extends State<ScreeningServicesScreen> {
                                                             'متأكد من رغبتك في حذف \n العنوان :اسم العنوان',
                                                             style: TextStyle(
                                                               color:
-                                                                  Colors.black,
+                                                              Colors.black,
                                                               fontSize: 18,
                                                               fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
+                                                              FontWeight
+                                                                  .bold,
                                                             ),
                                                             textAlign: TextAlign
                                                                 .center,
@@ -236,14 +229,14 @@ class _ScreeningServicesScreenState extends State<ScreeningServicesScreen> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsets.only(
-                                                                    left: 15,
-                                                                    right: 15),
+                                                            EdgeInsets.only(
+                                                                left: 15,
+                                                                right: 15),
                                                             child: Row(
                                                               children: [
                                                                 Expanded(
                                                                   child:
-                                                                      GestureDetector(
+                                                                  GestureDetector(
                                                                     onTap: () {
                                                                       Navigator.pop(
                                                                           context);
@@ -251,27 +244,27 @@ class _ScreeningServicesScreenState extends State<ScreeningServicesScreen> {
                                                                           i);
                                                                     },
                                                                     child:
-                                                                        Container(
+                                                                    Container(
                                                                       height:
-                                                                          40,
+                                                                      40,
                                                                       decoration:
-                                                                          BoxDecoration(
+                                                                      BoxDecoration(
                                                                         borderRadius:
-                                                                            BorderRadius.circular(25),
+                                                                        BorderRadius.circular(25),
                                                                         color: Color(
                                                                             0xFFFF5A5A),
                                                                       ),
                                                                       child: Center(
                                                                           child: Text(
-                                                                        'نعم',
-                                                                        style:
+                                                                            'نعم',
+                                                                            style:
                                                                             TextStyle(
-                                                                          color:
+                                                                              color:
                                                                               Colors.white,
-                                                                          fontSize:
+                                                                              fontSize:
                                                                               12,
-                                                                        ),
-                                                                      )),
+                                                                            ),
+                                                                          )),
                                                                     ),
                                                                   ),
                                                                 ),
@@ -280,37 +273,37 @@ class _ScreeningServicesScreenState extends State<ScreeningServicesScreen> {
                                                                 ),
                                                                 Expanded(
                                                                   child:
-                                                                      InkWell(
+                                                                  InkWell(
                                                                     onTap: () {
                                                                       Navigator.of(
-                                                                              context)
+                                                                          context)
                                                                           .pop();
                                                                     },
                                                                     child:
-                                                                        Container(
+                                                                    Container(
                                                                       height:
-                                                                          40,
+                                                                      40,
                                                                       decoration:
-                                                                          BoxDecoration(
+                                                                      BoxDecoration(
                                                                         borderRadius:
-                                                                            BorderRadius.circular(25),
+                                                                        BorderRadius.circular(25),
                                                                         border:
-                                                                            Border.all(
+                                                                        Border.all(
                                                                           color:
-                                                                              Color(0xFF0BC500),
+                                                                          Color(0xFF0BC500),
                                                                         ),
                                                                       ),
                                                                       child:
-                                                                          Center(
+                                                                      Center(
                                                                         child:
-                                                                            Text(
+                                                                        Text(
                                                                           'لا',
                                                                           style:
-                                                                              TextStyle(
+                                                                          TextStyle(
                                                                             color:
-                                                                                Color(0xFF0BC500),
+                                                                            Color(0xFF0BC500),
                                                                             fontSize:
-                                                                                12,
+                                                                            12,
                                                                           ),
                                                                         ),
                                                                       ),
@@ -321,9 +314,9 @@ class _ScreeningServicesScreenState extends State<ScreeningServicesScreen> {
                                                             ),
                                                           ),
                                                           Padding(
-                                                              padding: EdgeInsets
-                                                                  .only(
-                                                                      top: 50),
+                                                            padding: EdgeInsets
+                                                                .only(
+                                                                top: 50),
                                                           ),
                                                         ],
                                                       ),
@@ -341,7 +334,7 @@ class _ScreeningServicesScreenState extends State<ScreeningServicesScreen> {
                                         decoration: BoxDecoration(
                                           color: Color(0xFFF8F8F8),
                                           borderRadius:
-                                              BorderRadius.circular(10),
+                                          BorderRadius.circular(10),
                                         ),
                                         child: Center(
                                           child: Icon(
@@ -433,13 +426,35 @@ class _ScreeningServicesScreenState extends State<ScreeningServicesScreen> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
+        drawer: drawerList(context),
         appBar: AppBar(
-          leading: SizedBox(),
+          leading: Builder(
+            builder: (BuildContext context) {
+              return GestureDetector(
+                onTap: () { Scaffold.of(context).openDrawer(); },
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 18,
+                    ),
+                    Container(
+                      height: 35,
+                      width: 35,
+                      child: Image.asset(
+                        'assets/icons/icon64.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
           backgroundColor: Color(0xFFF8F8F8),
           iconTheme: IconThemeData(
             color: Colors.indigo,
           ),
-          toolbarHeight: 75,
+          toolbarHeight: 70,
           elevation: 0.0,
           actions: [
             Column(
@@ -454,7 +469,7 @@ class _ScreeningServicesScreenState extends State<ScreeningServicesScreen> {
                   child: Container(
                     padding: EdgeInsets.only(left: 16, right: 16),
                     height: 30,
-                    width: MediaQuery.of(context).size.width / 1.5,
+                    width: MediaQuery.of(context).size.width / 1.45,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       color: Colors.white,
@@ -560,6 +575,8 @@ class _ScreeningServicesScreenState extends State<ScreeningServicesScreen> {
                     onTap: () {
                       print('pp');
                     },
+                    h: 35,
+                    w: 35,
                   ),
                 ],
               ),

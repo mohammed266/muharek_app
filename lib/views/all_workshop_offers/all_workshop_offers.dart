@@ -15,8 +15,9 @@ class AllWorkshopOffersScreen extends StatelessWidget {
             itemBuilder: (_, i) => Padding(
               padding: EdgeInsets.only(bottom: 10),
               child: Container(
-                width: MediaQuery.of(context).size.width / 1.4,
-                height: 150,
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.275,
+                // 150,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(17),
                   image: DecorationImage(
@@ -41,7 +42,10 @@ class AllWorkshopOffersScreen extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                Image.asset('assets/icons/icon33.png'),
+                                Image.asset('assets/icons/icon33.png',
+                                  height: 19,
+                                  width: 19,
+                                ),
                                 SizedBox(
                                   width: 5,
                                 ),
@@ -87,7 +91,7 @@ class AllWorkshopOffersScreen extends StatelessWidget {
                                     'احجز الان',
                                     style: TextStyle(
                                       color: Color(0xFF2777B2),
-                                      fontSize: 14,
+                                      fontSize: 12,
                                     ),
                                   ),
                                 ),
@@ -99,7 +103,8 @@ class AllWorkshopOffersScreen extends StatelessWidget {
                       Column(
                         children: [
                           Container(
-                            height: 70,
+                            height:  MediaQuery.of(context).size.height* 0.12,
+                            // 70,
                             width: MediaQuery.of(context).size.width / 4.5,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.only(

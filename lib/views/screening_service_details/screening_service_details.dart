@@ -51,6 +51,8 @@ class ScreeningServiceDetailsScreen extends StatelessWidget {
                                 Image.asset(
                                   'assets/icons/icon17.png',
                                   color: Colors.white,
+                                  height: 20,
+                                  width: 20,
                                 ),
                                 Text(
                                   'محادثة',
@@ -85,7 +87,11 @@ class ScreeningServiceDetailsScreen extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              Image.asset('assets/icons/icon26.png'),
+                              Container(
+                                  child: Image.asset('assets/icons/icon26.png'),
+                                width: 18,
+                                height: 16,
+                              ),
                               SizedBox(
                                 width: 5,
                               ),

@@ -49,15 +49,16 @@ class _ScreeningServiceAfterChoiceState
             return Container(
               child: Column(
                 children: [
-                  SizedBox(height: 50),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height* 0.14,
+                  ),
                   Dialog(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
                     backgroundColor: Color(0xFFFFFFFF),
                     insetPadding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height / 20,
-                      bottom: MediaQuery.of(context).size.height / 20,
+                      bottom: 50,
                       right: 10,
                       left: 10,
                     ),
@@ -113,14 +114,14 @@ class _ScreeningServiceAfterChoiceState
                                         decoration: BoxDecoration(
                                           color: Color(0xFFF8F8F8),
                                           borderRadius:
-                                              BorderRadius.circular(10),
+                                          BorderRadius.circular(10),
                                         ),
                                         child: Row(
                                           children: [
                                             InkWell(
                                               onTap: () {
                                                 setState(
-                                                  () {
+                                                      () {
                                                     createVariables();
                                                     citySelectedList[i] = true;
                                                   },
@@ -132,7 +133,7 @@ class _ScreeningServiceAfterChoiceState
                                                 width: 20,
                                                 decoration: BoxDecoration(
                                                   borderRadius:
-                                                      BorderRadius.circular(10),
+                                                  BorderRadius.circular(10),
                                                   border: Border.all(
                                                     width: 1.3,
                                                     color: citySelectedList[i]
@@ -146,8 +147,8 @@ class _ScreeningServiceAfterChoiceState
                                                         ? Color(0xFF2777B2)
                                                         : Color(0xFFBFBFBF),
                                                     borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
+                                                    BorderRadius.circular(
+                                                        10),
                                                   ),
                                                 ),
                                               ),
@@ -170,7 +171,6 @@ class _ScreeningServiceAfterChoiceState
                                     ),
                                     InkWell(
                                       onTap: () {
-                                          // _city.removeAt(i);
                                         Navigator.pop(context);
                                         showDialog(
                                           context: context,
@@ -181,7 +181,7 @@ class _ScreeningServiceAfterChoiceState
                                                     left: 10, right: 10),
                                                 child: Column(
                                                   children: [
-                                                    SizedBox(height: 120),
+                                                    SizedBox( height: MediaQuery.of(context).size.height* 0.2,),
                                                     Dialog(
                                                       shape:
                                                       RoundedRectangleBorder(
@@ -193,23 +193,14 @@ class _ScreeningServiceAfterChoiceState
                                                       Color(0xFFFFFFFF),
                                                       insetPadding:
                                                       EdgeInsets.only(
-                                                        top: MediaQuery.of(
-                                                            context)
-                                                            .size
-                                                            .height /
-                                                            20,
-                                                        bottom: MediaQuery.of(
-                                                            context)
-                                                            .size
-                                                            .height /
-                                                            20,
+                                                        // top: MediaQuery.of(context).size.height* 0.14,
                                                         right: 10,
                                                         left: 10,
                                                       ),
                                                       child: Column(
                                                         children: [
                                                           SizedBox(
-                                                            height: 10,
+                                                            height: 20,
                                                           ),
                                                           Container(
                                                             height: 60,
@@ -350,7 +341,7 @@ class _ScreeningServiceAfterChoiceState
                                         decoration: BoxDecoration(
                                           color: Color(0xFFF8F8F8),
                                           borderRadius:
-                                              BorderRadius.circular(10),
+                                          BorderRadius.circular(10),
                                         ),
                                         child: Center(
                                           child: Icon(
@@ -436,51 +427,6 @@ class _ScreeningServiceAfterChoiceState
       },
     );
   }
-  // Future<void> _showDialog2()async{
-  //   return showDialog(
-  //       context: context,
-  //       builder: (context) {
-  //         return StatefulBuilder(
-  //             builder: (context, setState) {
-  //               return Container(
-  //                 child: Column(
-  //                   children: [
-  //                     SizedBox(height: 50),
-  //                     Dialog(
-  //                       shape: RoundedRectangleBorder(
-  //                         borderRadius: BorderRadius.circular(20),
-  //                       ),
-  //                       backgroundColor: Color(0xFFFFFFFF),
-  //                       insetPadding: EdgeInsets.only(
-  //                         top: MediaQuery.of(context).size.height / 20,
-  //                         bottom: MediaQuery.of(context).size.height / 20,
-  //                         right: 10,
-  //                         left: 10,
-  //                       ),
-  //                       child: Column(
-  //                         children: [
-  //                           FlatButton(
-  //                             onPressed: () {
-  //
-  //                             },
-  //                             child: const Text("مسح"),
-  //                           ),
-  //                           FlatButton(
-  //                             onPressed: () => Navigator.of(context).pop(false),
-  //                             child: const Text("تراجع"),
-  //                           ),
-  //                           Padding(padding: EdgeInsets.only(top: 20)),
-  //                         ],
-  //                       ),
-  //                     ),
-  //                   ],
-  //                 ),
-  //               );
-  //             }
-  //         );
-  //       }
-  //   );
-  // }
   void _modalBottomSheetMenu() {
     showModalBottomSheet(
         context: context,
@@ -695,7 +641,7 @@ class _ScreeningServiceAfterChoiceState
                         child: CircleAvatar(
                           backgroundColor: Colors.grey[100],
                           child: Image.asset(
-                            'assets/images/image23.png',
+                            'assets/images/image22.png',
                             height: 60,
                           ),
                           radius: 40.0,

@@ -61,6 +61,8 @@ class _WorkshopOwnerScreenState extends State<WorkshopOwnerScreen> {
                                 Image.asset(
                                   'assets/icons/icon17.png',
                                   color: Colors.white,
+                                  height: 20,
+                                  width: 20,
                                 ),
                                 Text(
                                   'محادثة',
@@ -224,7 +226,7 @@ class _WorkshopOwnerScreenState extends State<WorkshopOwnerScreen> {
             Padding(
               padding: EdgeInsets.only(left: 20, right: 20),
               child: Container(
-                height: 150,
+                height: MediaQuery.of(context).size.height * 0.275,
                 width: MediaQuery.of(context).size.width,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -233,7 +235,7 @@ class _WorkshopOwnerScreenState extends State<WorkshopOwnerScreen> {
                     padding: EdgeInsets.only(left: 15),
                     child: Container(
                       width: MediaQuery.of(context).size.width / 1.4,
-                      height: 150,
+                      // height: 150,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(17),
                         image: DecorationImage(
@@ -258,7 +260,11 @@ class _WorkshopOwnerScreenState extends State<WorkshopOwnerScreen> {
                                 children: [
                                   Row(
                                     children: [
-                                      Image.asset('assets/icons/icon33.png'),
+                                      Image.asset(
+                                          'assets/icons/icon33.png',
+                                        height: 19,
+                                        width: 19,
+                                      ),
                                       SizedBox(
                                         width: 5,
                                       ),
@@ -270,7 +276,7 @@ class _WorkshopOwnerScreenState extends State<WorkshopOwnerScreen> {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 8,
+                                    height: MediaQuery.of(context).size.height* 0.016,
                                   ),
                                   Text(
                                     'فحص شامل على كامل السيارة \n ب300 ريال',
@@ -278,7 +284,7 @@ class _WorkshopOwnerScreenState extends State<WorkshopOwnerScreen> {
                                         fontSize: 12, color: Colors.white),
                                   ),
                                   SizedBox(
-                                    height: 8,
+                                    height: MediaQuery.of(context).size.height* 0.016,
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -318,9 +324,8 @@ class _WorkshopOwnerScreenState extends State<WorkshopOwnerScreen> {
                             Column(
                               children: [
                                 Container(
-                                  height: 70,
-                                  width:
-                                      MediaQuery.of(context).size.width / 4.5,
+                                  height: MediaQuery.of(context).size.height* 0.12,
+                                  width: MediaQuery.of(context).size.width / 4.5,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.only(
                                       bottomRight: Radius.circular(80),
@@ -374,7 +379,7 @@ class _WorkshopOwnerScreenState extends State<WorkshopOwnerScreen> {
                 child: Row(
                   children: [
                     Expanded(
-                      child: InkWell(
+                      child: GestureDetector(
                         onTap: () {
                           setState(() {
                             screeningServices = true;
@@ -402,7 +407,7 @@ class _WorkshopOwnerScreenState extends State<WorkshopOwnerScreen> {
                       color: Color(0xFFCCCCCC),
                     ),
                     Expanded(
-                      child: InkWell(
+                      child: GestureDetector(
                         onTap: () {
                           setState(() {
                             screeningServices = false;
@@ -480,6 +485,8 @@ class _WorkshopOwnerScreenState extends State<WorkshopOwnerScreen> {
                               onTap: () {
                                 print('pp');
                               },
+                              h: 35,
+                              w: 35,
                             ),
                           ],
                         ),

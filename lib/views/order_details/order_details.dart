@@ -275,7 +275,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                         AssetImage('assets/icons/icon8.png'),
                       ],
                       activeStep: activeStep,
-                      bgColor: Color(0xFF555555),
+                      bgColor: Colors.green,
                       enableStepTapping: false,
                       upperBound: (bound) => upperBound = bound,
                       onStepReached: (index) {
@@ -283,7 +283,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                           activeStep = index;
                         });
                       },
-                      activeStepBorderColor: Colors.green,
+                      activeStepBorderColor: Color(0xFF555555),
                       enableNextPreviousButtons: false,
                       lineColor: Colors.green,
                       stepColor: Color(0xFF555555),
@@ -296,22 +296,30 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                       steppingEnabled: false,
                       // enableStepTapping: false,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          'الكابتن استقبل \n الطلب',
-                          style: TextStyle(fontSize: 8, color: Colors.white),
-                        ),
-                        Text(
-                          'الكابتن جاى لك \n في الطريق',
-                          style: TextStyle(fontSize: 8, color: Colors.white),
-                        ),
-                        Text(
-                          'تم المطلوب',
-                          style: TextStyle(fontSize: 8, color: Colors.white),
-                        ),
-                      ],
+                    Padding(
+                      padding: EdgeInsets.only(left: 10,right: 15),
+                      child: Row(
+                        children: [
+                          Text(
+                            'الكابتن استقبل \n الطلب',
+                            style: TextStyle(fontSize: 8, color: Colors.white),
+                          ),
+                          SizedBox(
+                            width:  MediaQuery.of(context).size.width* 0.2,
+                          ),
+                          Text(
+                            'الكابتن جاى لك \n في الطريق',
+                            style: TextStyle(fontSize: 8, color: Colors.white),
+                          ),
+                          SizedBox(
+                            width:  MediaQuery.of(context).size.width* 0.2,
+                          ),
+                          Text(
+                            'تم المطلوب',
+                            style: TextStyle(fontSize: 8, color: Colors.white),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -354,16 +362,31 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                             style: TextStyle(
                                 fontSize: 12, color: Color(0xFFA2A2A2)),
                           ),
-                          defaultButton(
-                            text: (activeStep == 0) ? 'تأكيد الطلب' : 'محادثة',
-                            color: (activeStep == 2) ? Color(0xFFBFBFBF) :Color(0xFF0BC500),
-                            function: () {
+                          GestureDetector(
+                            onTap: (){
                               if (activeStep < upperBound) {
                                 setState(() {
                                   activeStep++;
                                 });
                               }
                             },
+                            child: Container(
+                              height: 40,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: (activeStep == 2) ? Color(0xFFBFBFBF) :Color(0xFF0BC500),
+                              ),
+                              child: Center(
+                                  child: Text(
+                                      (activeStep == 0) ? 'تأكيد الطلب' : 'محادثة',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -522,24 +545,36 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                   ? Row(
                 children: [
                   Expanded(
-                    child: defaultButton(
-                      text: 'تقييم الخدمة',
-                      color: Color(0xFF3192D9),
-                      function: () {
+                    child: GestureDetector(
+                      onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (_) => DelegateEvaluationScreen(),),);
                       },
+                      child: Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: Color(0xFF3192D9),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Center(child: Text('تقييم الخدمة',style: TextStyle(fontSize: 10,color: Colors.white),)),
+                      ),
                     ),
                   ),
                   SizedBox(
                     width: 10,
                   ),
                   Expanded(
-                    child: defaultButton(
-                      text: 'الفاتورة',
-                      color: Color(0xFF0BC500),
-                      function: () {
+                    child: GestureDetector(
+                      onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (_) => CaptainBillScreen()));
                       },
+                      child: Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color(0xFF0BC500),
+                        ),
+                        child: Center(child: Text('الفاتورة',style: TextStyle(fontSize: 10,color: Colors.white),)),
+                      ),
                     ),
                   ),
                 ],
@@ -547,23 +582,35 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                   : Row(
                  children: [
                    Expanded(
-                     child: defaultButton(
-                       text: 'الغاء الطلب',
-                       color: Color(0xFFFF5A5A),
-                       function: () {
+                     child: GestureDetector(
+                       onTap: (){
                          _showDialog();
                        },
+                       child: Container(
+                         height: 40,
+                         decoration: BoxDecoration(
+                           borderRadius: BorderRadius.circular(20),
+                           color: Color(0xFFFF5A5A),
+                         ),
+                         child: Center(child: Text('الغاء الطلب',style: TextStyle(fontSize: 10,color: Colors.white),)),
+                       ),
                      ),
                    ),
                    SizedBox(
                      width: 10,
                    ),
                    Expanded(
-                     child: defaultButton(
-                       text: 'الفاتورة',
-                       color: Color(0xFFF8F8F8),
-                       function: null,
-                       c: Color(0xFFDCDCDC),
+                     child: GestureDetector(
+                       onTap: (){
+                       },
+                       child: Container(
+                         height: 40,
+                         decoration: BoxDecoration(
+                           borderRadius: BorderRadius.circular(20),
+                           color:Color(0xFFF8F8F8),
+                         ),
+                         child: Center(child: Text('الفاتورة',style: TextStyle(fontSize: 10,color: Color(0xFFDCDCDC)),)),
+                       ),
                      ),
                    ),
                  ],

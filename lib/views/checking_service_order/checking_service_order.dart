@@ -112,215 +112,220 @@ class _CheckingServiceOrderScreenState extends State<CheckingServiceOrderScreen>
         appBar: buildAppBar(context),
         body: Padding(
           padding: EdgeInsets.only(left: 20, right: 20, top: 20),
-          child: ListView(
-            children: [
-              _title(
-                title: 'نوع الصيانة',
-              ),
-              Container(
-                height: 40,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(22),
-                  color: Color(0xFFF8F8F8),
+          child: GestureDetector(
+            onTap: (){
+              FocusScope.of(context).requestFocus(new FocusNode());
+            },
+            child: ListView(
+              children: [
+                _title(
+                  title: 'نوع الصيانة',
                 ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              _title(
-                title: 'اختر السيارة',
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 15, right: 15),
-                height: 40,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(22),
-                  color: Color(0xFFF8F8F8),
-                ),
-                child: DropdownButton<String>(
-                  underline: Text(''),
-                  items: cars.map((String value) {
-                    return new DropdownMenuItem<String>(
-                      value: value,
-                      child: new Text(value),
-                    );
-                  }).toList(),
-                  onChanged: (newValue) {
-                    setState(() {
-                      _newCar = newValue;
-                    });
-                  },
-                  value: _newCar,
-                  isExpanded: true,
-                  hint: Text(
-                    'CL اكورا 2018',
-                    style: TextStyle(fontSize: 12, color: Color(0xFFBFBFBF)),
+                Container(
+                  height: 40,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(22),
+                    color: Color(0xFFF8F8F8),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              _title(
-                title: 'اكتب نبذة عن المشكلة',
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 15,right: 15),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(22),
-                  color: Color(0xFFF8F8F8),
+                SizedBox(
+                  height: 15,
                 ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    focusedBorder: InputBorder.none,
-                    enabledBorder: InputBorder.none,
+                _title(
+                  title: 'اختر السيارة',
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 15, right: 15),
+                  height: 40,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(22),
+                    color: Color(0xFFF8F8F8),
                   ),
-                  maxLines: 4,
+                  child: DropdownButton<String>(
+                    underline: Text(''),
+                    items: cars.map((String value) {
+                      return new DropdownMenuItem<String>(
+                        value: value,
+                        child: new Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (newValue) {
+                      setState(() {
+                        _newCar = newValue;
+                      });
+                    },
+                    value: _newCar,
+                    isExpanded: true,
+                    hint: Text(
+                      'CL اكورا 2018',
+                      style: TextStyle(fontSize: 12, color: Color(0xFFBFBFBF)),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                _title(
+                  title: 'اكتب نبذة عن المشكلة',
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 15,right: 15),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(22),
+                    color: Color(0xFFF8F8F8),
+                  ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      focusedBorder: InputBorder.none,
+                      enabledBorder: InputBorder.none,
+                    ),
+                    maxLines: 4,
 
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              _title(
-                title: 'رقم الجوال',
-              ),
-              Container(
-                height: 40,
-                padding: EdgeInsets.only(left: 15, right: 15),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(22),
-                  color: Color(0xFFF8F8F8),
+                SizedBox(
+                  height: 15,
                 ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    enabledBorder: InputBorder.none,
-                    focusedBorder: InputBorder.none,
-                    border: InputBorder.none,
-                    hintText: 'اكتب رقم الجوال',
-                    hintStyle: TextStyle(
-                      fontSize: 12,
-                      color: Color(0xFFBFBFBF),
+                _title(
+                  title: 'رقم الجوال',
+                ),
+                Container(
+                  height: 40,
+                  padding: EdgeInsets.only(left: 15, right: 15),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(22),
+                    color: Color(0xFFF8F8F8),
+                  ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      enabledBorder: InputBorder.none,
+                      focusedBorder: InputBorder.none,
+                      border: InputBorder.none,
+                      hintText: 'اكتب رقم الجوال',
+                      hintStyle: TextStyle(
+                        fontSize: 12,
+                        color: Color(0xFFBFBFBF),
+                      ),
+                    ),
+                    onChanged: (_) {},
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                _title(
+                  title: 'اختر طريقة الدفع',
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 15, right: 15),
+                  height: 40,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(22),
+                    color: Color(0xFFF8F8F8),
+                  ),
+                  child: DropdownButton<String>(
+                    underline: Text(''),
+                    items: payment.map((String value) {
+                      return new DropdownMenuItem<String>(
+                        value: value,
+                        child: new Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (newValue) {
+                      setState(() {
+                        _newValue = newValue;
+                      });
+                    },
+                    value: _newValue,
+                    isExpanded: true,
+                    hint: Text(
+                      'نقدى',
+                      style: TextStyle(fontSize: 12, color: Color(0xFFBFBFBF)),
                     ),
                   ),
-                  onChanged: (_) {},
-                  keyboardType: TextInputType.number,
                 ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              _title(
-                title: 'اختر طريقة الدفع',
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 15, right: 15),
-                height: 40,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(22),
-                  color: Color(0xFFF8F8F8),
+                SizedBox(
+                  height: 15,
                 ),
-                child: DropdownButton<String>(
-                  underline: Text(''),
-                  items: payment.map((String value) {
-                    return new DropdownMenuItem<String>(
-                      value: value,
-                      child: new Text(value),
-                    );
-                  }).toList(),
-                  onChanged: (newValue) {
-                    setState(() {
-                      _newValue = newValue;
-                    });
-                  },
-                  value: _newValue,
-                  isExpanded: true,
-                  hint: Text(
-                    'نقدى',
-                    style: TextStyle(fontSize: 12, color: Color(0xFFBFBFBF)),
+                _title(
+                  title: 'السعر',
+                ),
+                Container(
+                  height: 40,
+                  padding: EdgeInsets.only(left: 15, right: 15),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(22),
+                    color: Color(0xFFF8F8F8),
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              _title(
-                title: 'السعر',
-              ),
-              Container(
-                height: 40,
-                padding: EdgeInsets.only(left: 15, right: 15),
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(22),
-                  color: Color(0xFFF8F8F8),
-                ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    enabledBorder: InputBorder.none,
-                    focusedBorder: InputBorder.none,
-                    border: InputBorder.none,
-                    hintText: '‏300 ريال',
-                    hintStyle: TextStyle(
-                      fontSize: 12,
-                      color: Color(0xFFBFBFBF),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      enabledBorder: InputBorder.none,
+                      focusedBorder: InputBorder.none,
+                      border: InputBorder.none,
+                      hintText: '‏300 ريال',
+                      hintStyle: TextStyle(
+                        fontSize: 12,
+                        color: Color(0xFFBFBFBF),
+                      ),
                     ),
+                    onChanged: (_) {},
+                    keyboardType: TextInputType.number,
                   ),
-                  onChanged: (_) {},
-                  keyboardType: TextInputType.number,
                 ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: InkWell(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (_) => TabularOrderScreen(),),);
-                      },
-                      child: Container(
-                        height: 42,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFF8F8F8),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text('طلب مجدول',style: TextStyle(fontSize: 12,color: Color(0xFF4C5264)),),
-                            Image.asset('assets/icons/icon42.png',height: 13,width: 13,),
-                          ],
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (_) => TabularOrderScreen(),),);
+                        },
+                        child: Container(
+                          height: 42,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFF8F8F8),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text('طلب مجدول',style: TextStyle(fontSize: 12,color: Color(0xFF4C5264)),),
+                              Image.asset('assets/icons/icon42.png',height: 13,width: 13,),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    child: defaultButton(
-                      text: 'طلب',
-                      color: Color(0xFF1C608D),
-                      function: () {
-                        _showDialog();
-                      },
+                    SizedBox(
+                      width: 10,
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 40,
-              ),
-            ],
+                    Expanded(
+                      child: defaultButton(
+                        text: 'طلب',
+                        color: Color(0xFF1C608D),
+                        function: () {
+                          _showDialog();
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+              ],
+            ),
           ),
         ),
       ),

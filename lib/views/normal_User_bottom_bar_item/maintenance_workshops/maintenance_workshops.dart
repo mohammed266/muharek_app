@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../home/components/drawer_list.dart';
 import '../../all_workshop_offers/all_workshop_offers.dart';
 import '../../normal_user_home/normal_user_home_screen.dart';
 import '../../owner_workshop/workshop_owner.dart';
@@ -15,47 +16,129 @@ class _MaintenanceWorkshopsScreenState
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        drawer: drawerList(context),
+        backgroundColor: Colors.transparent,
         appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            'ورش الصيانة',
-            style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 14,
-                color: Color(0xFF4C5264),
-            ),
+          leading: Builder(
+            builder: (BuildContext context) {
+              return GestureDetector(
+                onTap: () { Scaffold.of(context).openDrawer(); },
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 18,
+                    ),
+                    Container(
+                      height: 35,
+                      width: 35,
+                      child: Image.asset(
+                        'assets/icons/icon64.png',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
           ),
-          leading: Column(
-            children: [
-              SizedBox(
-                height: 13,
-              ),
-              InkWell(
-                onTap: () {
-                  // Navigator.of(context).pop();
-                  Navigator.push(context, MaterialPageRoute(builder: (_) => HomeScreen(),),);
-                },
-                child: Container(
-                  width: 36,
-                  height: 36,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Center(
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Color(0xFF4C5264),
+          actions: [
+            Column(
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                InkWell(
+                  onTap: () {
+                    // _showDialog();
+                  },
+                  child: Container(
+                    padding: EdgeInsets.only(left: 16, right: 16),
+                    height: 30,
+                    width: MediaQuery.of(context).size.width / 1.45,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.white,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'الموقع الحالى',
+                          style:
+                          TextStyle(fontSize: 10, color: Color(0xFFDCDCDC)),
+                        ),
+                        Icon(
+                          Icons.location_on,
+                          color: Color(0xFF2777B2),
+                          size: 10,
+                        ),
+                      ],
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
+              ],
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Column(
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                InkWell(
+                  onTap: () {
+                    print('ll');
+                  },
+                  child: Container(
+                    height: 30,
+                    width: 30,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.white,
+                    ),
+                    child: Icon(
+                      Icons.search,
+                      color: Colors.indigo,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              width: 10,
+            ),
+          ],
+          // Column(
+          //   children: [
+          //     SizedBox(
+          //       height: 13,
+          //     ),
+          //     InkWell(
+          //       onTap: () {
+          //         // Navigator.of(context).pop();
+          //         Navigator.push(context, MaterialPageRoute(builder: (_) => HomeScreen(),),);
+          //       },
+          //       child: Container(
+          //         width: 36,
+          //         height: 36,
+          //         decoration: BoxDecoration(
+          //           color: Colors.white,
+          //           borderRadius: BorderRadius.circular(8),
+          //         ),
+          //         child: Center(
+          //           child: Icon(
+          //             Icons.arrow_back,
+          //             color: Color(0xFF4C5264),
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // ),
           elevation: 0.0,
           backgroundColor: Color(0xFFF8F8F8),
-          toolbarHeight: 60,
+          toolbarHeight: 70,
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
@@ -122,7 +205,7 @@ class _MaintenanceWorkshopsScreenState
                               'تصفح الخدمات',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 14,
+                                fontSize: 10,
                               ),
                             ),
                           ),
@@ -137,7 +220,11 @@ class _MaintenanceWorkshopsScreenState
               ),
               Row(
                 children: [
-                  Image.asset('assets/icons/icon26.png'),
+                  Image.asset(
+                    'assets/icons/icon26.png',
+                    height: 16,
+                    width: 16,
+                  ),
                   Padding(
                     padding: EdgeInsets.only(left: 7, right: 7),
                     child: Text(
@@ -173,9 +260,9 @@ class _MaintenanceWorkshopsScreenState
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: 6,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  mainAxisSpacing: 10,
+                  mainAxisSpacing: 5,
                   crossAxisCount: 2,
-                  crossAxisSpacing: 10,
+                  crossAxisSpacing: 5,
                 ),
                 itemBuilder: (_, i) => InkWell(
                   onTap: (){
@@ -185,10 +272,11 @@ class _MaintenanceWorkshopsScreenState
                       ),
                     );
                   },
-                  child: Container(
-                    decoration: BoxDecoration(
+                  child: Card(
+                    elevation: 4,
+                    shadowColor: Color(0xFFBFBFBF).withOpacity(.1),
+                    shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(17),
-                      color: Colors.grey.withOpacity(0.1),
                     ),
                     child: Column(
                       children: [
@@ -219,7 +307,7 @@ class _MaintenanceWorkshopsScreenState
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: MediaQuery.of(context).size.height * 0.16,
               ),
             ],
           ),

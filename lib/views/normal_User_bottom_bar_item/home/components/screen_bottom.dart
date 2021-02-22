@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:muharek_app/shared/components/component.dart';
-import 'package:muharek_app/views/normal_User_bottom_bar_item/home/components/service_title.dart';
-import 'package:muharek_app/views/screening_service_after_choice/screening_service_after_choice.dart';
+import '../../../../shared/components/component.dart';
+import 'service_title.dart';
+import '../../../screening_service_after_choice/screening_service_after_choice.dart';
 
 
 class ScreenBottom extends StatelessWidget {
@@ -63,11 +63,13 @@ class ScreenBottom extends StatelessWidget {
               onTap: (){
                 print('pp');
               },
+              w: 35,
+              h: 35,
             ),
           ],
         ),
         SizedBox(
-          height: 25,
+          height: MediaQuery.of(context).size.height* 0.18,
         ),
       ],
     );
